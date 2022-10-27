@@ -1,0 +1,6 @@
+backend/.idea/
+backend/target/
+backend/backend.iml
+backend/HELP.md
+
+web/node_modules/
