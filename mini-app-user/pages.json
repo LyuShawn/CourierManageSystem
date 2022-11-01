@@ -1,17 +1,62 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
+
+	    {
+            "path" : "pages/my-express/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的快递",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/send-express/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "寄快递",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	
+	"tabBar": {
+	        "color": "#2c2c2c", // tab 上的文字默认颜色
+	        "selectedColor": "#2979ff", // tab 上的文字选中时的颜色
+	        "borderStyle": "black", // tabbar 上边框的颜色，可选值 black/white
+	        "backgroundColor": "#ffffff",  // tab 的背景色
+	        "list": [{
+	            "pagePath": "pages/my-express/index",
+	            "iconPath": "static/tar-bar/express.svg",
+	            "selectedIconPath": "static/tar-bar/express-select.svg",
+	            "text": "我的快递"
+	        },{ // 最少2个、最多5个 tab
+	            "pagePath": "pages/send-express/index", // 页面路径，必须在 pages 中先定义
+	            "iconPath": "static/tar-bar/send.svg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
+	            "selectedIconPath": "static/tar-bar/send-select.svg", // 选中时的图片路径
+	            "text": "寄快递" // tab 上按钮文字
+	        }, { // 最少2个、最多5个 tab
+	            "pagePath": "pages/user/index", // 页面路径，必须在 pages 中先定义
+	            "iconPath": "static/tar-bar/my.svg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
+	            "selectedIconPath": "static/tar-bar/my-select.svg", // 选中时的图片路径
+	            "text": "个人中心" // tab 上按钮文字
+	        }]
+	    }
 }

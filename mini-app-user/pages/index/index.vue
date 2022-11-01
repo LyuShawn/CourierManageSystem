@@ -1,10 +1,6 @@
 <template>
 	<view class="content">
-		<u-button type="primary" text="确定"></u-button>
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		<h1>这是首页</h1>
 	</view>
 </template>
 
@@ -12,14 +8,18 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				value1: 0
 			}
 		},
 		onLoad() {
+			// 设置徽标
+			uni.setTabBarBadge({
+			    index: 1, // 索引，从 0 开始，指定第几个 tabBar
+			    text: '1' // 徽标中显示的文本
+			})
 
 		},
 		methods: {
-
 		}
 	}
 </script>
