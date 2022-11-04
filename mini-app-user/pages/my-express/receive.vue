@@ -2,31 +2,39 @@
 	<view class="content">
 		<u-gap height="10" ></u-gap>
 		<view class="block">
-			<view class="express">
-				<u--image :showLoading="true" :src="src" width="100px" height="100px" radius="10px"></u--image>
+			<u-gap height="5" ></u-gap>
+			<view class="express" v-for="(item,index) in expressList" :key="index">
+				
+				<u--image :showLoading="true" :src="item.src" width="80px" height="80px" radius="10px"></u--image>
 				<view class="view2">
 					<view class="view2-1">
-						<u--text :lines="1" :bold="true" size="18" text="待收件"></u--text>
+						<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
 					</view>
 					<view class="view2-2">
-						<u--text :lines="1" text="天猫 | 狂欢价 秋季男士衣服"></u--text>
+						<u--text :lines="1" :text="item.name"></u--text>
 					</view>
 					<view class="view2-3">
-						<u--text :lines="1" text="包裹离目的地越来越进了"></u--text>
+						<u--text :lines="1" :text="item.address"></u--text>
 					</view>
 				</view>
 			</view>
 			<!-- 分享包裹 -->
 			<view class="share">
-				<u--text align="center" prefixIcon="share" iconStyle="font-size: 19px" text="分享包裹"></u--text>
+				<u-gap height="5" ></u-gap>
+				<u--text align="center" prefixIcon="share" iconStyle="font-size: 28px" text="分享包裹"></u--text>
+				<u-gap height="10" ></u-gap>
 			</view>
 		</view>
 		
 		
 		<u-gap height="10" ></u-gap>
-		<view class="block1">
-			<u--image :showLoading="true" :src="yuantong" width="25px" height="25px" radius="5px"></u--image>
-			<u--text text="中通速递 YT3245646545" ></u--text>
+		<view>
+			
+		</view>
+		<view class="block1" v-for="(item,index) in expressInfoList" :key="index">
+			<u--image :showLoading="true" :src="item.img" width="25px" height="25px" radius="5px"></u--image>
+			<u--text :text="item.company" ></u--text>
+			<u--text :text="item.number" ></u--text>
 			<view class="block2">
 				<u--text color="gray" text="复制" ></u--text>
 			    <u--text  color="gray" text="打电话" ></u--text>
@@ -37,7 +45,7 @@
 		<view class="state">
 			<view class="u-demo-block">
 				
-				<view class="u-demo-block__content">
+				<view class="u-demo-block__content" >
 					<u-steps
 						:current="0"
 						direction="column"
@@ -47,22 +55,22 @@
 						inactiveColor="gray"
 					>
 					    <u-steps-item
-							title="运输中 11:40"
-							desc="福州转运中心"
+							:title="expressNewStatusList[0].title"
+							:desc="expressNewStatusList[0].desc"
 						>
 						</u-steps-item>
 						
-						<u-steps-item
-							title="昨天 22:35"
-							desc="南通转运公司"
+						<u-steps-item v-for="(item,index) in expressStatusList" :key="index"
+							:title="item.title"
+							:desc="item.desc"
 						>
 						</u-steps-item>
-						<u-steps-item
+						<!-- <u-steps-item
 							title="昨天 14:33"
 							
 							desc="江苏省南通市通州区三余公司已揽收"
 						>
-						</u-steps-item>
+						</u-steps-item> -->
 					</u-steps>
 				</view>
 			</view>
@@ -82,6 +90,20 @@
 				src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',
 			    yuantong:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.cnmo.com%2F1823_600x1000%2F1822451.jpg&refer=http%3A%2F%2Fimg.cnmo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669980420&t=4a6e442ee44332a52d78d26cce368d33',
 			    checkmark:'/static/my-express/share.svg',
+				expressList:[
+					{state:'待收件',name:'天猫 | 狂欢价 秋季男士衣服',address:'圆通速递：南通转运公司 已发出，下一站：福',src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',},
+				],
+				expressNewStatusList:[
+					{title:'待收件 14:33',desc:'福州大学快递中心'},
+				],
+				expressStatusList:[
+					{title:'今天 11:40',desc:'福州转运中心'},
+					{title:'昨天 22:35',desc:'南通转运公司'},
+					{title:'昨天 14:33',desc:'江苏省南通市通州区三余公司已揽收'},
+				],
+				expressInfoList:[
+					{company:'中通速递',number:'ZT123456789',img:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.cnmo.com%2F1823_600x1000%2F1822451.jpg&refer=http%3A%2F%2Fimg.cnmo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669980420&t=4a6e442ee44332a52d78d26cce368d33',},
+				],
 			};
 		}
 	}
@@ -89,7 +111,7 @@
 
 <style lang="scss">
 .content{
-	background-color: #DDDDDD;
+	background-color: #F3F6FA;
 }
 
 .express{
@@ -107,7 +129,7 @@
 		background-color: #B7B2B7;		
 	}
 	.view2 {
-		margin: 10px;
+		// margin: 50px,50px;
 	}
 	
 	.view3 {	
@@ -120,6 +142,7 @@
 
 .state{
 	margin: 10px 30px;
+	background-color: white;
 }
 .block{
 	background-color: white;

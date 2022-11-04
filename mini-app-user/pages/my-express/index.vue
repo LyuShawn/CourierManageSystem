@@ -33,6 +33,7 @@
 			<!-- 切换收寄div -->
 			<view class="block2">
 				<view class="block3">
+					
 					<u--text  size="20" bold='true' text="查包裹"></u--text>
 				</view>
 				
@@ -56,7 +57,15 @@
 				</div>
 				<!-- 快递内容 -->
 				<div v-show="state == 0">
-					<view class="express" @click="express_information()" v-for="(item,index) in getWaitList" :key="index">
+					<view v-if="getWaitList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="getWaitList.length" class="express" @click="express_information()"  v-for="(item,index) in getWaitList" :key="index">
 						
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
@@ -74,8 +83,15 @@
 					</view>
 				</div>
 				<div v-show="state == 1">
-					
-					<view class="express" @click="express_information()" v-for="(item,index) in getDispatchList" :key="index">
+					<view v-if="getDispatchList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="getDispatchList.length" class="express" @click="express_information()" v-for="(item,index) in getDispatchList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -92,7 +108,15 @@
 					</view>
 				</div>
 				<div v-show="state == 2">
-					<view class="express" @click="express_information()" v-for="(item,index) in getTransportList" :key="index">
+					<view v-if="getTransportList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="getTransportList.length" class="express" @click="express_information()" v-for="(item,index) in getTransportList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -109,8 +133,15 @@
 					</view>
 				</div>
 				<div v-show="state == 3">
-					
-					<view class="express" @click="express_information()" v-for="(item,index) in getUndeliverList" :key="index">
+					<view v-if="getUndeliverList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="getUndeliverList.length" class="express" @click="express_information()" v-for="(item,index) in getUndeliverList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -127,8 +158,15 @@
 					</view>
 				</div>
 				<div v-show="state == 4">
-					
-					<view class="express" @click="express_information()" v-for="(item,index) in getSignedList" :key="index">
+					<view v-if="getSignedList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="getSignedList.length" class="express" @click="express_information()" v-for="(item,index) in getSignedList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -154,7 +192,15 @@
 				<!-- 快递内容 -->
 				<div v-show="state == 0">
 					<!-- 待寄出 -->
-					<view class="express" @click="express_information()" v-for="(item,index) in postWaitList" :key="index">
+					<view v-if="postWaitList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="postWaitList.length" class="express" @click="express_information()" v-for="(item,index) in postWaitList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -172,7 +218,15 @@
 				</div>
 				<div v-show="state == 1">
 					<!-- 待收件 -->
-					<view class="express" @click="express_information()" v-for="(item,index) in postGetWaitList" :key="index">
+					<view v-if="postGetWaitList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="postGetWaitList.length" class="express" @click="express_information()" v-for="(item,index) in postGetWaitList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -190,7 +244,15 @@
 				</div>
 				<div v-show="state == 2">
 					<!-- <a>派送中</a> -->
-					<view class="express" @click="express_information()" v-for="(item,index) in postDispatchList" :key="index">
+					<view v-if="postDispatchList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="postDispatchList.length" class="express" @click="express_information()" v-for="(item,index) in postDispatchList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -208,7 +270,15 @@
 				</div>
 				<div v-show="state == 3">
 					<!-- <a>运输中</a> -->
-					<view class="express" @click="express_information()" v-for="(item,index) in postTranportList" :key="index">
+					<view v-if="postTranportList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="postTranportList.length" class="express" @click="express_information()" v-for="(item,index) in postTranportList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -226,7 +296,15 @@
 				</div>
 				<div v-show="state == 4">
 					<!-- <a>已签收</a> -->
-					<view class="express" @click="express_information()" v-for="(item,index) in postSignedList" :key="index">
+					<view v-if="postSignedList.length == 0">
+						<view class="nothing">
+							<u--image :showLoading="true" :src="noRecord" width="100px" height="100px" radius="10px"></u--image>
+						</view>
+						<view class="nothing">
+							<u--text align="center" :lines="1" :bold="true" size="18" text="近期无包裹"></u--text>
+						</view>
+					</view>
+					<view v-else-if="postSignedList.length " class="express" @click="express_information()" v-for="(item,index) in postSignedList" :key="index">
 						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
@@ -259,7 +337,8 @@
 				number: 0, //点击后的值，与下标同步，为0表示默认第一个按钮与div为选中状态
 				state: 0,
 				keyword: '',
-				
+				isShow: false,
+				noRecord:'/static/my-express/noRecord.svg',
 				list1: [
 					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
@@ -284,7 +363,7 @@
 					{option:'已签收'},
 				],
 				getWaitList:[
-					{state:'待收件',name:'天猫 | 狂欢价 秋季男士衣服',address:'圆通速递：南通转运公司 已发出，下一站：福',src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',},
+					// {state:'待收件',name:'天猫 | 狂欢价 秋季男士衣服',address:'圆通速递：南通转运公司 已发出，下一站：福',src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',},
 				],
 				getDispatchList:[
 					{state:'派送中',name:'天猫 | 狂欢价 秋季男士衣服',address:'圆通速递：南通转运公司 已发出，下一站：福',src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',},
@@ -343,6 +422,14 @@
 .top1{
 	display: flex;
 	text-align: center;
+}
+.nothing{
+	display: flex;
+	// margin: auto;
+	// flex: 1;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 }
 .block1{
 	background-color: white;
