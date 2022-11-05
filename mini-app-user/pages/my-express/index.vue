@@ -17,5 +17,6 @@
 <style lang="scss">
 .content{
 	background-color: aquamarine;
+	background-color: #bbb;
 }
 </style>
