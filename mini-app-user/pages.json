@@ -10,6 +10,15 @@
             }
             
         }
+		,{
+		    "path" : "pages/my-express/receive",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "我的快递",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
         ,{
             "path" : "pages/send-express/index",
             "style" :                                                                                    
