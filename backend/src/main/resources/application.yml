@@ -1,0 +1,8 @@
+server:
+  port: 80
+spring:
+  datasource:
+    username: cms
+    password: fzu23
+    url: jdbc:mysql://101.132.35.228:3306/courier_system?useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
