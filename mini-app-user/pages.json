@@ -36,7 +36,31 @@
                 "enablePullDownRefresh": false
             }
             
-        }
+        },
+		{
+			"path": "pages/send-express/address",
+			"style": {
+				"navigationBarTitleText": "地址簿"
+			}
+		},
+		{
+			"path": "pages/send-express/newaddr",
+			"style": {
+				"navigationBarTitleText": "新建地址",
+				"navigationBarBackgroundColor": "#3c9cff",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/send-express/editaddr",
+			"style": {
+				"navigationBarTitleText": "编辑地址",
+				"navigationBarBackgroundColor": "#3c9cff",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false
+			}
+		}
         ,{
             "path" : "pages/user/index",
             "style" :                                                                                    
