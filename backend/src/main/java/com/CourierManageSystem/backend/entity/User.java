@@ -23,11 +23,11 @@ public class User  implements Serializable {
 	@TableId(value = "id")
 	private Long id;
 
-	private String openId;
+	private String open_id;
 
 	private String nickname;
 
-	private String avatarUrl;
+	private String avatar_url;
 
 	private Integer gender;
 
@@ -39,7 +39,9 @@ public class User  implements Serializable {
 
 	private String city;
 
-	private Date updateTime;
+	private Date update_time;
 
-	private Long defaultAddress;
+	private Long default_address;
+
+	private String phone;
 }

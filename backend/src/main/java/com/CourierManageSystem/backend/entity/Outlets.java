@@ -22,11 +22,21 @@ public class Outlets  implements Serializable {
 	/**
 	 * 网点id
 	 */
-   
+
 	@TableId(value = "id")
 	private Long id;
 
+	/**
+	 * 网点账号
+	 */
 
+	private String username;
+
+	/**
+	 * 网点密码
+	 */
+
+	private String pwd;
 	/**
 	 * 网点名称
 	 */
@@ -46,23 +56,29 @@ public class Outlets  implements Serializable {
 	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	private Date update_time;
 
 	/**
 	 * 是否删除
 	 */
-	private Integer isDelete;
+	private Integer is_delete;
 	/**
 	 * 负责人身份证号
 	 */
-	private String principalIdentityId;
+	private String principal_identity_id;
 	/**
 	 * 负责人姓名
 	 */
-	private String principalName;
+	private String principal_name;
 	/**
 	 * 管理员是否确认注册
 	 */
 	private Integer confirmed;
+
+	/**
+	 * 地址经纬度
+	 */
+
+	private String location;
 
 }

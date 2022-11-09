@@ -1,7 +1,8 @@
 package com.CourierManageSystem.backend.controller;
 
-import com.CourierManageSystem.backend.model.AdminAddParam;
-import com.CourierManageSystem.backend.model.AdminLoginParam;
+import com.CourierManageSystem.backend.model.AdminModel.AdminAddParam;
+import com.CourierManageSystem.backend.model.AdminModel.AdminLoginParam;
+import com.CourierManageSystem.backend.model.AdminModel.OutletsRegisterConfirmParam;
 import com.CourierManageSystem.backend.service.AdminService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,8 @@ public class AdminController {
     public ResponseWrapper outletsRegisterRequest(){
         return adminService.outletsRegisterRequest();
     }
-
+    @PostMapping("/outlets_register_confirm")
+    public ResponseWrapper outletsRegisterConfirm(OutletsRegisterConfirmParam outletsRegisterConfirmParam){
+        return adminService.outletsRegisterConfirm(outletsRegisterConfirmParam);
+    }
 }

@@ -36,13 +36,17 @@ public class OutletsCourier  implements Serializable {
 	private Long courier;
 
 	/**
+	 * 申请状态
+	 */
+	private Integer confirmed;
+	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	private Date update_time;
 
 	/**
 	 * 是否删除
 	 */
-	private Integer isDelete;
+	private Integer is_delete;
 
 }

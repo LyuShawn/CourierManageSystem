@@ -28,7 +28,7 @@ public class UserExpress  implements Serializable {
 	/**
 	 * 用户id
 	 */
-	private Long user;
+	private String user_phone;
 
 	/**
 	 * 快递id
@@ -38,11 +38,11 @@ public class UserExpress  implements Serializable {
 	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	private Date update_time;
 
 	/**
 	 * 是否删除
 	 */
-	private Integer isDelete;
+	private Integer is_delete;
 
 }

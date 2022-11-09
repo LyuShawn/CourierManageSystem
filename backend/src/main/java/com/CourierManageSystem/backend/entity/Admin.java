@@ -1,8 +1,10 @@
 package com.CourierManageSystem.backend.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.annotation.*;
+import lombok.NoArgsConstructor;
 
 /**
  * @Title admin 
@@ -12,6 +14,8 @@ import com.baomidou.mybatisplus.annotation.*;
  */
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @TableName ( "admin" )
 public class Admin  implements Serializable {
 

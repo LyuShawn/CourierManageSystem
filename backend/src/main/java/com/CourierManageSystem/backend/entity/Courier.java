@@ -28,12 +28,12 @@ public class Courier  implements Serializable {
 	/**
 	 * open_id
 	 */
-	private String openId;
+	private String open_id;
 
 	/**
 	 * 姓名
 	 */
-	private String fullName;
+	private String full_name;
 
 	/**
 	 * 手机
@@ -53,7 +53,7 @@ public class Courier  implements Serializable {
 	/**
 	 * 头像url
 	 */
-	private String avatarUrl;
+	private String avatar_url;
 
 	/**
 	 * 性别
@@ -83,6 +83,10 @@ public class Courier  implements Serializable {
 	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	private Date update_time;
+	/**
+	 * 逻辑删除
+	 */
+	private Integer is_delete;
 
 }

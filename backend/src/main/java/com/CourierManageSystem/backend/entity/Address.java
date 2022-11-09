@@ -13,6 +13,10 @@ public class Address {
      */
     private long id;
     /**
+     * user_id
+     */
+    private long user;
+    /**
      * 手机号
      */
     private String phone;
@@ -21,15 +25,12 @@ public class Address {
      */
     private String addr;
     /**
-     * 网点id
-     */
-    private Long outlets;
-    /**
-     * 用户id
-     */
-    private Long user;
-    /**
      * 是否删除
      */
-    private Integer isDelete;
+    private Integer is_delete;
+
+    /**
+     * 地址经纬度
+     */
+    private String location;
 }

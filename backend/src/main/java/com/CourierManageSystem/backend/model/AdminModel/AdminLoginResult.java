@@ -1,4 +1,4 @@
-package com.CourierManageSystem.backend.model;
+package com.CourierManageSystem.backend.model.AdminModel;
 
 import lombok.Data;
 

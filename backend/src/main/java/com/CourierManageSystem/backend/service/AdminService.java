@@ -4,7 +4,7 @@ import com.CourierManageSystem.backend.entity.Admin;
 import com.CourierManageSystem.backend.entity.Outlets;
 import com.CourierManageSystem.backend.mapper.AdminMapper;
 import com.CourierManageSystem.backend.mapper.OutletsMapper;
-import com.CourierManageSystem.backend.model.*;
+import com.CourierManageSystem.backend.model.AdminModel.*;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -59,7 +59,9 @@ public class AdminService {
      * @return
      */
     public ResponseWrapper showOutlets(){
-        List<Outlets> outlets = outletsMapper.selectList(null);
+        LambdaQueryWrapper<Outlets> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Outlets::getIs_delete,0);
+        List<Outlets> outlets = outletsMapper.selectList(queryWrapper);
         List<ShowOutletsResult> showOutletsResults = JSON.parseArray(JSON.toJSONString(outlets)).toJavaList(ShowOutletsResult.class);
         return ResponseWrapper.markSuccess("获取成功",showOutletsResults);
     }
@@ -74,6 +76,27 @@ public class AdminService {
         List<Outlets> outlets = outletsMapper.selectList(queryWrapper);
         List<OutletsRegisterRequestResult> outletsRegisterRequestResults = JSON.parseArray(JSON.toJSONString(outlets)).toJavaList(OutletsRegisterRequestResult.class);
         return ResponseWrapper.markSuccess("查询成功",outletsRegisterRequestResults);
+    }
+
+    /**
+     *  网点注册确认
+     * @param outletsRegisterConfirmParam
+     * @return
+     */
+    public ResponseWrapper outletsRegisterConfirm(OutletsRegisterConfirmParam outletsRegisterConfirmParam){
+        LambdaQueryWrapper<Outlets> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Outlets::getId,outletsRegisterConfirmParam.getId());
+        Outlets selectOutlets = outletsMapper.selectOne(queryWrapper);
+        if(selectOutlets != null) {
+            Outlets outlets = new Outlets();
+            outlets.setId(outletsRegisterConfirmParam.getId());
+            outlets.setConfirmed(1);
+            outletsMapper.updateById(outlets);
+            return ResponseWrapper.markSuccess("成功确认");
+        }
+        else{
+            return ResponseWrapper.markError("该id:"+outletsRegisterConfirmParam.getId()+"对应用户不存在");
+        }
     }
 
 

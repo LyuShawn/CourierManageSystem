@@ -29,7 +29,7 @@ public class Express  implements Serializable {
 	/**
 	 * 快递单号
 	 */
-	private String trackingNumber;
+	private Long tracking_number;
 
 	/**
 	 * 取件快递员id
@@ -39,21 +39,17 @@ public class Express  implements Serializable {
 	/**
 	 * 收件人地址id
 	 */
-	private Long deliveryAddress;
+	private Long delivery_address;
 
 	/**
 	 * 发件人地址id
 	 */
-	private Long returnAddress;
+	private Long recipient_address;
 
-	/**
-	 * 是否大件
-	 */
-	private Integer bulk;
 	/**
 	 * 中途经过的所有网点id
 	 */
-	private String presentOutlets;
+	private String present_outlets;
 	/**
 	 * 是否妥投
 	 */
@@ -65,11 +61,11 @@ public class Express  implements Serializable {
 	/**
 	 * 是否删除
 	 */
-	private Integer isDelete;
+	private Integer is_delete;
 	/**
 	 * 是否取件
 	 */
-	private Integer pickUp;
+	private Integer pick_up;
 	/**
 	 * 快递价格
 	 */
@@ -77,19 +73,23 @@ public class Express  implements Serializable {
 	/**
 	 * 是否支付
 	 */
-	private Integer isPayment;
+	private Integer is_payment;
 	/**
 	 * 送件快递员id
 	 */
-	private Long deliveryCourier;
+	private Long delivery_courier;
 	/**
 	 * 初始网点
 	 */
-	private Long beginOutlets;
+	private Long begin_outlets;
 	/**
 	 * 最终网点
 	 */
-	private Long endOutlets;
+	private Long end_outlets;
+	/**
+	 * 当前网点
+	 */
+	private Long now_outlets;
 
 
 }

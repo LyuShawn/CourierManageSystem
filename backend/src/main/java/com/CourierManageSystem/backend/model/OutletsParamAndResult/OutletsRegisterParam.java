@@ -1,18 +1,22 @@
-package com.CourierManageSystem.backend.model;
+package com.CourierManageSystem.backend.model.OutletsParamAndResult;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.util.Date;
-
 @Data
-public class OutletsRegisterRequestResult {
+public class OutletsRegisterParam {
     /**
-     * 网点id
+     * 账号
      */
 
-    @TableId(value = "id")
-    private Long id;
+    private String username;
+
+    /**
+     * 密码
+     */
+
+    private String pwd;
 
 
     /**
@@ -43,13 +47,9 @@ public class OutletsRegisterRequestResult {
     /**
      * 负责人身份证号
      */
-    private String principalIdentityId;
+    private String principal_identity_id;
     /**
      * 负责人姓名
      */
-    private String principalName;
-    /**
-     * 管理员是否确认注册
-     */
-    private Integer confirmed;
+    private String principal_name;
 }

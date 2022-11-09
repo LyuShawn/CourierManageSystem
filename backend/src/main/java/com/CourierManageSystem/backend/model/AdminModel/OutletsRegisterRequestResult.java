@@ -1,11 +1,10 @@
-package com.CourierManageSystem.backend.model;
+package com.CourierManageSystem.backend.model.AdminModel;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
-import java.util.Date;
 @Data
-public class OuletsRegisterParam {
+public class OutletsRegisterRequestResult {
     /**
      * 网点id
      */
@@ -30,10 +29,6 @@ public class OuletsRegisterParam {
      */
     private String address;
 
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
 
     /**
      * 是否删除
@@ -47,4 +42,8 @@ public class OuletsRegisterParam {
      * 负责人姓名
      */
     private String principalName;
+    /**
+     * 管理员是否确认注册
+     */
+    private Integer confirmed;
 }
