@@ -2,7 +2,7 @@
 	<view class="content">
 		<u-gap height="10" ></u-gap>
 		<u-search placeholder="搜索快递单号" v-model="queryInfo.query" :clearabled="true" 
-		@clear="clear_content()" @change="searchInputChange(value)" actionText="确定" @search="cancel_search()" ></u-search>
+		@clear="clear_content()" @change="searchInput9999Change(value)" actionText="确定" @search="cancel_search()" ></u-search>
 		
 		<view v-for="(exp,index) in expressListRst"  :key="index">
 			<exp-item :exp="exp" @toExpDetail="toExpDetail"></exp-item>

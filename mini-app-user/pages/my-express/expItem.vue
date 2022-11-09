@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     // 跳转产品详情页面
-    toPrdDetail() {
+    toExpDetail() {
       this.$emit("to-exp-detail",this.exp.name);
     }
   }
