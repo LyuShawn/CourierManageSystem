@@ -1,0 +1,358 @@
+{
+	"logindata":[
+		{"username":"pgd111",
+		"pwd":"test111"
+		},
+		{"username":"pgd222",
+		"pwd":"test111"
+		},
+		{"username":"pgd333",
+		"pwd":"test111"
+		},
+	],
+  "register": [
+    {
+      "id": "1",
+      "name": "admin@163.com",
+      "pwd": "admin1"
+    },
+    {
+      "name": "asdas13",
+      "id": "zd9jI5y"
+    },
+    {
+      "name": "aaa111",
+      "pwd": "aaa111",
+      "id": "UoyT3Q_"
+    },
+    {
+      "name": "tt1111",
+      "pwd": "aaaaaa1",
+      "id": "_7_ixCp"
+    }
+  ],
+  "stationlist": [
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    },
+    {
+      "id": 1,
+      "nickname": "福州大学快递服务站",
+      "phone": "10086",
+      "address": "福州市闽侯县乌龙江大道2号",
+      "update_time": "20221107",
+      "is_delete": 1,
+      "principal_identify_id": "350123200010106666",
+      "principal_name": "张三",
+      "confirmed": 1,
+      "location": "110E,220N",
+      "username": "fzu66666",
+      "pwd": "fzu66666"
+    }
+  ],
+  "userlist": [
+    {
+      "id": 3897,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3817,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3087,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3587,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3837,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3487,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3837,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3817,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3087,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3787,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3687,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3687,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3857,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3827,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 387,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 31287,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 382137,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 381017,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 38137,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 37387,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3827,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 32487,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 30827,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 38137,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 31387,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    },
+    {
+      "id": 3837,
+      "title": "海天家园",
+      "type": "住宅",
+      "num": "1-1-2",
+      "hometype": "三室两厅",
+      "name": "马超"
+    }
+  ]
+}
