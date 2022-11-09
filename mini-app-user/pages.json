@@ -19,6 +19,15 @@
 		    }
 		    
 		}
+		,{
+		    "path" : "pages/my-express/search",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "搜索",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
         ,{
             "path" : "pages/send-express/index",
             "style" :                                                                                    

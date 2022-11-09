@@ -12,8 +12,10 @@
 		</view>
 		
 		<u-gap height="10" ></u-gap>
+		<view >
+			<u-search @click="express_search()" disabled="true" placeholder="复制单号查包裹进展" v-model="keyword" :showAction="false"></u-search>
+		</view>
 		
-		<u-search placeholder="复制单号查包裹进展" v-model="keyword" :showAction="false"></u-search>
 	    
 		
 		<!-- <view class="express">
@@ -402,8 +404,11 @@
 				this.state = index;
 			},
 			express_information(){
-				      this.$router.replace('pages/my-express/receive')
-			}
+				      this.$router.push('/pages/my-express/receive')
+			},
+			express_search(){
+				this.$router.push('/pages/my-express/search')
+			},
 		}
 	}
 </script>

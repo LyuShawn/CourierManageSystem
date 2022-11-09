@@ -28,54 +28,57 @@
 		
 		
 		<u-gap height="10" ></u-gap>
-		<view>
-			
-		</view>
-		<view class="block1" v-for="(item,index) in expressInfoList" :key="index">
-			<u--image :showLoading="true" :src="item.img" width="25px" height="25px" radius="5px"></u--image>
-			<u--text :text="item.company" ></u--text>
-			<u--text :text="item.number" ></u--text>
-			<view class="block2">
-				<u--text color="gray" text="复制" ></u--text>
-			    <u--text  color="gray" text="打电话" ></u--text>
+		<view class="state">
+			<u-gap height="10" ></u-gap>
+			<view margin="10px" class="block1" v-for="(item,index) in expressInfoList" :key="index">
+				<u--image :showLoading="true" :src="item.img" width="30px" height="30px" radius="5px"></u--image>
+				<u--text align="center" :text="item.company" ></u--text>
+				<u--text :text="item.number" ></u--text>
+				<view class="block2">
+					<u--text color="gray" text="复制" ></u--text>
+					<u--text mode="phone" call="true" color="gray" text="打电话" ></u--text>
+				</view>
+				
 			</view>
 			
+			<view class="state1">
+				<view class="u-demo-block">
+					
+					<view class="u-demo-block__content" >
+						<u-steps
+							:current="0"
+							direction="column"
+							dot="true"
+							
+							activeColor="#2979ff"
+							inactiveColor="gray"
+						>
+							<u-steps-item
+								:title="expressNewStatusList[0].title"
+								:desc="expressNewStatusList[0].desc"
+							>
+							</u-steps-item>
+							
+							<u-steps-item v-for="(item,index) in expressStatusList" :key="index"
+								:title="item.title"
+								:desc="item.desc"
+							>
+							</u-steps-item>
+							<!-- <u-steps-item
+								title="昨天 14:33"
+								
+								desc="江苏省南通市通州区三余公司已揽收"
+							>
+							</u-steps-item> -->
+						</u-steps>
+						
+					</view>
+					<u-gap height="10" ></u-gap>
+				</view>
+
+			</view>
 		</view>
 		
-		<view class="state">
-			<view class="u-demo-block">
-				
-				<view class="u-demo-block__content" >
-					<u-steps
-						:current="0"
-						direction="column"
-						dot="true"
-						
-						activeColor="#2979ff"
-						inactiveColor="gray"
-					>
-					    <u-steps-item
-							:title="expressNewStatusList[0].title"
-							:desc="expressNewStatusList[0].desc"
-						>
-						</u-steps-item>
-						
-						<u-steps-item v-for="(item,index) in expressStatusList" :key="index"
-							:title="item.title"
-							:desc="item.desc"
-						>
-						</u-steps-item>
-						<!-- <u-steps-item
-							title="昨天 14:33"
-							
-							desc="江苏省南通市通州区三余公司已揽收"
-						>
-						</u-steps-item> -->
-					</u-steps>
-				</view>
-			</view>
-
-		</view>
 		
 		
 	</view>
@@ -140,8 +143,14 @@
     text-align: center;
 }
 
+
 .state{
-	margin: 10px 30px;
+	margin: 10px 10px;
+	background-color: white;
+	border-radius: 10px;
+}
+.state1{
+	margin: 20px 50px;
 	background-color: white;
 }
 .block{
@@ -150,9 +159,9 @@
 .block1{
 	margin: 10px 10px;
 	display: flex;
+	background-color: white;
 	align-items: center;
-	justify-content: center;
-	justify-content: space-around;
+	// justify-content: space-around;
 }
 .block2{
    height: 20px;
