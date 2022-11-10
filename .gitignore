@@ -4,3 +4,5 @@ backend/backend.iml
 backend/HELP.md
 
 web/node_modules/
+mini-app-user/
+.DS_Store
