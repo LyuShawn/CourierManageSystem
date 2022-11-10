@@ -69,6 +69,14 @@
                 "enablePullDownRefresh": false
             }
             
+        }        ,{
+            "path" : "pages/web-view/webView",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
         }
     ],
 	"globalStyle": {

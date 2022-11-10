@@ -43,10 +43,10 @@
 				<image class="to" src="/static/user-page/to.png"></image>
 			</view>
 		</view>
-		<view class="bottom-logo">
+		<view class="bottom-logo" @click="goGithub">
 			<view class="by">by</view>
 			<view class="author">工程训练23小组</view>
-			<view @click="goGithub">LyuShawn/CourierManageSystem</view>
+			<view >LyuShawn/CourierManageSystem</view>
 		</view>
 		<u-toast ref="uToast" />
 
@@ -62,7 +62,10 @@
 				//#ifndef APP-PLUS
 				isH5Plus: false,
 				//#endif
-				userinfo: {},
+				userinfo: {
+					avatarUrl: '',
+					nickName: '你好,请登录'
+				},
 				showEditor: false,
 				statusTypeList: [
 					//name-标题 icon-图标 badge-角标
@@ -207,7 +210,12 @@
 
 			//跳转项目GitHub
 			goGithub() {
-				window.location.href = 'https://github.com/LyuShawn/CourierManageSystem'
+				//let url='https://github.com/LyuShawn/CourierManageSystem'
+				let url='https://www.baidu.com'
+				uni.navigateTo({
+					// 此处的链接为小程序上面新建的webview页面路径，参数url为要跳转外链的地址
+					url: '/pages/web-view/webView?url=' + encodeURIComponent(url) + '&title=仓库地址'
+				});
 			},
 			//用户登录
 			userLogin() {
@@ -267,6 +275,7 @@
 		.userinfo {
 			width: 90%;
 			display: flex;
+
 
 			.face {
 				flex-shrink: 0;
