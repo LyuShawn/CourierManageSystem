@@ -1,6 +1,6 @@
 {
-    "name" : "mini-app",
-    "appid" : "",
+    "name" : "mini-app-courier",
+    "appid" : "__UNI__0FDE665",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -68,5 +68,5 @@
     "uniStatistics" : {
         "enable" : false
     },
-    "vueVersion" : "3"
+    "vueVersion" : "2"
 }
