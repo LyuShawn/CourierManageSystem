@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class OutletsController {
      * @return
      */
     @PostMapping("/register")
-    public ResponseWrapper register(OutletsRegisterParam outletsRegisterParam){
+    public ResponseWrapper register(@RequestBody OutletsRegisterParam outletsRegisterParam){
         return outletsService.register(outletsRegisterParam);
     }
 
@@ -33,7 +34,7 @@ public class OutletsController {
      * @return
      */
     @PostMapping("/getOne")
-    public ResponseWrapper getOne(OutletsGetOneParam outletsGetOneParam){
+    public ResponseWrapper getOne(@RequestBody OutletsGetOneParam outletsGetOneParam){
         return outletsService.getOne(outletsGetOneParam);
     }
 
@@ -42,7 +43,7 @@ public class OutletsController {
      * @return
      */
     @PostMapping("/showCourierApplyList")
-    public ResponseWrapper showCourierApplyList(OutletsCourierApplyParam outletsCourierApplyParam){
+    public ResponseWrapper showCourierApplyList(@RequestBody OutletsCourierApplyParam outletsCourierApplyParam){
         return outletsService.showCourierApplyList(outletsCourierApplyParam);
     }
 
@@ -51,7 +52,7 @@ public class OutletsController {
      * @return
      */
     @PostMapping("/courierIsJoin")
-    public ResponseWrapper courierIsJoin(OutletsCourierIsJoinParam outletsCourierIsJoinParam){
+    public ResponseWrapper courierIsJoin(@RequestBody OutletsCourierIsJoinParam outletsCourierIsJoinParam){
         return outletsService.courierIsJoin(outletsCourierIsJoinParam);
     }
 
@@ -60,7 +61,7 @@ public class OutletsController {
      * @return
      */
     @PostMapping("/showAllExpress")
-    public ResponseWrapper showAllExpress(OutletsExpressAllParam outletsExpressAllParam){
+    public ResponseWrapper showAllExpress(@RequestBody OutletsExpressAllParam outletsExpressAllParam){
         return outletsService.showAllExpress(outletsExpressAllParam);
     }
 
@@ -69,7 +70,7 @@ public class OutletsController {
      * @return
      */
     @PostMapping("/getExpress")
-    public ResponseWrapper getExpress(OutletsGetExpressParam outletsGetExpressParam){
+    public ResponseWrapper getExpress(@RequestBody OutletsGetExpressParam outletsGetExpressParam){
         return outletsService.getExpress(outletsGetExpressParam);
     }
 }

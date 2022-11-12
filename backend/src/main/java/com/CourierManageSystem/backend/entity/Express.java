@@ -22,7 +22,7 @@ public class Express  implements Serializable {
 	 * 地址表id
 	 */
    
-	@TableId(value = "id")
+	@TableId(value = "id",type = IdType.AUTO)
 	private Long id;
 
 

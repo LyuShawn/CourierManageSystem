@@ -32,6 +32,11 @@ public class CourierService {
      * @return
      */
     public ResponseWrapper courierRegister(CourierRegisterParam courierRegisterParam){
+        LambdaQueryWrapper<Courier> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Courier::getOpen_id,courierRegisterParam.getOpen_id());
+        if(courierMapper.selectCount(queryWrapper) > 0 ){
+            return ResponseWrapper.markError("该oepn_id对应快递员已存在");
+        }
         Courier courier = new Courier();
         courier.setCountry(courierRegisterParam.getCountry());
         courier.setOpen_id(courierRegisterParam.getOpen_id());

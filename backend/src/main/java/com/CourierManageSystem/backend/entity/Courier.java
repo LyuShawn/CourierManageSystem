@@ -22,7 +22,7 @@ public class Courier  implements Serializable {
 	 * id
 	 */
    
-	@TableId(value = "id")
+	@TableId(value = "id",type = IdType.AUTO)
 	private Long id;
 
 	/**

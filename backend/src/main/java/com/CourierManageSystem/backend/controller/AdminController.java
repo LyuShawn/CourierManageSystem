@@ -1,15 +1,10 @@
 package com.CourierManageSystem.backend.controller;
 
-import com.CourierManageSystem.backend.model.AdminModel.AdminAddParam;
-import com.CourierManageSystem.backend.model.AdminModel.AdminLoginParam;
-import com.CourierManageSystem.backend.model.AdminModel.OutletsRegisterConfirmParam;
+import com.CourierManageSystem.backend.model.AdminModel.*;
 import com.CourierManageSystem.backend.service.AdminService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
@@ -23,7 +18,7 @@ public class AdminController {
      * @param adminLoginParam
      * @return
      */
-    @PostMapping("/login")
+    @GetMapping ("/login")
     public ResponseWrapper login(AdminLoginParam adminLoginParam){
         return adminService.login(adminLoginParam);
     }
@@ -55,8 +50,34 @@ public class AdminController {
     public ResponseWrapper outletsRegisterRequest(){
         return adminService.outletsRegisterRequest();
     }
+
+    /**
+     * 网点注册审核
+     * @param outletsRegisterConfirmParam
+     * @return
+     */
     @PostMapping("/outlets_register_confirm")
-    public ResponseWrapper outletsRegisterConfirm(OutletsRegisterConfirmParam outletsRegisterConfirmParam){
+    public ResponseWrapper outletsRegisterConfirm(@RequestBody OutletsRegisterConfirmParam outletsRegisterConfirmParam){
         return adminService.outletsRegisterConfirm(outletsRegisterConfirmParam);
+    }
+
+    /**
+     * 删除网点
+     * @param deleteOutletsParam
+     * @return
+     */
+    @PostMapping("/delete_outlets")
+    public ResponseWrapper deleteOutlets(@RequestBody DeleteOutletsParam deleteOutletsParam){
+        return adminService.deleteOutlets(deleteOutletsParam);
+    }
+
+    /**
+     * 管理员修改密码
+     * @param adminUpdatePwdParam
+     * @return
+     */
+    @PostMapping("/update_pwd")
+    public ResponseWrapper adminUpdatePwd(@RequestBody AdminUpdatePwdParam adminUpdatePwdParam){
+        return adminService.adminUpdatePwd(adminUpdatePwdParam);
     }
 }

@@ -1,5 +1,6 @@
 package com.CourierManageSystem.backend.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -7,7 +8,7 @@ import lombok.Data;
 @Data
 @TableName( "address" )
 public class Address {
-    @TableId(value = "id")
+    @TableId(value = "id",type = IdType.AUTO)
     /**
      * 地址表id
      */

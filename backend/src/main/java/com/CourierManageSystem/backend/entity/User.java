@@ -20,7 +20,7 @@ public class User  implements Serializable {
 	private static final long serialVersionUID =  9143998439313778686L;
 
    
-	@TableId(value = "id")
+	@TableId(value = "id",type = IdType.AUTO)
 	private Long id;
 
 	private String open_id;

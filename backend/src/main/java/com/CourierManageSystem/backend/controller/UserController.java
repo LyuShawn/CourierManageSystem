@@ -5,10 +5,7 @@ import com.CourierManageSystem.backend.model.UserModel.*;
 import com.CourierManageSystem.backend.service.UserService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -17,35 +14,35 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/register")
-    public ResponseWrapper register(UserRegisterParam userRegisterParam){
+    public ResponseWrapper register(@RequestBody UserRegisterParam userRegisterParam){
         return userService.register(userRegisterParam);
     }
 
     @PostMapping("/update")
-    public ResponseWrapper update(User user)
+    public ResponseWrapper update(@RequestBody User user)
     {
         return userService.update(user);
     }
 
     @PostMapping("/user_information")
-    public ResponseWrapper user_information(String open_id)
+    public ResponseWrapper user_information(@RequestBody String open_id)
     {
         return userService.user_information(open_id);
     }
 
     @PostMapping("/add_address")
-    public ResponseWrapper add_address(UserAddAddressParam userAddAddressParam)
+    public ResponseWrapper add_address(@RequestBody UserAddAddressParam userAddAddressParam)
     {
         return userService.add_address(userAddAddressParam);
     }
 
     @PostMapping("/change_address")
-    public ResponseWrapper change_address(UserChangeAddressParam userChangeAddressParam)
+    public ResponseWrapper change_address(@RequestBody UserChangeAddressParam userChangeAddressParam)
     {
         return userService.change_address(userChangeAddressParam);
     }
     @PostMapping("/delete_address")
-    public ResponseWrapper delete_address(String address_id) {
+    public ResponseWrapper delete_address(@RequestBody String address_id) {
         return userService.delete_address(address_id);
     }
 
@@ -55,17 +52,17 @@ public class UserController {
     }
 
     @PostMapping("/express_money")
-    public ResponseWrapper express_money(UserExpressMoneyParam userExpressMoneyParam) {
+    public ResponseWrapper express_money(@RequestBody UserExpressMoneyParam userExpressMoneyParam) {
         return userService.express_money(userExpressMoneyParam);
     }
 
     @PostMapping("/delivery_express")
-    public ResponseWrapper delivery_express(UserDeliverExpressParam userDeliverExpressParam) {
+    public ResponseWrapper delivery_express(@RequestBody UserDeliverExpressParam userDeliverExpressParam) {
         return userService.delivery_express(userDeliverExpressParam);
     }
 
     @PostMapping("/logistics_information")
-    public ResponseWrapper logistics_information(String tracking_number) {
+    public ResponseWrapper logistics_information(@RequestBody String tracking_number) {
         return userService.logistics_information(tracking_number);
     }
 
@@ -76,7 +73,7 @@ public class UserController {
 
 
     @PostMapping("/set_default_address")
-    public ResponseWrapper set_default_address(UserSetDefaultAddressParam userSetDefaultAddressParam) {
+    public ResponseWrapper set_default_address(@RequestBody UserSetDefaultAddressParam userSetDefaultAddressParam) {
         return userService.set_default_address(userSetDefaultAddressParam);
     }
 }

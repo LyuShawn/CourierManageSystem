@@ -4,10 +4,7 @@ import com.CourierManageSystem.backend.model.CourierModel.*;
 import com.CourierManageSystem.backend.service.CourierService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/courier")
@@ -21,7 +18,7 @@ public class CourierController {
      * @return
      */
     @PostMapping("/register")
-    public ResponseWrapper register(CourierRegisterParam courierRegisterParam){
+    public ResponseWrapper register(@RequestBody CourierRegisterParam courierRegisterParam){
         return courierService.courierRegister(courierRegisterParam);
     }
 
@@ -51,7 +48,7 @@ public class CourierController {
      * @return
      */
     @PostMapping("/express_reach_confirm")
-    public ResponseWrapper expressReachConfirm(ExpressReachConfirmParam expressReachConfirmParam){
+    public ResponseWrapper expressReachConfirm(@RequestBody ExpressReachConfirmParam expressReachConfirmParam){
         return courierService.expressReachConfirm(expressReachConfirmParam);
     }
 
@@ -61,7 +58,7 @@ public class CourierController {
      * @return
      */
     @PostMapping("/information_change")
-    public ResponseWrapper courierInformationChange(CourierInformationChangeParam courierInformationChangeParam){
+    public ResponseWrapper courierInformationChange(@RequestBody CourierInformationChangeParam courierInformationChangeParam){
         return courierService.courierInformationChange(courierInformationChangeParam);
     }
 
@@ -81,7 +78,7 @@ public class CourierController {
      * @return
      */
     @PostMapping("/accept_task")
-    public ResponseWrapper courierAcceptTask(CourierAcceptTaskParam courierAcceptTaskParam){
+    public ResponseWrapper courierAcceptTask(@RequestBody CourierAcceptTaskParam courierAcceptTaskParam){
         return courierService.courierAcceptTask(courierAcceptTaskParam);
     }
 
@@ -101,7 +98,7 @@ public class CourierController {
      * @return
      */
     @PostMapping("/express_get_confirm")
-    public ResponseWrapper expressGetConfirm(ExpressGetConfirmParam expressGetConfirmParam){
+    public ResponseWrapper expressGetConfirm(@RequestBody ExpressGetConfirmParam expressGetConfirmParam){
         return courierService.expressGetConfirm(expressGetConfirmParam);
     }
 
@@ -111,7 +108,7 @@ public class CourierController {
      * @return
      */
     @PostMapping("/apply_outlets")
-    public ResponseWrapper courierApplyOutlets(CourierApplyOutletsParam courierApplyOutletsParam){
+    public ResponseWrapper courierApplyOutlets(@RequestBody CourierApplyOutletsParam courierApplyOutletsParam){
         return courierService.courierApplyOutlets(courierApplyOutletsParam);
     }
 

@@ -23,7 +23,7 @@ public class Outlets  implements Serializable {
 	 * 网点id
 	 */
 
-	@TableId(value = "id")
+	@TableId(value = "id",type = IdType.AUTO)
 	private Long id;
 
 	/**

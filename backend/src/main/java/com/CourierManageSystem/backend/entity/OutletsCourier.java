@@ -22,7 +22,7 @@ public class OutletsCourier  implements Serializable {
 	 * 网点-快递员表id
 	 */
    
-	@TableId(value = "id")
+	@TableId(value = "id",type = IdType.AUTO)
 	private Long id;
 
 	/**

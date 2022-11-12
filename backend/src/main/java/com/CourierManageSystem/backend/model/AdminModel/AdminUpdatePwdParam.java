@@ -3,13 +3,13 @@ package com.CourierManageSystem.backend.model.AdminModel;
 import lombok.Data;
 
 @Data
-public class OutletsRegisterConfirmParam {
+public class AdminUpdatePwdParam {
     /**
-     * 网点id
+     * 管理员id
      */
     private Long id;
     /**
-     * 审核结果 -1：拒绝，1：同意
+     * 密码
      */
-    private Integer confirmed;
+    private String pwd;
 }

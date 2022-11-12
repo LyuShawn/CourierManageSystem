@@ -22,7 +22,7 @@ public class UserExpress  implements Serializable {
 	 * 用户-快递表id
 	 */
    
-	@TableId(value = "id")
+	@TableId(value = "id",type = IdType.AUTO)
 	private Long id;
 
 	/**

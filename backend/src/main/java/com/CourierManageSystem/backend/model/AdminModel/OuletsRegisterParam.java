@@ -11,7 +11,7 @@ public class OuletsRegisterParam {
      * 网点id
      */
 
-    @TableId(value = "id")
+
     private Long id;
 
 

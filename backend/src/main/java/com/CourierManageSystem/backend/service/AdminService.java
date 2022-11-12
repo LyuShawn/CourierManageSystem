@@ -31,7 +31,8 @@ public class AdminService {
         queryWrapper.eq(Admin::getName,adminLoginParam.getName());
         queryWrapper.eq(Admin::getPwd,adminLoginParam.getPwd());
         Admin admin = adminMapper.selectOne(queryWrapper);
-        if (admin!=null){
+
+        if (admin != null){
             AdminLoginResult adminLoginResult = new AdminLoginResult();
             adminLoginResult.setId(admin.getId().intValue());
             return ResponseWrapper.markSuccess("登录成功",adminLoginResult);
@@ -47,9 +48,16 @@ public class AdminService {
      * @return
      */
     public ResponseWrapper add(AdminAddParam adminAddParam){
+        LambdaQueryWrapper<Admin> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Admin::getName,adminAddParam.getName());
+        if(adminMapper.selectCount(queryWrapper)>0){
+            return ResponseWrapper.markError("姓名已存在");
+        }
+
         Admin admin = new Admin();
         admin.setName(adminAddParam.getName());
         admin.setPwd(adminAddParam.getPwd());
+
         adminMapper.insert(admin);
         return ResponseWrapper.markSuccess("新增成功");
     }
@@ -79,7 +87,7 @@ public class AdminService {
     }
 
     /**
-     *  网点注册确认
+     *  网点注册审核
      * @param outletsRegisterConfirmParam
      * @return
      */
@@ -90,15 +98,50 @@ public class AdminService {
         if(selectOutlets != null) {
             Outlets outlets = new Outlets();
             outlets.setId(outletsRegisterConfirmParam.getId());
-            outlets.setConfirmed(1);
+            outlets.setConfirmed(outletsRegisterConfirmParam.getConfirmed());
             outletsMapper.updateById(outlets);
             return ResponseWrapper.markSuccess("成功确认");
         }
         else{
-            return ResponseWrapper.markError("该id:"+outletsRegisterConfirmParam.getId()+"对应用户不存在");
+            return ResponseWrapper.markError("该id:"+outletsRegisterConfirmParam.getId()+"对应网点不存在");
         }
     }
 
+    /**
+     * 删除网点
+     * @param deleteOutletsParam
+     * @return
+     */
+    public ResponseWrapper deleteOutlets(DeleteOutletsParam deleteOutletsParam){
+        LambdaQueryWrapper<Outlets> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Outlets::getId,deleteOutletsParam.getId());
 
+        if (outletsMapper.selectOne(queryWrapper) == null) {
+            return ResponseWrapper.markError("该id对应的网点不存在");
+        }
+        Outlets outlets = new Outlets();
+        outlets.setId(deleteOutletsParam.getId());
+        outlets.setIs_delete(1);
+        outletsMapper.updateById(outlets);
+        return ResponseWrapper.markSuccess("删除成功");
+    }
+
+    /**
+     * 管理员修改密码
+     * @param adminUpdatePwdParam
+     * @return
+     */
+    public ResponseWrapper adminUpdatePwd(AdminUpdatePwdParam adminUpdatePwdParam){
+        LambdaQueryWrapper<Admin> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Admin::getId,adminUpdatePwdParam.getId());
+        if(adminMapper.selectOne(queryWrapper) == null){
+            return ResponseWrapper.markError("该id对应管理员不存在");
+        }
+        Admin admin = new Admin();
+        admin.setId(adminUpdatePwdParam.getId());
+        admin.setPwd(adminUpdatePwdParam.getPwd());
+        adminMapper.updateById(admin);
+        return ResponseWrapper.markSuccess("修改成功");
+    }
 
 }
