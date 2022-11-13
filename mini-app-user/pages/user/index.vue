@@ -144,6 +144,10 @@
 		onShow() {
 			//加载
 			this.init();
+			console.log(111);
+			this.$api.User.getAddress(1).then((res)=>{
+				console.log(res);
+			})
 
 		},
 		methods: {

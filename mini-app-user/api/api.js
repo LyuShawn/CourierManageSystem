@@ -4,19 +4,14 @@ import {
 
 
 export class User {
-	static login(code) {
+	static getAddress(userId) {
 		return request({
-			url: '/user/login',
-			method: 'post',
+			url: '/user/get_all_address',
+			method: 'get',
 			data: {
-				code
+				user_id:userId,
 			}
 		})
 	}
 
-	static test() {
-		return request({
-			url: '/test/test_hello',
-		})
-	}
 }
