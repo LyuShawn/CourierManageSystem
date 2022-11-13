@@ -29,7 +29,7 @@ public class AdminController {
      * @return
      */
     @PostMapping("/add")
-    public ResponseWrapper add(AdminAddParam adminAddParam){
+    public ResponseWrapper add(@RequestBody AdminAddParam adminAddParam){
         return adminService.add(adminAddParam);
     }
 

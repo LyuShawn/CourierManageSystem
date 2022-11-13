@@ -32,15 +32,15 @@ public class OutletsRegisterRequestResult {
     /**
      * 是否删除
      */
-    private Integer isDelete;
+    private Integer is_delete;
     /**
      * 负责人身份证号
      */
-    private String principalIdentityId;
+    private String principal_identity_id;
     /**
      * 负责人姓名
      */
-    private String principalName;
+    private String principal_name;
     /**
      * 管理员是否确认注册
      */
