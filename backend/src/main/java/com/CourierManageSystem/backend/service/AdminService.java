@@ -134,12 +134,13 @@ public class AdminService {
     public ResponseWrapper adminUpdatePwd(AdminUpdatePwdParam adminUpdatePwdParam){
         LambdaQueryWrapper<Admin> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Admin::getId,adminUpdatePwdParam.getId());
+        queryWrapper.eq(Admin::getPwd,adminUpdatePwdParam.getOldPwd());
         if(adminMapper.selectOne(queryWrapper) == null){
-            return ResponseWrapper.markError("该id对应管理员不存在");
+            return ResponseWrapper.markError("旧密码不匹配");
         }
         Admin admin = new Admin();
         admin.setId(adminUpdatePwdParam.getId());
-        admin.setPwd(adminUpdatePwdParam.getPwd());
+        admin.setPwd(adminUpdatePwdParam.getNewPwd());
         adminMapper.updateById(admin);
         return ResponseWrapper.markSuccess("修改成功");
     }

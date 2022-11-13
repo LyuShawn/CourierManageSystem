@@ -9,7 +9,11 @@ public class AdminUpdatePwdParam {
      */
     private Long id;
     /**
-     * 密码
+     * 旧密码
      */
-    private String pwd;
+    private String oldPwd;
+    /**
+     * 新密码
+     */
+    private String newPwd;
 }
