@@ -209,6 +209,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -374,7 +377,7 @@ var _default =
     //跳转项目GitHub
     goGithub: function goGithub() {
       //let url='https://github.com/LyuShawn/CourierManageSystem'
-      var url = 'https://www.baidu.com';
+      var url = 'https://github.com/LyuShawn/CourierManageSystem';
       uni.navigateTo({
         // 此处的链接为小程序上面新建的webview页面路径，参数url为要跳转外链的地址
         url: '/pages/web-view/webView?url=' + encodeURIComponent(url) + '&title=仓库地址' });
