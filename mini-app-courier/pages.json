@@ -39,18 +39,18 @@
 		"backgroundColor": "#ffffff", // tab 的背景色
 		"list": [{
 			"pagePath": "pages/express/index",
-			"iconPath": "static/tab-bar/express.svg",
-			"selectedIconPath": "static/tab-bar/express-select.svg",
+			"iconPath": "static/tab-bar/express.png",
+			"selectedIconPath": "static/tab-bar/express-select.png",
 			"text": "我的快递"
 		}, { // 最少2个、最多5个 tab
 			"pagePath": "pages/my-outlets/index", // 页面路径，必须在 pages 中先定义
-			"iconPath": "static/tab-bar/outlets.svg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
-			"selectedIconPath": "static/tab-bar/outlets-select.svg", // 选中时的图片路径
+			"iconPath": "static/tab-bar/outlets.png", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
+			"selectedIconPath": "static/tab-bar/outlets-select.png", // 选中时的图片路径
 			"text": "我的网点" // tab 上按钮文字
 		}, { // 最少2个、最多5个 tab
 			"pagePath": "pages/user/index", // 页面路径，必须在 pages 中先定义
-			"iconPath": "static/tab-bar/user.svg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
-			"selectedIconPath": "static/tab-bar/user-select.svg", // 选中时的图片路径
+			"iconPath": "static/tab-bar/user.png", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
+			"selectedIconPath": "static/tab-bar/user-select.png", // 选中时的图片路径
 			"text": "个人中心" // tab 上按钮文字
 		}]
 	}
