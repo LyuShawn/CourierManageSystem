@@ -7,7 +7,7 @@ public class AdminUpdatePwdParam {
     /**
      * 管理员id
      */
-    private Long id;
+    private String name;
     /**
      * 旧密码
      */

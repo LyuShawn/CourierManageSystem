@@ -8,6 +8,7 @@ import com.CourierManageSystem.backend.model.AdminModel.*;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -133,15 +134,16 @@ public class AdminService {
      */
     public ResponseWrapper adminUpdatePwd(AdminUpdatePwdParam adminUpdatePwdParam){
         LambdaQueryWrapper<Admin> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(Admin::getId,adminUpdatePwdParam.getId());
+        queryWrapper.eq(Admin::getName,adminUpdatePwdParam.getName());
         queryWrapper.eq(Admin::getPwd,adminUpdatePwdParam.getOldPwd());
         if(adminMapper.selectOne(queryWrapper) == null){
             return ResponseWrapper.markError("旧密码不匹配");
         }
-        Admin admin = new Admin();
-        admin.setId(adminUpdatePwdParam.getId());
-        admin.setPwd(adminUpdatePwdParam.getNewPwd());
-        adminMapper.updateById(admin);
+        LambdaUpdateWrapper<Admin> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(Admin::getName,adminUpdatePwdParam.getName());
+        updateWrapper.eq(Admin::getPwd,adminUpdatePwdParam.getOldPwd());
+        updateWrapper.set(Admin::getPwd,adminUpdatePwdParam.getNewPwd());
+        adminMapper.update(null,updateWrapper);
         return ResponseWrapper.markSuccess("修改成功");
     }
 
