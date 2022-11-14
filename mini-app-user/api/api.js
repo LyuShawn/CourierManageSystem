@@ -22,6 +22,18 @@ export class User {
 			}
 		})
 	}
+	
+	static userLogin(open_id,nickname,avatar_url){
+		return request({
+			url:'user/register',
+			method:'post',
+			data:{
+				open_id,
+				nickname,
+				avatar_url
+			}
+		})
+	}
 
 }
 

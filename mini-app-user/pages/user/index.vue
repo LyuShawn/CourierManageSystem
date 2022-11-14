@@ -24,7 +24,7 @@
 		</view>
 		<view class="list">
 			<view style="box-shadow: 0 0 20upx rgba(0, 0, 0, 0.15);;border-radius: 24upx;">
-				<view class="li" v-for="(li,li_i) in severList[0]" @tap="toPage(li_i)"
+				<view class="li" v-for="(li,li_i) in severList[0]" @tap="toServer1(li_i)"
 					v-bind:class="{'noborder':li_i==severList[0].length-1,'first':li_i==0}" hover-class="hover"
 					:key="li.title">
 					<view class="icon">
@@ -36,15 +36,15 @@
 			</view>
 			<view style="margin-top: 20rpx;margin-bottom: 10rpx;"></view>
 			<view style="box-shadow: 0 0 20upx rgba(0, 0, 0, 0.15);;border-radius: 24upx;">
-				<view class="li" v-for="(li,li_i) in severList[1]" @tap="toPage(li_i)"
+				<button style="width: 100%;" class="li" v-for="(li,li_i) in severList[1]" @tap="toServer2(li_i)"
 					v-bind:class="{'noborder':li_i==severList[1].length-1,'first':li_i==0}" hover-class="hover"
-					:key="li.title">
+					:key="li.title" :open-type="li.openType">
 					<view class="icon">
 						<image :src="'/static/user-page/sever/'+li.icon"></image>
 					</view>
 					<view class="text">{{li.title}}</view>
 					<image class="to" src="/static/user-page/to.png"></image>
-				</view>
+				</button>
 			</view>
 		</view>
 		<view class="bottom-logo" @click="goGithub">
@@ -58,7 +58,7 @@
 					<image class="avatar" :src="userinfo.avatarUrl"></image>
 				</button>
 				<view class="nickname-input">
-					<u-input v-model="userinfo.nickName"  fontSize="20px" placeholder="请输入昵称" />
+					<u-input v-model="userinfo.nickName" fontSize="20px" placeholder="请输入昵称" />
 				</view>
 				<view class="comfirm-btn">
 					<u-button type="primary" text="确认" @click="confirmUserInfo"></u-button>
@@ -78,10 +78,12 @@
 				isH5Plus: false,
 				//#endif
 				userinfo: {
-					avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
-					nickName: '微信用户'
+					avatarUrl: uni.getStorageSync('userinfo').avatarUrl ||
+						'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
+					nickName: uni.getStorageSync('userinfo').nickName || null
 				},
 				showEditor: false,
+				
 				statusTypeList: [
 					//name-标题 icon-图标 badge-角标
 					{
@@ -135,22 +137,26 @@
 					[{
 							name: 'help',
 							title: '帮助',
-							icon: 'help.png'
+							icon: 'help.png',
+							openType:null
 						},
 						{
 							name: 'feedback',
 							title: '反馈',
-							icon: 'feedback.png'
+							icon: 'feedback.png',
+							openType:'feedback'
 						},
 						{
 							name: 'about',
 							title: '关于我们',
-							icon: 'about.png'
+							icon: 'about.png',
+							openType:null
 						},
 						{
 							name: 'share',
 							title: '推荐给朋友',
-							icon: 'share.png'
+							icon: 'share.png',
+							openType:'share'
 						}
 					]
 				],
@@ -160,32 +166,35 @@
 		onShow() {
 			//加载
 			this.init();
-			this.$api.User.getAddress(1).then((res) => {
-				console.log(res.data.data);
-
-			})
-
-
 		},
 		methods: {
 			init() {
-
+				
 			},
 
-			//用户点击列表项
-			toPage(i) {
+			toServer1(i) {
 				if (this.severList[0][i].name == 'classes') {
-					uni.$emit('showEditor', {
-						show: !this.showEditor
-					})
+					console.log('进入我的地址簿');
 				} else if (this.severList[0][i].name == 'backups') {
 					this.$refs.uToast.show({
-						title: '已自动进行数据备份',
+						message: '已自动进行数据备份',
 					})
 				} else if (this.severList[0][i].name == 'download') {
 					this.$refs.uToast.show({
-						title: '本地的数据已和云端同步',
+						message: '本地的数据已和云端同步',
 					})
+				}
+			},
+
+			toServer2(i){
+				if (this.severList[1][i].name == 'help') {
+					console.log('进入帮助页面');
+				} else if (this.severList[1][i].name == 'feedback') {
+					console.log('进入反馈页面');
+				} else if (this.severList[1][i].name == 'about') {
+					console.log('进入关于我们页面');
+				}else if(this.severList[1][i].name == 'share'){
+					console.log('进入分享页面');
 				}
 			},
 
@@ -201,33 +210,6 @@
 				})
 			},
 
-			getUserInfoSuccess(res) {
-				this.userinfo = {
-					avatarUrl: res.userInfo.avatarUrl,
-					nickName: res.userInfo.nickName,
-				}
-				uni.setStorage({
-					key: 'userinfo',
-					data: res.userInfo,
-				})
-				let userInfo = res.userInfo;
-				this.$api.User.addUser(userInfo.avatarUrl, userInfo.city, userInfo.country, 1,
-					userInfo.language, userInfo.nickName, userInfo.province).then((res) => {});
-
-				this.setNavBarColor('#cda8c3');
-			},
-
-			setNavBarColor(color) {
-				//动态设置导航栏颜色
-				wx.setNavigationBarColor({
-					frontColor: '#000000',
-					backgroundColor: color,
-					animation: {
-						duration: 300,
-						timingFunc: 'easeInOut'
-					}
-				})
-			},
 
 			//跳转项目GitHub
 			goGithub() {
@@ -237,53 +219,44 @@
 					url: '/pages/web-view/webView?url=' + encodeURIComponent(url) + '&title=仓库地址'
 				});
 			},
-			//用户登录
-			userLogin() {
-				this.showInfoPopup = true;
 
-				let _this = this;
-				new Promise((resolve, rejected) => {
-					wx.getUserProfile({
-						desc: '用于用户信息备份',
-						success: res => resolve(res),
-						fail: err => rejected(err)
-					})
-				}).then(res => {
-					console.log(res);
-					//成功获取用户信息
-					//_this.getUserInfoSuccess(res);
-				}).catch(err => {
-					console.log(err);
-					uni.showToast({
-						title: '您拒绝了授权信息，将无法进行数据云备份',
-						icon: 'none',
-					})
-				})
-
-
-				//查询缓存看是否已有信息
-				// wx.getStorage({
-				// 	key: 'user_info',
-				// 	success(res) {
-				// 		//已经获得用户信息
-				// 	},
-				// 	fail(res) {
-				// 		// 使用Promise包装增加可读性（有回调函数的方法都可以这样做）
-
-				// 	}
-				// })
-
-			},
-			closeInfoPopup() {
-
-			},
 			onChooseAvatar(e) {
 				this.userinfo.avatarUrl = e.detail.avatarUrl;
 				console.log(this.userinfo.avatarUrl);
 			},
+
+			userLogin() {
+				if (uni.getStorageSync('login')) {
+					return;
+				} else {
+					this.showInfoPopup = true
+				}
+			},
+
 			confirmUserInfo() {
+				var _this = this
 				console.log(this.userinfo);
-				this.showInfoPopup=false;
+				this.showInfoPopup = false;
+
+				try {
+					//open_id存入缓存
+					uni.setStorageSync('userinfo', _this.userinfo);
+					uni.setStorageSync('login', true);
+				} catch (e) {
+					// error
+				}
+
+				uni.getStorage({
+					key: 'open_id',
+					success: function(res) {
+						let open_id = res.data
+						_this.$api.User.userLogin(open_id, _this.userinfo.nickName, _this.userinfo.avatarUrl)
+							.then((res) => {
+								console.log(res);
+							})
+					}
+				})
+
 			},
 		},
 		components: {
