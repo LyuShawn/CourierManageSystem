@@ -18351,7 +18351,7 @@ platform;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 137);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Object.defineProperty(exports, "__esModule", { value: true });exports.Myexpress = exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 473);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
 
 
 
@@ -18365,58 +18365,25 @@ User = /*#__PURE__*/function () {function User() {_classCallCheck(this, User);}_
           user_id: userId } });
 
 
-    } }]);return User;}();exports.User = User;
+    } }]);return User;}();exports.User = User;var
+
+
+
+
+
+Myexpress = /*#__PURE__*/function () {function Myexpress() {_classCallCheck(this, Myexpress);}_createClass(Myexpress, null, [{ key: "getAllExpress", value: function getAllExpress(
+    code) {
+      return (0, _request.request)({
+        url: '/user/get_all_express',
+        method: 'get',
+        data: {
+          code: code } });
+
+
+    } }]);return Myexpress;}();exports.Myexpress = Myexpress;
 
 /***/ }),
-/* 137 */
-/*!***************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/api/request.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0; // 基于Promise封装的请求
-var BASE_URL = 'http://101.132.35.228:8083';
-//const BASE_URL = 'https://localhost'
-
-var request = function request(options) {
-
-  var header = {};
-  try {
-    var tokenKey = uni.getStorageSync('tokenKey') || null;
-    var tokenValue = uni.getStorageSync('tokenValue') || null;
-    header[tokenKey] = tokenValue;
-  } catch (err) {
-    console.log(err);
-  } finally {
-    // Promise封装
-    return new Promise(function (resolve, reject) {
-      uni.request({
-        // url基地址
-        url: BASE_URL + options.url,
-        // 请求方法，默认get
-        method: options.method || 'GET',
-        // 请求体
-        data: options.data || {},
-        // 请求头
-        header: header,
-        // 请求成功回调
-        success: function success(res) {
-          resolve(res);
-        },
-        // 请求失败回调
-        fail: function fail(err) {
-          reject(err);
-        } });
-
-    });
-  }
-
-};exports.request = request;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
+/* 137 */,
 /* 138 */,
 /* 139 */,
 /* 140 */,
@@ -18492,8 +18459,7 @@ var request = function request(options) {
 /* 210 */,
 /* 211 */,
 /* 212 */,
-/* 213 */,
-/* 214 */
+/* 213 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/value.js ***!
   \************************************************************************************************************************/
@@ -18587,7 +18553,7 @@ var request = function request(options) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 215 */
+/* 214 */
 /*!******************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/button.js ***!
   \******************************************************************************************************************/
@@ -18608,7 +18574,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     openType: String } };exports.default = _default;
 
 /***/ }),
-/* 216 */
+/* 215 */
 /*!********************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \********************************************************************************************************************/
@@ -18641,7 +18607,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 217 */
+/* 216 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/props.js ***!
   \************************************************************************************************************************/
@@ -18759,14 +18725,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 217 */,
 /* 218 */,
 /* 219 */,
 /* 220 */,
 /* 221 */,
 /* 222 */,
 /* 223 */,
-/* 224 */,
-/* 225 */
+/* 224 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \************************************************************************************************************************/
@@ -18989,7 +18955,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 226 */
+/* 225 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/props.js ***!
   \************************************************************************************************************************/
@@ -19086,14 +19052,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 226 */,
 /* 227 */,
 /* 228 */,
 /* 229 */,
 /* 230 */,
 /* 231 */,
 /* 232 */,
-/* 233 */,
-/* 234 */
+/* 233 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-gap/props.js ***!
   \***********************************************************************************************************************/
@@ -19125,14 +19091,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 234 */,
 /* 235 */,
 /* 236 */,
 /* 237 */,
 /* 238 */,
 /* 239 */,
 /* 240 */,
-/* 241 */,
-/* 242 */
+/* 241 */
 /*!**************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-search/props.js ***!
   \**************************************************************************************************************************/
@@ -19258,14 +19224,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 242 */,
 /* 243 */,
 /* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */,
 /* 248 */,
-/* 249 */,
-/* 250 */
+/* 249 */
 /*!**************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper/props.js ***!
   \**************************************************************************************************************************/
@@ -19398,6 +19364,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 250 */,
 /* 251 */,
 /* 252 */,
 /* 253 */,
@@ -19409,8 +19376,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 259 */,
 /* 260 */,
 /* 261 */,
-/* 262 */,
-/* 263 */
+/* 262 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-image/props.js ***!
   \*************************************************************************************************************************/
@@ -19502,12 +19468,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 263 */,
 /* 264 */,
 /* 265 */,
 /* 266 */,
 /* 267 */,
-/* 268 */,
-/* 269 */
+/* 268 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps/props.js ***!
   \*************************************************************************************************************************/
@@ -19554,14 +19520,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 269 */,
 /* 270 */,
 /* 271 */,
 /* 272 */,
 /* 273 */,
 /* 274 */,
 /* 275 */,
-/* 276 */,
-/* 277 */
+/* 276 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps-item/props.js ***!
   \******************************************************************************************************************************/
@@ -19593,14 +19559,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 277 */,
 /* 278 */,
 /* 279 */,
 /* 280 */,
 /* 281 */,
 /* 282 */,
 /* 283 */,
-/* 284 */,
-/* 285 */
+/* 284 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell-group/props.js ***!
   \******************************************************************************************************************************/
@@ -19622,14 +19588,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 285 */,
 /* 286 */,
 /* 287 */,
 /* 288 */,
 /* 289 */,
 /* 290 */,
 /* 291 */,
-/* 292 */,
-/* 293 */
+/* 292 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell/props.js ***!
   \************************************************************************************************************************/
@@ -19747,14 +19713,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 293 */,
 /* 294 */,
 /* 295 */,
 /* 296 */,
 /* 297 */,
 /* 298 */,
 /* 299 */,
-/* 300 */,
-/* 301 */
+/* 300 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-line/props.js ***!
   \************************************************************************************************************************/
@@ -19795,14 +19761,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 301 */,
 /* 302 */,
 /* 303 */,
 /* 304 */,
 /* 305 */,
 /* 306 */,
 /* 307 */,
-/* 308 */,
-/* 309 */
+/* 308 */
 /*!**************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-picker/props.js ***!
   \**************************************************************************************************************************/
@@ -19889,14 +19855,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 309 */,
 /* 310 */,
 /* 311 */,
 /* 312 */,
 /* 313 */,
 /* 314 */,
 /* 315 */,
-/* 316 */,
-/* 317 */
+/* 316 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-input/props.js ***!
   \*************************************************************************************************************************/
@@ -20091,12 +20057,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 317 */,
 /* 318 */,
 /* 319 */,
 /* 320 */,
 /* 321 */,
-/* 322 */,
-/* 323 */
+/* 322 */
 /*!****************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse/props.js ***!
   \****************************************************************************************************************************/
@@ -20123,14 +20089,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 323 */,
 /* 324 */,
 /* 325 */,
 /* 326 */,
 /* 327 */,
 /* 328 */,
 /* 329 */,
-/* 330 */,
-/* 331 */
+/* 330 */
 /*!*********************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse-item/props.js ***!
   \*********************************************************************************************************************************/
@@ -20197,14 +20163,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 331 */,
 /* 332 */,
 /* 333 */,
 /* 334 */,
 /* 335 */,
 /* 336 */,
 /* 337 */,
-/* 338 */,
-/* 339 */
+/* 338 */
 /*!********************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
   \********************************************************************************************************************************/
@@ -20266,14 +20232,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 339 */,
 /* 340 */,
 /* 341 */,
 /* 342 */,
 /* 343 */,
 /* 344 */,
 /* 345 */,
-/* 346 */,
-/* 347 */
+/* 346 */
 /*!**************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-button/props.js ***!
   \**************************************************************************************************************************/
@@ -20442,14 +20408,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 347 */,
 /* 348 */,
 /* 349 */,
 /* 350 */,
 /* 351 */,
 /* 352 */,
 /* 353 */,
-/* 354 */,
-/* 355 */
+/* 354 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-modal/props.js ***!
   \*************************************************************************************************************************/
@@ -20541,14 +20507,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 355 */,
 /* 356 */,
 /* 357 */,
 /* 358 */,
 /* 359 */,
 /* 360 */,
 /* 361 */,
-/* 362 */,
-/* 363 */
+/* 362 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-empty/props.js ***!
   \*************************************************************************************************************************/
@@ -20615,6 +20581,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 363 */,
 /* 364 */,
 /* 365 */,
 /* 366 */,
@@ -20635,8 +20602,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 381 */,
 /* 382 */,
 /* 383 */,
-/* 384 */,
-/* 385 */
+/* 384 */
 /*!************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-link/props.js ***!
   \************************************************************************************************************************/
@@ -20683,14 +20649,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 385 */,
 /* 386 */,
 /* 387 */,
 /* 388 */,
 /* 389 */,
 /* 390 */,
 /* 391 */,
-/* 392 */,
-/* 393 */
+/* 392 */
 /*!********************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \********************************************************************************************************************************/
@@ -20757,14 +20723,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 393 */,
 /* 394 */,
 /* 395 */,
 /* 396 */,
 /* 397 */,
 /* 398 */,
 /* 399 */,
-/* 400 */,
-/* 401 */
+/* 400 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
   \************************************************************************************************************************************/
@@ -20801,6 +20767,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 401 */,
 /* 402 */,
 /* 403 */,
 /* 404 */,
@@ -20814,8 +20781,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 412 */,
 /* 413 */,
 /* 414 */,
-/* 415 */,
-/* 416 */
+/* 415 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-popup/props.js ***!
   \*************************************************************************************************************************/
@@ -20902,14 +20868,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 416 */,
 /* 417 */,
 /* 418 */,
 /* 419 */,
 /* 420 */,
 /* 421 */,
 /* 422 */,
-/* 423 */,
-/* 424 */
+/* 423 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-toolbar/props.js ***!
   \***************************************************************************************************************************/
@@ -20951,6 +20917,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 424 */,
 /* 425 */,
 /* 426 */,
 /* 427 */,
@@ -20969,8 +20936,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 440 */,
 /* 441 */,
 /* 442 */,
-/* 443 */,
-/* 444 */
+/* 443 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \***************************************************************************************************************************/
@@ -21002,14 +20968,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 444 */,
 /* 445 */,
 /* 446 */,
 /* 447 */,
 /* 448 */,
 /* 449 */,
 /* 450 */,
-/* 451 */,
-/* 452 */
+/* 451 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/props.js ***!
   \******************************************************************************************************************************/
@@ -21041,7 +21007,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 453 */
+/* 452 */
 /*!***********************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \***********************************************************************************************************************************/
@@ -21052,7 +21018,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 34));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 454));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 453));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -21206,7 +21172,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 454 */
+/* 453 */
 /*!*************************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \*************************************************************************************************************************************/
@@ -21282,14 +21248,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
+/* 454 */,
 /* 455 */,
 /* 456 */,
 /* 457 */,
 /* 458 */,
 /* 459 */,
 /* 460 */,
-/* 461 */,
-/* 462 */
+/* 461 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \******************************************************************************************************************************/
@@ -21305,14 +21271,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 462 */,
 /* 463 */,
 /* 464 */,
 /* 465 */,
 /* 466 */,
 /* 467 */,
 /* 468 */,
-/* 469 */,
-/* 470 */
+/* 469 */
 /*!*******************************************************************************************************************************!*\
   !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \*******************************************************************************************************************************/
@@ -21322,6 +21288,58 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   props: {} };exports.default = _default;
+
+/***/ }),
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */
+/*!***************************************************************************************!*\
+  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/api/request.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0; // 基于Promise封装的请求
+var BASE_URL = 'http://101.132.35.228:8083';
+//const BASE_URL = 'https://localhost'
+
+var request = function request(options) {
+
+  var header = {};
+  try {
+    var tokenKey = uni.getStorageSync('tokenKey') || null;
+    var tokenValue = uni.getStorageSync('tokenValue') || null;
+    header[tokenKey] = tokenValue;
+  } catch (err) {
+    console.log(err);
+  } finally {
+    // Promise封装
+    return new Promise(function (resolve, reject) {
+      uni.request({
+        // url基地址
+        url: BASE_URL + options.url,
+        // 请求方法，默认get
+        method: options.method || 'GET',
+        // 请求体
+        data: options.data || {},
+        // 请求头
+        header: header,
+        // 请求成功回调
+        success: function success(res) {
+          resolve(res);
+        },
+        // 请求失败回调
+        fail: function fail(err) {
+          reject(err);
+        } });
+
+    });
+  }
+
+};exports.request = request;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ]]);
