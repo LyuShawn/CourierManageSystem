@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/outlets")
 @CrossOrigin
@@ -70,5 +71,32 @@ public class OutletsController {
     @PostMapping("/getExpress")
     public ResponseWrapper getExpress(@RequestBody OutletsGetExpressParam outletsGetExpressParam){
         return outletsService.getExpress(outletsGetExpressParam);
+    }
+
+    /**
+     * 修改网点信息
+     * @return
+     */
+    @PostMapping("/modifyInf")
+    public ResponseWrapper modifyInf(@RequestBody OutletsModifyInfParam outletsModifyInfParam){
+        return outletsService.modifyInf(outletsModifyInfParam);
+    }
+
+    /**
+     * 查看本网点快递员
+     * @return
+     */
+    @PostMapping("/showCouriers")
+    public ResponseWrapper showCouriers(@RequestBody OutletsCourierApplyParam outletsCourierApplyParam){
+        return outletsService.showCouriers(outletsCourierApplyParam);
+    }
+
+    /**
+     * 删除网点快递员
+     * @return
+     */
+    @PostMapping("/delCourier")
+    public ResponseWrapper delCourier(OutletsCourierIsJoinParam outletsCourierIsJoinParam){
+        return outletsService.delCourier(outletsCourierIsJoinParam);
     }
 }

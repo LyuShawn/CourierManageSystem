@@ -29,9 +29,9 @@ public class UserController {
     }
 
     @PostMapping("/user_information")
-    public ResponseWrapper user_information(@RequestBody String open_id)
+    public ResponseWrapper user_information(@RequestBody UserInformationParam userInformationParam)
     {
-        return userService.user_information(open_id);
+        return userService.user_information(userInformationParam);
     }
 
     @PostMapping("/add_address")
@@ -46,8 +46,8 @@ public class UserController {
         return userService.change_address(userChangeAddressParam);
     }
     @PostMapping("/delete_address")
-    public ResponseWrapper delete_address(@RequestBody String address_id) {
-        return userService.delete_address(address_id);
+    public ResponseWrapper delete_address(@RequestBody UserDeleteAddressParam userDeleteAddressParam) {
+        return userService.delete_address(userDeleteAddressParam);
     }
 
     @GetMapping("/get_all_address")
@@ -66,8 +66,8 @@ public class UserController {
     }
 
     @PostMapping("/logistics_information")
-    public ResponseWrapper logistics_information(@RequestBody String tracking_number) {
-        return userService.logistics_information(tracking_number);
+    public ResponseWrapper logistics_information(@RequestBody UserLogisticsInformationParam userLogisticsInformationParam) {
+        return userService.logistics_information(userLogisticsInformationParam);
     }
 
     @GetMapping("/get_all_express")
@@ -86,5 +86,18 @@ public class UserController {
         //获得登录凭证code
         String code=jsonObject.getString("code");
         return userService.userLogin(code);
+    }
+
+    @PostMapping("/get_express_state")
+    public ResponseWrapper get_express_state(@RequestBody UserGetExpressStateParam userGetExpressStateParam) {
+        return userService.get_express_state(userGetExpressStateParam);
+    }
+    @GetMapping("/get_express_pass_outlets")
+        public ResponseWrapper get_express_pass_outlets(String tracking_number) {
+            return userService.get_express_pass_outlets(tracking_number);
+    }
+    @GetMapping("/get_express_nowoutlets")
+    public ResponseWrapper get_express_nowoutlets(String tracking_number) {
+        return userService.get_express_nowoutlets(tracking_number);
     }
 }

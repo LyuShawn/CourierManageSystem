@@ -45,4 +45,9 @@ public class UserExpress  implements Serializable {
 	 */
 	private Integer is_delete;
 
+	/**
+	 * 0代表收件，1代表寄件
+	 */
+	private Integer receive_send;
+
 }

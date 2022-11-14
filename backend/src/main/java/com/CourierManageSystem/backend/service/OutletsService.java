@@ -169,4 +169,71 @@ public class OutletsService {
         expressMapper.updateById(express);
         return ResponseWrapper.markSuccess("入库成功");
     }
+
+    /**
+     * 修改网点信息
+     * @return
+     */
+    public ResponseWrapper modifyInf(OutletsModifyInfParam outletsModifyInfParam) {
+        System.out.println("网点修改参数为"+outletsModifyInfParam.toString());
+        Map<String, Object> map = new HashMap<>();
+        map.put("is_delete", 0);
+        map.put("id", outletsModifyInfParam.getId());
+        List<Outlets> outlets = outletsMapper.selectByMap(map);
+        if (outlets.size() == 0)
+            return ResponseWrapper.markError("网点不存在");
+        Outlets outlet = outlets.get(0);
+        outlet.setUsername(outletsModifyInfParam.getUsername());
+        outlet.setPwd(outletsModifyInfParam.getPwd());
+        outlet.setNickname(outletsModifyInfParam.getNickname());
+        outlet.setPhone(outletsModifyInfParam.getPhone());
+        outlet.setAddress(outletsModifyInfParam.getAddress());
+        outlet.setLocation(GetGeocoding.getGeocoding(outletsModifyInfParam.getAddress()));
+        outlet.setPrincipal_name(outletsModifyInfParam.getPrincipal_name());
+        outlet.setPrincipal_identity_id(outletsModifyInfParam.getPrincipal_identity_id());
+        outletsMapper.updateById(outlet);
+        return ResponseWrapper.markSuccess("修改成功");
+    }
+
+    /**
+     * 查看网点管理员
+     * @return
+     */
+    public ResponseWrapper showCouriers(OutletsCourierApplyParam outletsCourierApplyParam) {
+        Map<String, Object> map=new HashMap<>();
+        map.put("outlets",outletsCourierApplyParam.getId());
+        map.put("is_delete",0);
+        map.put("confirmed",1);
+        List<OutletsCourier> outletsCouriers = outletsCourierMapper.selectByMap(map);
+        if(outletsCouriers.size()==0)
+            return ResponseWrapper.markError("暂无快递员");
+        List<Courier> couriers = new ArrayList<>();
+        for(OutletsCourier x:outletsCouriers){
+            map=new HashMap<>();
+            map.put("id",x.getCourier());
+            map.put("is_delete",0);
+            if(courierMapper.selectByMap(map).size()!=0)
+                couriers.add(courierMapper.selectByMap(map).get(0));
+        }
+        return ResponseWrapper.markSuccess("成功",couriers);
+    }
+
+    /**
+     * 删除网点管理员
+     * @return
+     */
+    public ResponseWrapper delCourier(OutletsCourierIsJoinParam outletsCourierIsJoinParam) {
+        Map<String, Object> map=new HashMap<>();
+        map.put("outlets",outletsCourierIsJoinParam.getOutlets_id());
+        map.put("courier",outletsCourierIsJoinParam.getCourier());
+        map.put("is_delete",0);
+        map.put("confirmed",1);
+        List<OutletsCourier> outletsCouriers = outletsCourierMapper.selectByMap(map);
+        if(outletsCouriers.size()==0)
+            return ResponseWrapper.markError("快递员或网点不存在");
+        OutletsCourier outletsCourier = outletsCouriers.get(0);
+        outletsCourier.setIs_delete(1);
+        outletsCourierMapper.updateById(outletsCourier);
+        return ResponseWrapper.markSuccess("删除成功");
+    }
 }

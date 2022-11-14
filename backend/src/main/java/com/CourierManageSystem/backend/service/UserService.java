@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -86,14 +83,14 @@ public class UserService {
     /**
      * 获取用户信息接口
      *
-     * @param open_id
+     * @param
      * @return
      */
 
-    public ResponseWrapper user_information(String open_id) {
-        System.out.println("用户信息获取，参数为:\n" + open_id.toString());
+    public ResponseWrapper user_information(UserInformationParam userInformationParam) {
+        System.out.println("用户信息获取，参数为:\n" + userInformationParam.getOpen_id().toString());
         Map<String, Object> map = new HashMap<>();
-        map.put("open_id", open_id);
+        map.put("open_id", userInformationParam.getOpen_id());
         List<User> users = userMapper.selectByMap(map);
         if (users.size() == 0)
             return ResponseWrapper.markError("open_id不存在");
@@ -117,17 +114,27 @@ public class UserService {
         express.setIs_delete(0);
         express.setPick_up(0);
         express.setIs_payment(0);
+        express.setPresent_outlets("");
         express.setBegin_outlets(addressMatchOutlets.Match(express.getDelivery_address()));
         express.setEnd_outlets(addressMatchOutlets.Match(express.getRecipient_address()));
         express.setNow_outlets((long) -1);
         expressMapper.insert(express);
         Map map=new HashMap();
         map.put("tracking_number",express.getTracking_number());
-        UserExpress userExpress=new UserExpress();
-        userExpress.setExpress(express.getId());
-        userExpress.setIs_delete(0);
-        userExpress.setUser_phone(userDeliverExpressParam.getPhone());
-        userExpressMapper.insert(userExpress);
+        UserExpress send_userExpress=new UserExpress();
+        send_userExpress.setExpress(express.getId());
+        send_userExpress.setIs_delete(0);
+        send_userExpress.setUser_phone(userDeliverExpressParam.getPhone());
+        send_userExpress.setReceive_send(1);
+        userExpressMapper.insert(send_userExpress);
+        //寄件人用户快递表
+        Address receive_address=addressMapper.selectById(userDeliverExpressParam.getRecipient_address());
+        UserExpress receive_userExpress=new UserExpress();
+        receive_userExpress.setExpress(express.getId());
+        receive_userExpress.setIs_delete(0);
+        receive_userExpress.setUser_phone(receive_address.getPhone());
+        receive_userExpress.setReceive_send(0);
+        //收件人用户快递表
         return ResponseWrapper.markSuccess("快递已生成",map);
     }
 
@@ -137,10 +144,10 @@ public class UserService {
      * @param
      * @return
      */
-    public ResponseWrapper logistics_information(String tracking_number)
+    public ResponseWrapper logistics_information(UserLogisticsInformationParam userLogisticsInformationParam)
     {
         Map<String, Object> map = new HashMap<>();
-        map.put("tracking_number", tracking_number);
+        map.put("tracking_number", userLogisticsInformationParam.getTracking_number());
         List<Express> expresses = expressMapper.selectByMap(map);
         if(expresses.size()==0)
             return ResponseWrapper.markError("查询失败，无此快递单号");
@@ -189,9 +196,9 @@ public class UserService {
      * @param
      * @return
      */
-    public ResponseWrapper delete_address(String address_id) {
-        System.out.println("用户地址删除参数为\n" + address_id.toString());
-        Address address = addressMapper.selectById(address_id);
+    public ResponseWrapper delete_address(UserDeleteAddressParam userDeleteAddressParam) {
+        System.out.println("用户地址删除参数为\n" + userDeleteAddressParam.getAddress_id().toString());
+        Address address = addressMapper.selectById(userDeleteAddressParam.getAddress_id());
         if (address == null)
             return ResponseWrapper.markError("删除失败，id异常！");
         address.setIs_delete(1);
@@ -295,4 +302,88 @@ public class UserService {
         }
         return ResponseWrapper.markError("系统未知错误");
     }
+
+    public ResponseWrapper get_express_state(UserGetExpressStateParam userGetExpressStateParam)
+    {
+        Map map1=new HashMap();
+        map1.put("tracking_number",userGetExpressStateParam.getTracking_number());
+        List<Express> expresses=expressMapper.selectByMap(map1);
+        if(expresses.size()==0)
+            return ResponseWrapper.markError("无此快递单号，查询失败！");
+        Express express=expresses.get(0);
+        Map map2=new HashMap();
+        map2.put("express",express.getId());
+        map2.put("user_phone",userGetExpressStateParam.getPhone());
+        List<UserExpress> userExpressList=userExpressMapper.selectByMap(map2);
+        Map statemap=new HashMap();
+        UserExpress userExpress = userExpressList.get(0);
+        //判断收件人和寄件人是不是一个人 如果是一个人 状态为3
+        if(userExpressList.size()==1) {
+            statemap.put("receive_send",userExpress.getReceive_send());
+        }
+        else{
+            statemap.put("receive_send",3);
+        }
+        if(express.getPick_up()==0)
+        {
+            //快递员还未取件 待揽件
+            statemap.put("state",1);
+            return ResponseWrapper.markSuccess("查询成功！状态为待揽件",statemap);
+        }
+        else
+        {
+            if(express.getDelivered()==0)
+            {
+                //快递员已取件运输中 但是还未签收
+                statemap.put("state",2);
+                return ResponseWrapper.markSuccess("查询成功！状态为运输中",statemap);
+            }
+            else
+            {
+                statemap.put("state",3);
+                return ResponseWrapper.markSuccess("查询成功！状态为已签收",statemap);
+            }
+        }
+    }
+
+    public ResponseWrapper get_express_pass_outlets(String tracking_number)
+    {
+        Map map=new HashMap();
+        map.put("tracking_number",tracking_number);
+        List<Express> expressList=expressMapper.selectByMap(map);
+        if(expressList.size()==0)
+            return ResponseWrapper.markError("快递单号有误 查询失败");
+        Express express=expressList.get(0);
+        String pass_outlets=express.getPresent_outlets();
+        List<String> pass_outlets_list=Arrays.asList(pass_outlets.split("-"));
+        if(pass_outlets_list.size()<2)
+            return ResponseWrapper.markError("查询失败，快递还未运输！");
+        List<String> msg=new ArrayList<String>();
+        for (int i=1;i<pass_outlets_list.size();i++)
+        {
+            Outlets outlets=outletsMapper.selectById(pass_outlets_list.get(i));
+            msg.add(outlets.getNickname());
+        }
+        Map map_msg=new HashMap();
+        map_msg.put("pass_outlets_list",msg);
+        return  ResponseWrapper.markSuccess("查询成功",map_msg);
+    }
+
+    public ResponseWrapper get_express_nowoutlets(String tracking_number)
+    {
+        Map map=new HashMap();
+        map.put("tracking_number",tracking_number);
+        List<Express> expressList=expressMapper.selectByMap(map);
+        if(expressList.size()==0)
+            return ResponseWrapper.markError("快递单号有误 查询失败");
+        Express express=expressList.get(0);
+        Long now_outlets=express.getNow_outlets();
+        if(now_outlets==-1)
+            return ResponseWrapper.markError("快递待揽件，还未入库");
+        Outlets outlets=outletsMapper.selectById(now_outlets);
+        Map map_msg=new HashMap();
+        map_msg.put("now_outlet",outlets.getNickname());
+        return  ResponseWrapper.markSuccess("查询成功",map_msg);
+    }
+
 }
