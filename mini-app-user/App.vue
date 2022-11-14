@@ -7,7 +7,10 @@
 				"provider": "weixin",
 				"onlyAuthorize": true, // 微信登录仅请求授权认证
 				success: function(res) {
-					console.log(res);
+					console.log(res.code);
+					_this.$api.User.login(res.code).then((res)=>{
+						console.log(res);
+					})
 				},
 				fail: function(err) {
 					console.log(err);
