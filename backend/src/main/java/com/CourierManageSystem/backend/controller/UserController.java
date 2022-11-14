@@ -4,8 +4,11 @@ import com.CourierManageSystem.backend.entity.User;
 import com.CourierManageSystem.backend.model.UserModel.*;
 import com.CourierManageSystem.backend.service.UserService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/user")
@@ -75,5 +78,12 @@ public class UserController {
     @PostMapping("/set_default_address")
     public ResponseWrapper set_default_address(@RequestBody UserSetDefaultAddressParam userSetDefaultAddressParam) {
         return userService.set_default_address(userSetDefaultAddressParam);
+    }
+
+    @PostMapping("/login")
+    public ResponseWrapper login(@RequestBody JSONObject jsonObject) throws IOException {
+        //获得登录凭证code
+        String code=jsonObject.getString("code");
+        return userService.userLogin(code);
     }
 }
