@@ -19,4 +19,17 @@ export class User {
 			url: '/test/test_hello',
 		})
 	}
+	
+}
+
+export class Myexpress{
+	static getAllExpress(code) {
+		return request({
+			url: '/user/get_all_express',
+			method: 'get',
+			data: {
+				code
+			}
+		})
+	}
 }

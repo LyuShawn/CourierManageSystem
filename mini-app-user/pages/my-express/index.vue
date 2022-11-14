@@ -69,7 +69,7 @@
 					</view>
 					<view v-else-if="getWaitList.length" class="express" @click="express_information()"  v-for="(item,index) in getWaitList" :key="index">
 						
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -94,7 +94,7 @@
 						</view>
 					</view>
 					<view v-else-if="getDispatchList.length" class="express" @click="express_information()" v-for="(item,index) in getDispatchList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -119,7 +119,7 @@
 						</view>
 					</view>
 					<view v-else-if="getTransportList.length" class="express" @click="express_information()" v-for="(item,index) in getTransportList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -144,7 +144,7 @@
 						</view>
 					</view>
 					<view v-else-if="getUndeliverList.length" class="express" @click="express_information()" v-for="(item,index) in getUndeliverList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -169,7 +169,7 @@
 						</view>
 					</view>
 					<view v-else-if="getSignedList.length" class="express" @click="express_information()" v-for="(item,index) in getSignedList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -203,7 +203,7 @@
 						</view>
 					</view>
 					<view v-else-if="postWaitList.length" class="express" @click="express_information()" v-for="(item,index) in postWaitList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -229,7 +229,7 @@
 						</view>
 					</view>
 					<view v-else-if="postGetWaitList.length" class="express" @click="express_information()" v-for="(item,index) in postGetWaitList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -255,7 +255,7 @@
 						</view>
 					</view>
 					<view v-else-if="postDispatchList.length" class="express" @click="express_information()" v-for="(item,index) in postDispatchList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -281,7 +281,7 @@
 						</view>
 					</view>
 					<view v-else-if="postTranportList.length" class="express" @click="express_information()" v-for="(item,index) in postTranportList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -307,7 +307,7 @@
 						</view>
 					</view>
 					<view v-else-if="postSignedList.length " class="express" @click="express_information()" v-for="(item,index) in postSignedList" :key="index">
-						<u--image :showLoading="true" :src="item.src" width="100px" height="100px" radius="10px"></u--image>
+						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
@@ -341,6 +341,7 @@
 				keyword: '',
 				isShow: false,
 				noRecord:'/static/my-express/noRecord.svg',
+				imgPath:'/static/my-express/express.svg',
 				list1: [
 					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
@@ -404,10 +405,15 @@
 				this.state = index;
 			},
 			express_information(){
-				      this.$router.push('/pages/my-express/receive')
+				uni.navigateTo({
+					url: '/pages/my-express/receive'
+				})
 			},
 			express_search(){
-				this.$router.push('/pages/my-express/search')
+				
+				uni.navigateTo({
+					url: '/pages/my-express/search'
+				})
 			},
 		}
 	}

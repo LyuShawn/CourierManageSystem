@@ -91,7 +91,6 @@
 		data() {
 			return {
 				src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',
-			    yuantong:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.cnmo.com%2F1823_600x1000%2F1822451.jpg&refer=http%3A%2F%2Fimg.cnmo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669980420&t=4a6e442ee44332a52d78d26cce368d33',
 			    checkmark:'/static/my-express/share.svg',
 				expressList:[
 					{state:'待收件',name:'天猫 | 狂欢价 秋季男士衣服',address:'圆通速递：南通转运公司 已发出，下一站：福',src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',},
@@ -108,6 +107,11 @@
 					{company:'中通速递',number:'ZT123456789',img:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.cnmo.com%2F1823_600x1000%2F1822451.jpg&refer=http%3A%2F%2Fimg.cnmo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669980420&t=4a6e442ee44332a52d78d26cce368d33',},
 				],
 			};
+		},
+		onLoad(){
+			// uni.$on('info',function(data) {
+			// 	message:data.id;
+			// })
 		}
 	}
 </script>
