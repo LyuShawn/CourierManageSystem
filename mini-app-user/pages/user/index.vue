@@ -146,8 +146,10 @@
 			this.init();
 			console.log(111);
 			this.$api.User.getAddress(1).then((res)=>{
-				console.log(res);
+				console.log(res.data.data);
+				
 			})
+			
 
 		},
 		methods: {
@@ -223,7 +225,7 @@
 			},
 			//用户登录
 			userLogin() {
-				var _this = this;
+				let _this = this;
 				//查询缓存看是否已有信息
 				wx.getStorage({
 					key: 'userinfo',
