@@ -1,0 +1,23 @@
+
+.content{
+	background-color: white;/*240,240,240 */
+}
+.block{
+	display: flex;
+	justify-content: space-between;
+}
+.view{
+	display: flex;
+	margin: 15px 10px;
+	align-items: center;
+	/* justify-content: center; */
+	background-color: #F3F6FA;
+	border-radius: 10px;
+}
+.view1{
+		margin: 15px 10px;
+}
+.view2{
+		margin: 20px 15px;
+}
+

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "地址簿",
+  "usingComponents": {
+    "u-search": "/uni_modules/uview-ui/components/u-search/u-search",
+    "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
+    "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal",
+    "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty"
+  }
+}

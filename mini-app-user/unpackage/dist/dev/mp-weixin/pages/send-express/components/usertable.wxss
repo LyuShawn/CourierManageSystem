@@ -1,0 +1,24 @@
+
+.content .user.data-v-d8dac736 {
+	margin-top: 20px;
+	display: flex;
+	width: 100%;
+	height: 40px;
+}
+.content .user text.data-v-d8dac736 {
+	width: 100px;
+	margin-left: 10px;
+}
+.bottom.data-v-d8dac736 {
+	position: fixed;
+	bottom: 0;
+	left: 30px;
+	margin-bottom: 20px;
+	width: 80%;
+	height: 34px;
+}
+.bottom button.data-v-d8dac736 {
+	background-color: #3c9cff;
+	color: white;
+}
+

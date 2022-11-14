@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新建地址",
+  "navigationBarBackgroundColor": "#3c9cff",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "usertable": "/pages/send-express/components/usertable"
+  }
+}

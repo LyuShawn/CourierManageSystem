@@ -94,18 +94,18 @@
 	        "backgroundColor": "#ffffff",  // tab 的背景色
 	        "list": [{
 	            "pagePath": "pages/my-express/index",
-	            "iconPath": "static/tar-bar/express.svg",
-	            "selectedIconPath": "static/tar-bar/express-select.svg",
+	            "iconPath": "static/tar-bar/express.png",
+	            "selectedIconPath": "static/tar-bar/express-select.png",
 	            "text": "我的快递"
 	        },{ // 最少2个、最多5个 tab
 	            "pagePath": "pages/send-express/index", // 页面路径，必须在 pages 中先定义
-	            "iconPath": "static/tar-bar/send.svg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
-	            "selectedIconPath": "static/tar-bar/send-select.svg", // 选中时的图片路径
+	            "iconPath": "static/tar-bar/send.png", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
+	            "selectedIconPath": "static/tar-bar/send-select.png", // 选中时的图片路径
 	            "text": "寄快递" // tab 上按钮文字
 	        }, { // 最少2个、最多5个 tab
 	            "pagePath": "pages/user/index", // 页面路径，必须在 pages 中先定义
-	            "iconPath": "static/tar-bar/my.svg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
-	            "selectedIconPath": "static/tar-bar/my-select.svg", // 选中时的图片路径
+	            "iconPath": "static/tar-bar/my.png", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
+	            "selectedIconPath": "static/tar-bar/my-select.png", // 选中时的图片路径
 	            "text": "个人中心" // tab 上按钮文字
 	        }]
 	    }
