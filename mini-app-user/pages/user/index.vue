@@ -2,7 +2,7 @@
 	<view>
 		<view class="header" v-bind:class="{'status':isH5Plus}">
 			<view class="userinfo" @click="userLogin">
-				<view class="face">
+				<view class="avatar">
 					<image :src="userinfo.avatarUrl"></image>
 				</view>
 				<view class="info">
@@ -52,7 +52,19 @@
 			<view>LyuShawn/CourierManageSystem</view>
 		</view>
 		<u-toast ref="uToast" />
-
+		<u-popup :show="showInfoPopup" :round="20" mode="bottom" @close="closeInfoPopup" closeOnClickOverlay="true">
+			<view class="userinfo-popup">
+				<button class="avatar-wrapper" open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
+					<image class="avatar" :src="userinfo.avatarUrl"></image>
+				</button>
+				<view class="nickname-input">
+					<u-input v-model="userinfo.nickName"  fontSize="20px" placeholder="请输入昵称" />
+				</view>
+				<view class="comfirm-btn">
+					<u-button type="primary" text="确认" @click="confirmUserInfo"></u-button>
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 <script>
@@ -66,8 +78,8 @@
 				isH5Plus: false,
 				//#endif
 				userinfo: {
-					avatarUrl: '',
-					nickName: '你好,请登录'
+					avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
+					nickName: '微信用户'
 				},
 				showEditor: false,
 				statusTypeList: [
@@ -142,6 +154,7 @@
 						}
 					]
 				],
+				showInfoPopup: false,
 			};
 		},
 		onShow() {
@@ -218,7 +231,6 @@
 
 			//跳转项目GitHub
 			goGithub() {
-				//let url='https://github.com/LyuShawn/CourierManageSystem'
 				let url = 'https://github.com/LyuShawn/CourierManageSystem'
 				uni.navigateTo({
 					// 此处的链接为小程序上面新建的webview页面路径，参数url为要跳转外链的地址
@@ -227,34 +239,52 @@
 			},
 			//用户登录
 			userLogin() {
+				this.showInfoPopup = true;
+
 				let _this = this;
-				//查询缓存看是否已有信息
-				wx.getStorage({
-					key: 'userinfo',
-					success(res) {
-						//已经获得用户信息
-					},
-					fail(res) {
-						// 使用Promise包装增加可读性（有回调函数的方法都可以这样做）
-						new Promise((resolve, rejected) => {
-							uni.getUserProfile({
-								desc: '用于用户信息备份',
-								success: res => resolve(res),
-								fail: err => rejected(err)
-							})
-						}).then(res => {
-							//成功获取用户信息
-							_this.getUserInfoSuccess(res);
-						}).catch(err => {
-							uni.showToast({
-								title: '您拒绝了授权信息，将无法进行数据云备份',
-								icon: 'none',
-							})
-						})
-					}
+				new Promise((resolve, rejected) => {
+					wx.getUserProfile({
+						desc: '用于用户信息备份',
+						success: res => resolve(res),
+						fail: err => rejected(err)
+					})
+				}).then(res => {
+					console.log(res);
+					//成功获取用户信息
+					//_this.getUserInfoSuccess(res);
+				}).catch(err => {
+					console.log(err);
+					uni.showToast({
+						title: '您拒绝了授权信息，将无法进行数据云备份',
+						icon: 'none',
+					})
 				})
 
-			}
+
+				//查询缓存看是否已有信息
+				// wx.getStorage({
+				// 	key: 'user_info',
+				// 	success(res) {
+				// 		//已经获得用户信息
+				// 	},
+				// 	fail(res) {
+				// 		// 使用Promise包装增加可读性（有回调函数的方法都可以这样做）
+
+				// 	}
+				// })
+
+			},
+			closeInfoPopup() {
+
+			},
+			onChooseAvatar(e) {
+				this.userinfo.avatarUrl = e.detail.avatarUrl;
+				console.log(this.userinfo.avatarUrl);
+			},
+			confirmUserInfo() {
+				console.log(this.userinfo);
+				this.showInfoPopup=false;
+			},
 		},
 		components: {
 
@@ -285,7 +315,7 @@
 			display: flex;
 
 
-			.face {
+			.avatar {
 				flex-shrink: 0;
 				width: 15vw;
 				height: 15vw;
@@ -455,6 +485,37 @@
 
 		.author {
 			margin-bottom: 4rpx;
+		}
+	}
+
+	.userinfo-popup {
+		height: 30vh;
+		padding-top: 100rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		.avatar-wrapper {
+			width: 140rpx;
+			height: 140rpx;
+			border: 0;
+			padding: 0;
+
+			.avatar {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.nickname-input {
+			margin-top: 30rpx;
+			width: 90vw;
+		}
+
+		.comfirm-btn {
+			font-size: 20px;
+			margin-top: 30rpx;
 		}
 	}
 </style>
