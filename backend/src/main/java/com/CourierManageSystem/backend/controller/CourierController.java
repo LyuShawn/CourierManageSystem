@@ -112,6 +112,6 @@ public class CourierController {
     public ResponseWrapper courierApplyOutlets(@RequestBody CourierApplyOutletsParam courierApplyOutletsParam){
         return courierService.courierApplyOutlets(courierApplyOutletsParam);
     }
-
+    
 
 }
