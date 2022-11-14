@@ -1,0 +1,15 @@
+backend/.idea/
+backend/target/
+backend/backend.iml
+backend/HELP.md
+backend/
+
+.DS_Store
+web/node_modules/
+node_modules/
+mini-app-user/
+uni_modules/
+outlets/
+
+unpackage/
+.hbuilderx/
