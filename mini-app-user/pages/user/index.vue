@@ -190,11 +190,11 @@
 				if (this.severList[1][i].name == 'help') {
 					console.log('进入帮助页面');
 				} else if (this.severList[1][i].name == 'feedback') {
-					console.log('进入反馈页面');
+					//console.log('进入反馈页面');
 				} else if (this.severList[1][i].name == 'about') {
 					console.log('进入关于我们页面');
 				}else if(this.severList[1][i].name == 'share'){
-					console.log('进入分享页面');
+					//console.log('进入分享页面');
 				}
 			},
 
@@ -241,7 +241,6 @@
 				try {
 					//open_id存入缓存
 					uni.setStorageSync('userinfo', _this.userinfo);
-					uni.setStorageSync('login', true);
 				} catch (e) {
 					// error
 				}
@@ -250,8 +249,10 @@
 					key: 'open_id',
 					success: function(res) {
 						let open_id = res.data
+						console.log(open_id);
 						_this.$api.User.userLogin(open_id, _this.userinfo.nickName, _this.userinfo.avatarUrl)
 							.then((res) => {
+								uni.setStorageSync('login', true);
 								console.log(res);
 							})
 					}
