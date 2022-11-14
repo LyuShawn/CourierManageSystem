@@ -1,1 +1,0 @@
-<usertable vue-id="7c2c4590-1" addressId="{{addressId}}" data-event-opts="{{[['^submit',[['submit']]]]}}" bind:submit="__e" bind:__l="__l"></usertable>

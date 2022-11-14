@@ -13,9 +13,16 @@ export class User {
 			}
 		})
 	}
-	
-	
-	
+	static login(code){
+		return request({
+			url:'/user/login',
+			method:'post',
+			data:{
+				code:code
+			}
+		})
+	}
+
 }
 
 export class Myexpress{

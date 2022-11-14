@@ -7,9 +7,15 @@
 				"provider": "weixin",
 				"onlyAuthorize": true, // 微信登录仅请求授权认证
 				success: function(res) {
-					console.log(res.code);
+					//console.log(res.code);
 					_this.$api.User.login(res.code).then((res)=>{
-						console.log(res);
+						let openid=res.data.data.openId;
+						try {
+							//open_id存入缓存
+							uni.setStorageSync('open_id', openid);
+						} catch (e) {
+							// error
+						}
 					})
 				},
 				fail: function(err) {
