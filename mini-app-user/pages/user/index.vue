@@ -23,30 +23,33 @@
 			</view>
 		</view>
 		<view class="list">
-			<view class="li" v-for="(li,li_i) in severList[0]" @tap="toPage(li_i)"
-				v-bind:class="{'noborder':li_i==severList[0].length-1,'first':li_i==0}" hover-class="hover"
-				:key="li.title">
-				<view class="icon">
-					<image :src="'/static/user-page/sever/'+li.icon"></image>
+			<view style="box-shadow: 0 0 20upx rgba(0, 0, 0, 0.15);;border-radius: 24upx;">
+				<view class="li" v-for="(li,li_i) in severList[0]" @tap="toPage(li_i)"
+					v-bind:class="{'noborder':li_i==severList[0].length-1,'first':li_i==0}" hover-class="hover"
+					:key="li.title">
+					<view class="icon">
+						<image :src="'/static/user-page/sever/'+li.icon"></image>
+					</view>
+					<view class="text">{{li.title}}</view>
+					<image class="to" src="/static/user-page/to.png"></image>
 				</view>
-				<view class="text">{{li.title}}</view>
-				<image class="to" src="/static/user-page/to.png"></image>
 			</view>
 			<view style="margin-top: 20rpx;margin-bottom: 10rpx;"></view>
-			<view class="li" v-for="(li,li_i) in severList[1]" @tap="toPage(li_i)"
-				v-bind:class="{'noborder':li_i==severList[1].length-1,'first':li_i==0}" hover-class="hover"
-				:key="li.title">
-				<view class="icon">
-					<image :src="'/static/user-page/sever/'+li.icon"></image>
+			<view style="box-shadow: 0 0 20upx rgba(0, 0, 0, 0.15);;border-radius: 24upx;">
+				<view class="li" v-for="(li,li_i) in severList[1]" @tap="toPage(li_i)"
+					v-bind:class="{'noborder':li_i==severList[1].length-1,'first':li_i==0}" hover-class="hover"
+					:key="li.title">
+					<view class="icon">
+						<image :src="'/static/user-page/sever/'+li.icon"></image>
+					</view>
+					<view class="text">{{li.title}}</view>
+					<image class="to" src="/static/user-page/to.png"></image>
 				</view>
-				<view class="text">{{li.title}}</view>
-				<image class="to" src="/static/user-page/to.png"></image>
 			</view>
 		</view>
 		<view class="bottom-logo" @click="goGithub">
-			<view class="by">by</view>
 			<view class="author">工程训练23小组</view>
-			<view >LyuShawn/CourierManageSystem</view>
+			<view>LyuShawn/CourierManageSystem</view>
 		</view>
 		<u-toast ref="uToast" />
 
@@ -144,6 +147,12 @@
 		onShow() {
 			//加载
 			this.init();
+			console.log(111);
+			this.$api.User.getAddress(1).then((res) => {
+				console.log(res.data.data);
+
+			})
+
 
 		},
 		methods: {
@@ -211,7 +220,7 @@
 			//跳转项目GitHub
 			goGithub() {
 				//let url='https://github.com/LyuShawn/CourierManageSystem'
-				let url='https://www.baidu.com'
+				let url = 'https://github.com/LyuShawn/CourierManageSystem'
 				uni.navigateTo({
 					// 此处的链接为小程序上面新建的webview页面路径，参数url为要跳转外链的地址
 					url: '/pages/web-view/webView?url=' + encodeURIComponent(url) + '&title=仓库地址'
@@ -219,7 +228,7 @@
 			},
 			//用户登录
 			userLogin() {
-				var _this = this;
+				let _this = this;
 				//查询缓存看是否已有信息
 				wx.getStorage({
 					key: 'userinfo',
@@ -377,7 +386,7 @@
 	.list {
 		width: 90vw;
 		position: relative;
-		border-bottom: solid 26upx #f1f1f1;
+		//border-bottom: solid 26upx #f1f1f1;
 		margin: auto;
 
 		button {
@@ -436,7 +445,7 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		bottom: 40rpx;
+		bottom: 20rpx;
 		text-align: center;
 		margin: auto;
 		color: #595959;

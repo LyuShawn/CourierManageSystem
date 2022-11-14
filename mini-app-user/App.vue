@@ -2,6 +2,17 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			let _this = this;
+			uni.login({
+				"provider": "weixin",
+				"onlyAuthorize": true, // 微信登录仅请求授权认证
+				success: function(res) {
+					console.log(res);
+				},
+				fail: function(err) {
+					console.log(err);
+				}
+			})
 		},
 		onShow: function() {
 			console.log('App Show')
