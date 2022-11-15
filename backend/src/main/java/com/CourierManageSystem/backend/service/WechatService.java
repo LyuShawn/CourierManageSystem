@@ -14,7 +14,7 @@ import java.util.Objects;
 @Log4j2
 public class WechatService {
 
-    private String APPID="wx3fcad718a821d77d";
+    private String APPID="wx3fcad718a821d77d"; 
     private String SECRET="ba8459cc58de7acbcc67998c291a7d95";
     private String messageUrl="https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=";
     private static final String AUTHORIZATION_CODE = "authorization_code";
