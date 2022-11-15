@@ -166,15 +166,6 @@
 		onShow() {
 			//加载
 			this.init();
-<<<<<<< HEAD
-			console.log(111);
-			this.$api.User.getAddress(1).then((res) => {
-				console.log(res.data.data);
-			})
-
-
-=======
->>>>>>> 4a673f9222962c96a26458c23bb8e0d09c0007e8
 		},
 		methods: {
 			init() {
