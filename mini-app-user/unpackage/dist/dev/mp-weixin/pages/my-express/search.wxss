@@ -1,6 +1,7 @@
 
 .content{
-	background-color: white;/*240,240,240 */
+	background-color: white;/*240,240,240
+ */
 }
 .block{
 	display: flex;

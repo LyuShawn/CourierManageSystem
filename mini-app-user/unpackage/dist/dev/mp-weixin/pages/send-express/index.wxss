@@ -71,24 +71,111 @@
   background-color: white;
   position: fixed;
   display: flex;
+  justify-content: flex-end;
   bottom: 0;
 }
 .bottom text {
-  font-size: 20rpx;
+  font-size: 30rpx;
   font-weight: bold;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .bottom .btn {
   background-color: #3c9cff;
   color: white;
   margin-top: 15px;
-  margin-left: 230px;
+  margin-left: 200px;
   border-radius: 15px;
+}
+.bottom .price {
+  margin-top: 12px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ff3e3e;
 }
 .title {
   hite-space: nowrap;
   font-size: 20px;
   margin-top: 15px;
   font-weight: bold;
+}
+.address {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b4b4b4;
+  margin: 10px 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.address .send {
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid #c9c5c5;
+}
+.address .send .s {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  color: #3c9cff;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+._name {
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 56px;
+}
+._phone {
+  position: absolute;
+  font-size: 10px;
+  color: gray;
+  margin-top: 12px;
+  margin-left: 120px;
+  width: 100px;
+  height: 10px;
+}
+.iconfont {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 10px;
+}
+._addr {
+  position: absolute;
+  margin-left: 56px;
+  font-size: 10px;
+  margin-top: 30px;
+  color: gray;
+}
+.address .receive {
+  position: relative;
+  height: 50px;
+}
+.address .receive .r {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #3c9cff;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 

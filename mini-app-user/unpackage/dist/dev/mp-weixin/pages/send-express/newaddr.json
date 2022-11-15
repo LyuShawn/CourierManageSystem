@@ -4,6 +4,7 @@
   "navigationBarTextStyle": "white",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "usertable": "/pages/send-express/components/usertable"
+    "u-popup": "/uni_modules/uview-ui/components/u-popup/u-popup",
+    "chooser": "/pages/send-express/components/choosearea"
   }
 }

@@ -9084,9 +9084,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 5 */
-/*!***********************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/pages.json ***!
-  \***********************************************************************************/
+/*!***************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/pages.json ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9227,9 +9227,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 12 */
-/*!******************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/index.js ***!
-  \******************************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/index.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9316,9 +9316,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 13 */
-/*!*****************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mixin.js ***!
-  \*****************************************************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mixin.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9485,9 +9485,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 14 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mpMixin.js ***!
-  \*******************************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mpMixin.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9500,9 +9500,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 15 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/index.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/index.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9513,9 +9513,9 @@ _Request.default;exports.default = _default;
 
 /***/ }),
 /* 16 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/Request.js ***!
-  \*******************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/Request.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9721,9 +9721,9 @@ Request = /*#__PURE__*/function () {
 
 /***/ }),
 /* 17 */
-/*!***************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
-  \***************************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9734,9 +9734,9 @@ function _default(config) {return (0, _index.default)(config);};exports.default 
 
 /***/ }),
 /* 18 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/adapters/index.js ***!
-  \*********************************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/adapters/index.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9842,9 +9842,9 @@ function _default(config) {return new Promise(function (resolve, reject) {
 
 /***/ }),
 /* 19 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
-  \***********************************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9921,9 +9921,9 @@ function buildURL(url, params) {
 
 /***/ }),
 /* 20 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10062,9 +10062,9 @@ function isUndefined(val) {
 
 /***/ }),
 /* 21 */
-/*!*************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
-  \*************************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10092,9 +10092,9 @@ function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 22 */
-/*!****************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
-  \****************************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10116,9 +10116,9 @@ function isAbsoluteURL(url) {
 
 /***/ }),
 /* 23 */
-/*!**************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
-  \**************************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10140,9 +10140,9 @@ function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 24 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/settle.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/settle.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10166,9 +10166,9 @@ function settle(resolve, reject, response) {var
 
 /***/ }),
 /* 25 */
-/*!******************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
-  \******************************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10226,9 +10226,9 @@ InterceptorManager;exports.default = _default;
 
 /***/ }),
 /* 26 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
-  \***********************************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10339,9 +10339,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 
 /***/ }),
 /* 27 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/defaults.js ***!
-  \********************************************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/defaults.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10377,9 +10377,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 28 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils/clone.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils/clone.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10648,7 +10648,7 @@ var clone = function () {
 }();var _default =
 
 clone;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 29).Buffer))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../福州大学工程实训/HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 29).Buffer))
 
 /***/ }),
 /* 29 */
@@ -12725,17 +12725,17 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 /* 33 */
-/*!****************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/util/route.js ***!
-  \****************************************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/util/route.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 34));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * 并且带有路由拦截功能
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  */var
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * 并且带有路由拦截功能
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */var
 
 Router = /*#__PURE__*/function () {
   function Router() {_classCallCheck(this, Router);
@@ -13648,9 +13648,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 37 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/colorGradient.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/colorGradient.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13791,9 +13791,9 @@ function colorToRgba(color, alpha) {
 
 /***/ }),
 /* 38 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/test.js ***!
-  \*******************************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/test.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14088,9 +14088,9 @@ function regExp(o) {
 
 /***/ }),
 /* 39 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/debounce.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/debounce.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14127,9 +14127,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 40 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/throttle.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/throttle.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14167,9 +14167,9 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 41 */
-/*!********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/index.js ***!
-  \********************************************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/index.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14882,9 +14882,9 @@ function setConfig(_ref3)
 
 /***/ }),
 /* 42 */
-/*!********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/digit.js ***!
-  \********************************************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/digit.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15057,9 +15057,9 @@ function enableBoundaryChecking() {var flag = arguments.length > 0 && arguments[
 
 /***/ }),
 /* 43 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/config.js ***!
-  \*******************************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/config.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15100,9 +15100,9 @@ if (true) {
 
 /***/ }),
 /* 44 */
-/*!******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props.js ***!
-  \******************************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15299,9 +15299,9 @@ _upload.default);exports.default = _default;
 
 /***/ }),
 /* 45 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/actionSheet.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/actionSheet.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15332,9 +15332,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 46 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/album.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/album.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15365,9 +15365,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 47 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/alert.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/alert.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15395,9 +15395,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 48 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatar.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatar.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15431,9 +15431,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 49 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatarGroup.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatarGroup.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15462,9 +15462,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 50 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/backtop.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/backtop.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15496,9 +15496,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 51 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/badge.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/badge.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15531,9 +15531,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 52 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/button.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/button.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15581,9 +15581,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 53 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/calendar.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/calendar.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15631,9 +15631,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 54 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/carKeyboard.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/carKeyboard.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15654,9 +15654,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 55 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cell.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cell.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15697,9 +15697,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 56 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cellGroup.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cellGroup.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15722,9 +15722,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 57 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkbox.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkbox.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15757,9 +15757,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 58 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
-  \********************************************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15794,9 +15794,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 59 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/circleProgress.js ***!
-  \*********************************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/circleProgress.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15817,9 +15817,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 60 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/code.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/code.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15846,9 +15846,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 61 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/codeInput.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/codeInput.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15883,9 +15883,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 62 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/col.js ***!
-  \**********************************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/col.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15910,9 +15910,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 63 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapse.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapse.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15935,9 +15935,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 64 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapseItem.js ***!
-  \*******************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapseItem.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15968,9 +15968,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 65 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/columnNotice.js ***!
-  \*******************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/columnNotice.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16000,9 +16000,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 66 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countDown.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countDown.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16026,9 +16026,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 67 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countTo.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countTo.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16059,9 +16059,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 68 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/datetimePicker.js ***!
-  \*********************************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/datetimePicker.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16103,9 +16103,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 69 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/divider.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/divider.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16133,9 +16133,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 70 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/empty.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/empty.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16166,9 +16166,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 71 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/form.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/form.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16196,9 +16196,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 72 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/formItem.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/formItem.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16227,9 +16227,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 73 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gap.js ***!
-  \**********************************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gap.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16254,9 +16254,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 74 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/grid.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/grid.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16279,9 +16279,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 75 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gridItem.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gridItem.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16303,9 +16303,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 76 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/icon.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/icon.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16347,9 +16347,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 43));f
 
 /***/ }),
 /* 77 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/image.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/image.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16385,9 +16385,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 78 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexAnchor.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexAnchor.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16412,9 +16412,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 79 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexList.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexList.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16439,9 +16439,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 80 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/input.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/input.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16495,9 +16495,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 81 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/keyboard.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/keyboard.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16533,9 +16533,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 82 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/line.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/line.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16561,9 +16561,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 83 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/lineProgress.js ***!
-  \*******************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/lineProgress.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16588,9 +16588,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 84 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/link.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/link.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16622,9 +16622,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 43));f
 
 /***/ }),
 /* 85 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/list.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/list.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16658,9 +16658,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 86 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/listItem.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/listItem.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16681,9 +16681,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 87 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingIcon.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingIcon.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16719,9 +16719,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 43));f
 
 /***/ }),
 /* 88 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingPage.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingPage.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16750,9 +16750,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 89 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadmore.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadmore.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16790,9 +16790,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 90 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/modal.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/modal.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16828,9 +16828,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 91 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/navbar.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/navbar.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16867,9 +16867,9 @@ var _color = _interopRequireDefault(__webpack_require__(/*! ../color */ 92));fun
 
 /***/ }),
 /* 92 */
-/*!******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/color.js ***!
-  \******************************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/color.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16894,9 +16894,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 93 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noNetwork.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noNetwork.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16919,9 +16919,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 94 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noticeBar.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noticeBar.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16954,9 +16954,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 95 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/notify.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/notify.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16984,9 +16984,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 96 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberBox.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberBox.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17027,9 +17027,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 97 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
-  \*********************************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17052,9 +17052,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 98 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/overlay.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/overlay.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17078,9 +17078,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 99 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/parse.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/parse.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17108,9 +17108,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 100 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/picker.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/picker.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17145,9 +17145,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 101 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/popup.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/popup.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17182,9 +17182,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 102 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radio.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radio.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17217,9 +17217,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 103 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radioGroup.js ***!
-  \*****************************************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radioGroup.js ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17255,9 +17255,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 104 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rate.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rate.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17289,9 +17289,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 105 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/readMore.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/readMore.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17319,9 +17319,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 106 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/row.js ***!
-  \**********************************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/row.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17344,9 +17344,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 107 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rowNotice.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rowNotice.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17373,9 +17373,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 108 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/scrollList.js ***!
-  \*****************************************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/scrollList.js ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17401,9 +17401,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 109 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/search.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/search.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17446,9 +17446,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 110 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/section.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/section.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17478,9 +17478,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 111 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/skeleton.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/skeleton.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17511,9 +17511,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 112 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/slider.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/slider.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17544,9 +17544,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 113 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/statusBar.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/statusBar.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17567,9 +17567,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 114 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/steps.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/steps.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17596,9 +17596,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 115 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/stepsItem.js ***!
-  \****************************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/stepsItem.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17622,9 +17622,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 116 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/sticky.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/sticky.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17650,9 +17650,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 117 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/subsection.js ***!
-  \*****************************************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/subsection.js ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17681,9 +17681,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 118 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeAction.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeAction.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17704,9 +17704,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 119 */
-/*!**********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
-  \**********************************************************************************************************************************/
+/*!**************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17733,9 +17733,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 120 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swiper.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swiper.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17779,9 +17779,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 121 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
-  \***********************************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17806,9 +17806,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 122 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/switch.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/switch.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17838,9 +17838,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 123 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbar.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbar.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17868,9 +17868,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 124 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbarItem.js ***!
-  \*****************************************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbarItem.js ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17896,9 +17896,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 125 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabs.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabs.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17936,9 +17936,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 126 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tag.js ***!
-  \**********************************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tag.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17973,9 +17973,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 127 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/text.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/text.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18018,9 +18018,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 128 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/textarea.js ***!
-  \***************************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/textarea.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18062,9 +18062,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 129 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toast.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toast.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18099,9 +18099,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 130 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toolbar.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toolbar.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18127,9 +18127,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 131 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tooltip.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tooltip.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18160,9 +18160,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 132 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/transition.js ***!
-  \*****************************************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/transition.js ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18186,9 +18186,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 133 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/upload.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/upload.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18230,9 +18230,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 134 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/zIndex.js ***!
-  \*******************************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/zIndex.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18259,9 +18259,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 135 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/platform.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/platform.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18344,14 +18344,14 @@ platform;exports.default = _default;
 
 /***/ }),
 /* 136 */
-/*!***********************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/api/api.js ***!
-  \***********************************************************************************/
+/*!***************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/api/api.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.Myexpress = exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 473);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Object.defineProperty(exports, "__esModule", { value: true });exports.Myexpress = exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 137);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
 
 
 
@@ -18365,11 +18365,29 @@ User = /*#__PURE__*/function () {function User() {_classCallCheck(this, User);}_
           user_id: userId } });
 
 
-    } }]);return User;}();exports.User = User;var
+    } }, { key: "deleteaddress", value: function deleteaddress(
+    address_id) {
+      return (0, _request.request)({
+        url: '/user/change_address',
+        method: 'post',
+        data: {
+          address_id: address_id } });
 
 
+    } }, { key: "changeaddress", value: function changeaddress(
+    address_id, phone, addr) {
+      return (0, _request.request)({
+        url: '/user/change_address',
+        method: 'post',
+        data: {
+          address_id: address_id,
+          phone: phone,
+          addr: addr } });
 
 
+    }
+    //static newaddress(user)
+  }]);return User;}();exports.User = User;var
 
 Myexpress = /*#__PURE__*/function () {function Myexpress() {_classCallCheck(this, Myexpress);}_createClass(Myexpress, null, [{ key: "getAllExpress", value: function getAllExpress(
     code) {
@@ -18383,7 +18401,55 @@ Myexpress = /*#__PURE__*/function () {function Myexpress() {_classCallCheck(this
     } }]);return Myexpress;}();exports.Myexpress = Myexpress;
 
 /***/ }),
-/* 137 */,
+/* 137 */
+/*!*******************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/api/request.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0; // 基于Promise封装的请求
+var BASE_URL = 'http://101.132.35.228:8083';
+//const BASE_URL = 'https://localhost'
+
+var request = function request(options) {
+
+  var header = {};
+  try {
+    var tokenKey = uni.getStorageSync('tokenKey') || null;
+    var tokenValue = uni.getStorageSync('tokenValue') || null;
+    header[tokenKey] = tokenValue;
+  } catch (err) {
+    console.log(err);
+  } finally {
+    // Promise封装
+    return new Promise(function (resolve, reject) {
+      uni.request({
+        // url基地址
+        url: BASE_URL + options.url,
+        // 请求方法，默认get
+        method: options.method || 'GET',
+        // 请求体
+        data: options.data || {},
+        // 请求头
+        header: header,
+        // 请求成功回调
+        success: function success(res) {
+          resolve(res);
+        },
+        // 请求失败回调
+        fail: function fail(err) {
+          reject(err);
+        } });
+
+    });
+  }
+
+};exports.request = request;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 138 */,
 /* 139 */,
 /* 140 */,
@@ -18460,9 +18526,9 @@ Myexpress = /*#__PURE__*/function () {function Myexpress() {_classCallCheck(this
 /* 211 */,
 /* 212 */,
 /* 213 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/value.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/value.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18554,9 +18620,9 @@ Myexpress = /*#__PURE__*/function () {function Myexpress() {_classCallCheck(this
 
 /***/ }),
 /* 214 */
-/*!******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/button.js ***!
-  \******************************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/button.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18575,9 +18641,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 215 */
-/*!********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/openType.js ***!
-  \********************************************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/openType.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18608,9 +18674,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 216 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/props.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/props.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18733,9 +18799,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 222 */,
 /* 223 */,
 /* 224 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/icons.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/icons.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18956,9 +19022,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 225 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/props.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/props.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19060,9 +19126,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 231 */,
 /* 232 */,
 /* 233 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-gap/props.js ***!
-  \***********************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-gap/props.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19099,9 +19165,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 239 */,
 /* 240 */,
 /* 241 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-search/props.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-search/props.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19232,9 +19298,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 247 */,
 /* 248 */,
 /* 249 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper/props.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper/props.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19377,9 +19443,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 260 */,
 /* 261 */,
 /* 262 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-image/props.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-image/props.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19474,9 +19540,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 266 */,
 /* 267 */,
 /* 268 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps/props.js ***!
-  \*************************************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps/props.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19528,9 +19594,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 274 */,
 /* 275 */,
 /* 276 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps-item/props.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps-item/props.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19567,9 +19633,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 282 */,
 /* 283 */,
 /* 284 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell-group/props.js ***!
-  \******************************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell-group/props.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19596,9 +19662,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 290 */,
 /* 291 */,
 /* 292 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell/props.js ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell/props.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19721,57 +19787,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 298 */,
 /* 299 */,
 /* 300 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-line/props.js ***!
-  \************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    color: {
-      type: String,
-      default: uni.$u.props.line.color },
-
-    // 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带px单位的值等
-    length: {
-      type: [String, Number],
-      default: uni.$u.props.line.length },
-
-    // 线条方向，col-竖向，row-横向
-    direction: {
-      type: String,
-      default: uni.$u.props.line.direction },
-
-    // 是否显示细边框
-    hairline: {
-      type: Boolean,
-      default: uni.$u.props.line.hairline },
-
-    // 线条与上下左右元素的间距，字符串形式，如"30px"、"20px 30px"
-    margin: {
-      type: [String, Number],
-      default: uni.$u.props.line.margin },
-
-    // 是否虚线，true-虚线，false-实线
-    dashed: {
-      type: Boolean,
-      default: uni.$u.props.line.dashed } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-picker/props.js ***!
-  \**************************************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-picker/props.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19855,17 +19873,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-input/props.js ***!
-  \*************************************************************************************************************************/
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-input/props.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20057,15 +20075,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse/props.js ***!
-  \****************************************************************************************************************************/
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */
+/*!********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse/props.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20089,17 +20107,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse-item/props.js ***!
-  \*********************************************************************************************************************************/
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */
+/*!*************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse-item/props.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20163,17 +20181,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
-  \********************************************************************************************************************************/
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */
+/*!************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20232,17 +20250,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-button/props.js ***!
-  \**************************************************************************************************************************/
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */
+/*!******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-button/props.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20408,17 +20426,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-modal/props.js ***!
-  \*************************************************************************************************************************/
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-modal/props.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20507,17 +20525,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-empty/props.js ***!
-  \*************************************************************************************************************************/
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-empty/props.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20581,210 +20599,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-link/props.js ***!
-  \************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 文字颜色
-    color: {
-      type: String,
-      default: uni.$u.props.link.color },
-
-    // 字体大小，单位px
-    fontSize: {
-      type: [String, Number],
-      default: uni.$u.props.link.fontSize },
-
-    // 是否显示下划线
-    underLine: {
-      type: Boolean,
-      default: uni.$u.props.link.underLine },
-
-    // 要跳转的链接
-    href: {
-      type: String,
-      default: uni.$u.props.link.href },
-
-    // 小程序中复制到粘贴板的提示语
-    mpTips: {
-      type: String,
-      default: uni.$u.props.link.mpTips },
-
-    // 下划线颜色
-    lineColor: {
-      type: String,
-      default: uni.$u.props.link.lineColor },
-
-    // 超链接的问题，不使用slot形式传入，是因为nvue下无法修改颜色
-    text: {
-      type: String,
-      default: uni.$u.props.link.text } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
-  \********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.show },
-
-    // 颜色
-    color: {
-      type: String,
-      default: uni.$u.props.loadingIcon.color },
-
-    // 提示文字颜色
-    textColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.textColor },
-
-    // 文字和图标是否垂直排列
-    vertical: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.vertical },
-
-    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
-    mode: {
-      type: String,
-      default: uni.$u.props.loadingIcon.mode },
-
-    // 图标大小，单位默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.size },
-
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.textSize },
-
-    // 文字内容
-    text: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.text },
-
-    // 动画模式
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.loadingIcon.timingFunction },
-
-    // 动画执行周期时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.duration },
-
-    // mode=circle时的暗边颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */
-/*!************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
-  \************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 轮播的长度
-    length: {
-      type: [String, Number],
-      default: uni.$u.props.swiperIndicator.length },
-
-    // 当前处于活动状态的轮播的索引
-    current: {
-      type: [String, Number],
-      default: uni.$u.props.swiperIndicator.current },
-
-    // 指示器非激活颜色
-    indicatorActiveColor: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
-
-    // 指示器的激活颜色
-    indicatorInactiveColor: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
-
-    // 指示器模式，line-线型，dot-点型
-    indicatorMode: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-popup/props.js ***!
-  \*************************************************************************************************************************/
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */
+/*!*****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-popup/props.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20868,17 +20693,256 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-link/props.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 文字颜色
+    color: {
+      type: String,
+      default: uni.$u.props.link.color },
+
+    // 字体大小，单位px
+    fontSize: {
+      type: [String, Number],
+      default: uni.$u.props.link.fontSize },
+
+    // 是否显示下划线
+    underLine: {
+      type: Boolean,
+      default: uni.$u.props.link.underLine },
+
+    // 要跳转的链接
+    href: {
+      type: String,
+      default: uni.$u.props.link.href },
+
+    // 小程序中复制到粘贴板的提示语
+    mpTips: {
+      type: String,
+      default: uni.$u.props.link.mpTips },
+
+    // 下划线颜色
+    lineColor: {
+      type: String,
+      default: uni.$u.props.link.lineColor },
+
+    // 超链接的问题，不使用slot形式传入，是因为nvue下无法修改颜色
+    text: {
+      type: String,
+      default: uni.$u.props.link.text } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */
+/*!************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */
+/*!****************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 轮播的长度
+    length: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.length },
+
+    // 当前处于活动状态的轮播的索引
+    current: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.current },
+
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */
+/*!****************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-line/props.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    color: {
+      type: String,
+      default: uni.$u.props.line.color },
+
+    // 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带px单位的值等
+    length: {
+      type: [String, Number],
+      default: uni.$u.props.line.length },
+
+    // 线条方向，col-竖向，row-横向
+    direction: {
+      type: String,
+      default: uni.$u.props.line.direction },
+
+    // 是否显示细边框
+    hairline: {
+      type: Boolean,
+      default: uni.$u.props.line.hairline },
+
+    // 线条与上下左右元素的间距，字符串形式，如"30px"、"20px 30px"
+    margin: {
+      type: [String, Number],
+      default: uni.$u.props.line.margin },
+
+    // 是否虚线，true-虚线，false-实线
+    dashed: {
+      type: Boolean,
+      default: uni.$u.props.line.dashed } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 414 */,
+/* 415 */,
 /* 416 */,
 /* 417 */,
 /* 418 */,
 /* 419 */,
 /* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-toolbar/props.js ***!
-  \***************************************************************************************************************************/
+/* 421 */
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-toolbar/props.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20917,6 +20981,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 422 */,
+/* 423 */,
 /* 424 */,
 /* 425 */,
 /* 426 */,
@@ -20929,17 +20995,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 433 */,
 /* 434 */,
 /* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-overlay/props.js ***!
-  \***************************************************************************************************************************/
+/* 436 */
+/*!*******************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-overlay/props.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20968,17 +21027,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 444 */,
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/props.js ***!
-  \******************************************************************************************************************************/
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/props.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21007,10 +21066,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 452 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/transition.js ***!
-  \***********************************************************************************************************************************/
+/* 445 */
+/*!***************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/transition.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21018,7 +21077,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 34));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 453));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 446));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -21172,10 +21231,10 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 453 */
-/*!*************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
-  \*************************************************************************************************************************************/
+/* 446 */
+/*!*****************************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21248,17 +21307,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 454 */,
-/* 455 */,
-/* 456 */,
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-status-bar/props.js ***!
-  \******************************************************************************************************************************/
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */
+/*!**********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-status-bar/props.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21271,75 +21330,23 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 462 */,
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
-  \*******************************************************************************************************************************/
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */
+/*!***********************************************************************************************************!*\
+  !*** G:/project/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   props: {} };exports.default = _default;
-
-/***/ }),
-/* 470 */,
-/* 471 */,
-/* 472 */,
-/* 473 */
-/*!***************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/api/request.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0; // 基于Promise封装的请求
-var BASE_URL = 'http://101.132.35.228:8083';
-//const BASE_URL = 'https://localhost'
-
-var request = function request(options) {
-
-  var header = {};
-  try {
-    var tokenKey = uni.getStorageSync('tokenKey') || null;
-    var tokenValue = uni.getStorageSync('tokenValue') || null;
-    header[tokenKey] = tokenValue;
-  } catch (err) {
-    console.log(err);
-  } finally {
-    // Promise封装
-    return new Promise(function (resolve, reject) {
-      uni.request({
-        // url基地址
-        url: BASE_URL + options.url,
-        // 请求方法，默认get
-        method: options.method || 'GET',
-        // 请求体
-        data: options.data || {},
-        // 请求头
-        header: header,
-        // 请求成功回调
-        success: function success(res) {
-          resolve(res);
-        },
-        // 请求失败回调
-        fail: function fail(err) {
-          reject(err);
-        } });
-
-    });
-  }
-
-};exports.request = request;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ]]);

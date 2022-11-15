@@ -11,11 +11,29 @@ export class User {
 			data: {
 				user_id:userId,
 			}
-		})
+		})	
 	}
-	
-	
-	
+	static deleteaddress(address_id) {
+		return request({
+			url: '/user/change_address',
+			method: 'post',
+			data: {
+				address_id:address_id,
+			}
+		})	
+	}
+	static changeaddress(address_id,phone,addr) {
+		return request({
+			url: '/user/change_address',
+			method: 'post',
+			data: {
+				address_id:address_id,
+				phone:phone,
+				addr: addr,
+			}
+		})	
+	}
+	//static newaddress(user)
 }
 
 export class Myexpress{

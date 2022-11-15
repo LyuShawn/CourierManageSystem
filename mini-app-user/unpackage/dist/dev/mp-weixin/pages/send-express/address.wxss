@@ -78,7 +78,7 @@
   font-size: 25px;
 }
 .show-item button.data-v-76475409 {
-  margin-right: 0;
+  margin-right: 5px;
   background-color: #c85d53;
   color: white;
 }

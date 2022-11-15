@@ -36,7 +36,6 @@ export default {
 				columnIndex,
 				index,
 				indexs,
-				// 微信小程序无法将picker实例传出来，只能通过ref操作
 				picker = this.$refs.uPicker
 			} = e;
 			console.log(columnIndex, index, indexs);
