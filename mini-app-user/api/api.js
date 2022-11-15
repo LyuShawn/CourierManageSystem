@@ -13,7 +13,6 @@ export class User {
 			}
 		})	
 	}
-<<<<<<< HEAD
 	static deleteaddress(address_id) {
 		return request({
 			url: '/user/change_address',
@@ -35,7 +34,6 @@ export class User {
 		})	
 	}
 	//static newaddress(user)
-=======
 	static login(code){
 		return request({
 			url:'/user/login',
@@ -58,7 +56,6 @@ export class User {
 		})
 	}
 
->>>>>>> 4a673f9222962c96a26458c23bb8e0d09c0007e8
 }
 
 export class Myexpress{
