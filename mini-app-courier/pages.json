@@ -1,6 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/user/my-info/index",
+			"style": {
+				"navigationBarTitleText": "完善我的信息",
+				"enablePullDownRefresh": false
+			}
+		
+		},
+		{
 			"path": "pages/user/index",
 			"style": {
 				"navigationBarTitleText": "个人中心",
@@ -21,7 +29,16 @@
 				"enablePullDownRefresh": false
 			}
 
+		},
+		{
+			"path": "pages/web-view/webView",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
+		
 
 	],
 	"globalStyle": {
