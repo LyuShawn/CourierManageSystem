@@ -34,4 +34,6 @@ public class Address {
      * 地址经纬度
      */
     private String location;
+
+    private String name;
 }

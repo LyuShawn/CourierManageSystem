@@ -16,4 +16,8 @@ public class UserAddAddressParam {
      * 地址
      */
     private String addr;
+    /**
+     * 姓名
+     */
+    private String name;
 }

@@ -46,8 +46,11 @@ public class UserService {
         Map<String, Object> map = new HashMap<>();
         map.put("open_id", userRegisterParam.getOpen_id());
         List<User> users = userMapper.selectByMap(map);
-        if (users.size() != 0)
-            return ResponseWrapper.markSuccess("已注册");
+        Map map_msg=new HashMap();
+        if (users.size() != 0) {
+            map_msg.put("user_id",users.get(0).getId());
+            return ResponseWrapper.markSuccess("已注册",map_msg);
+        }
         User user = new User();
         user.setOpen_id(userRegisterParam.getOpen_id());
         user.setAvatar_url(userRegisterParam.getAvatar_url());
@@ -59,8 +62,9 @@ public class UserService {
         user.setNickname(userRegisterParam.getNickname());
         user.setPhone(userRegisterParam.getPhone());
         userMapper.insert(user);
+        map_msg.put("user_id",user.getId());
         System.out.println("用户注册成功\n" + user.toString());
-        return ResponseWrapper.markSuccess("注册成功");
+        return ResponseWrapper.markSuccess("注册成功",map_msg);
     }
 
     /**
@@ -165,6 +169,7 @@ public class UserService {
         address.setAddr(userAddAddressParam.getAddr());
         address.setPhone(userAddAddressParam.getPhone());
         address.setUser(userAddAddressParam.getUser());
+        address.setName(userAddAddressParam.getName());
         address.setIs_delete(0);
         address.setLocation(GetGeocoding.getGeocoding(userAddAddressParam.getAddr()));
         addressMapper.insert(address);
@@ -185,6 +190,7 @@ public class UserService {
         address.setPhone(userChangeAddressParam.getPhone());
         address.setAddr(userChangeAddressParam.getAddr());
         address.setLocation(GetGeocoding.getGeocoding(userChangeAddressParam.getAddr()));
+        address.setName(userChangeAddressParam.getName());
         addressMapper.updateById(address);
         return ResponseWrapper.markSuccess("地址修改成功!");
     }
@@ -211,6 +217,7 @@ public class UserService {
      * @return
      */
     public ResponseWrapper get_all_address(String user_id) {
+        System.out.println("用户获得全部地址信息参数为"+user_id);
         Map<String, Object> map = new HashMap<>();
         map.put("user", user_id);
         map.put("is_delete", 0);
@@ -240,7 +247,7 @@ public class UserService {
         return ResponseWrapper.markSuccess("价格计算成功！",moneymap);
     }
     /**
-     * 用户获得全部地址
+     * 用户获得全部快递
      *
      * @param
      * @return
@@ -249,16 +256,40 @@ public class UserService {
     {
         Map<String, Object> map = new HashMap<>();
         map.put("user_phone", phone);
+        map.put("is_delete", 0);
         List<UserExpress> userExpresses=userExpressMapper.selectByMap(map);
-        ArrayList<Express> expresses = new ArrayList();
+        ArrayList<UserGetAllExpressResult> userGetAllExpressResults = new ArrayList();
         for(int i=0;i<userExpresses.size();i++)
         {
+            UserGetAllExpressResult userGetAllExpressResult=new UserGetAllExpressResult();
             Map<String, Object> map1 = new HashMap<>();
             map1.put("id", userExpresses.get(i).getExpress());
             List<Express> expresses1=expressMapper.selectByMap(map1);
-            expresses.add(expresses1.get(0));
+            Express express=expresses1.get(0);
+            userGetAllExpressResult.setExpress(express);
+            userGetAllExpressResult.setReceive_send(userExpresses.get(i).getReceive_send());
+            int state;
+            if(express.getPick_up()==0)
+            {
+                //快递员还未取件 待揽件
+                state=1;
+            }
+            else
+            {
+                if(express.getDelivered()==0)
+                {
+                    //快递员已取件运输中 但是还未签收
+                    state=2;
+                }
+                else
+                {
+                    state=3;
+                }
+            }
+            userGetAllExpressResult.setState(state);
+            userGetAllExpressResults.add(userGetAllExpressResult);
         }
-        return ResponseWrapper.markSuccess("查找用户快递信息成功！",expresses);
+        return ResponseWrapper.markSuccess("查找用户快递信息成功！",userGetAllExpressResults);
     }
     /**
      * 用户设置默认地址
