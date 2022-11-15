@@ -18348,108 +18348,12 @@ platform;exports.default = _default;
   !*** G:/project/CourierManageSystem/mini-app-user/api/api.js ***!
   \***************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.Myexpress = exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 137);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
-
-
-
-
-User = /*#__PURE__*/function () {function User() {_classCallCheck(this, User);}_createClass(User, null, [{ key: "getAddress", value: function getAddress(
-    userId) {
-      return (0, _request.request)({
-        url: '/user/get_all_address',
-        method: 'get',
-        data: {
-          user_id: userId } });
-
-
-    } }, { key: "deleteaddress", value: function deleteaddress(
-    address_id) {
-      return (0, _request.request)({
-        url: '/user/change_address',
-        method: 'post',
-        data: {
-          address_id: address_id } });
-
-
-    } }, { key: "changeaddress", value: function changeaddress(
-    address_id, phone, addr) {
-      return (0, _request.request)({
-        url: '/user/change_address',
-        method: 'post',
-        data: {
-          address_id: address_id,
-          phone: phone,
-          addr: addr } });
-
-
-    }
-    //static newaddress(user)
-  }]);return User;}();exports.User = User;var
-
-Myexpress = /*#__PURE__*/function () {function Myexpress() {_classCallCheck(this, Myexpress);}_createClass(Myexpress, null, [{ key: "getAllExpress", value: function getAllExpress(
-    code) {
-      return (0, _request.request)({
-        url: '/user/get_all_express',
-        method: 'get',
-        data: {
-          code: code } });
-
-
-    } }]);return Myexpress;}();exports.Myexpress = Myexpress;
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: G:\\project\\CourierManageSystem\\mini-app-user\\api\\api.js: Unexpected token (16:0)\n\n  14 | \t\t})\t\n  15 | \t}\n> 16 | <<<<<<< HEAD\n     | ^\n  17 | \tstatic deleteaddress(address_id) {\n  18 | \t\treturn request({\n  19 | \t\t\turl: '/user/change_address',\n    at Object._raise (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:746:17)\n    at Object.raiseWithData (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:739:17)\n    at Object.raise (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:733:17)\n    at Object.unexpected (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8807:16)\n    at Object.parseIdentifierName (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10823:18)\n    at Object.parseIdentifier (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10800:23)\n    at Object.parseMaybePrivateName (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10157:19)\n    at Object.parsePropertyName (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10624:126)\n    at Object.parseClassPropertyName (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12127:22)\n    at Object.parseClassMemberWithIsStatic (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12045:22)\n    at Object.parseClassMember (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12015:10)\n    at G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11960:14\n    at Object.withTopicForbiddingContext (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11031:14)\n    at Object.parseClassBody (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11937:10)\n    at Object.parseClass (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11911:22)\n    at Object.parseStatementContent (G:\\福州大学工程实训\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11198:21)");
 
 /***/ }),
-/* 137 */
-/*!*******************************************************************!*\
-  !*** G:/project/CourierManageSystem/mini-app-user/api/request.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0; // 基于Promise封装的请求
-var BASE_URL = 'http://101.132.35.228:8083';
-//const BASE_URL = 'https://localhost'
-
-var request = function request(options) {
-
-  var header = {};
-  try {
-    var tokenKey = uni.getStorageSync('tokenKey') || null;
-    var tokenValue = uni.getStorageSync('tokenValue') || null;
-    header[tokenKey] = tokenValue;
-  } catch (err) {
-    console.log(err);
-  } finally {
-    // Promise封装
-    return new Promise(function (resolve, reject) {
-      uni.request({
-        // url基地址
-        url: BASE_URL + options.url,
-        // 请求方法，默认get
-        method: options.method || 'GET',
-        // 请求体
-        data: options.data || {},
-        // 请求头
-        header: header,
-        // 请求成功回调
-        success: function success(res) {
-          resolve(res);
-        },
-        // 请求失败回调
-        fail: function fail(err) {
-          reject(err);
-        } });
-
-    });
-  }
-
-};exports.request = request;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
+/* 137 */,
 /* 138 */,
 /* 139 */,
 /* 140 */,

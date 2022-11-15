@@ -2,7 +2,7 @@ backend/.idea/
 backend/target/
 backend/backend.iml
 backend/HELP.md
-.DS_Stroe
+.DS_Store
 
 web/node_modules/
 node_modules/

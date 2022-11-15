@@ -103,7 +103,16 @@ __webpack_require__.r(__webpack_exports__);
       "provider": "weixin",
       "onlyAuthorize": true, // 微信登录仅请求授权认证
       success: function success(res) {
-        console.log(res);
+        //console.log(res.code);
+        _this.$api.User.login(res.code).then(function (res) {
+          var openid = res.data.data.openId;
+          try {
+            //open_id存入缓存
+            uni.setStorageSync('open_id', openid);
+          } catch (e) {
+            // error
+          }
+        });
       },
       fail: function fail(err) {
         console.log(err);
