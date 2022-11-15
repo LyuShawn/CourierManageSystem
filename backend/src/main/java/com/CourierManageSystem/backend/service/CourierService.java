@@ -10,11 +10,14 @@ import com.CourierManageSystem.backend.mapper.OutletsCourierMapper;
 import com.CourierManageSystem.backend.model.CourierModel.*;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.google.common.collect.ImmutableMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -25,6 +28,11 @@ public class CourierService {
     ExpressMapper expressMapper;
     @Autowired
     OutletsCourierMapper outletsCourierMapper;
+
+    private static final int INVALID = 40029;
+    private static final int OFTEN = 45011;
+    @Autowired
+    CourierWechatService courierWechatService;
 
     /**
      * 快递员注册
@@ -262,4 +270,28 @@ public class CourierService {
         return ResponseWrapper.markSuccess("申请已经发送");
     }
 
+    public ResponseWrapper userLogin(String code) throws IOException {
+        //登录凭证校验。通过 wx.login 接口获得临时登录凭证 code 后传到开发者服务器调用此接口完成登录流程
+        JSONObject code2Session = courierWechatService.getCode2Session(code);
+        Integer errorCode =code2Session.getInteger("errcode");
+
+        //errcode为0表示请求成功
+        if(errorCode==0){
+            //将获得的openid 返回
+            return ResponseWrapper.markSuccess("用户登录成功", ImmutableMap.of("openId",code2Session.getString("openid")));
+            //StpUtil.login(code2Session.getString("openid"));
+            // 获取当前会话的token值,将该token值作为skey传给小程序端作为会话的维护
+
+        }
+        else if(errorCode==-1){
+            return ResponseWrapper.markError("系统繁忙，此时请开发者稍候再试");
+        }
+        else if(errorCode==INVALID){
+            return ResponseWrapper.markError("code 无效");
+        }
+        else if(errorCode==OFTEN){
+            return ResponseWrapper.markError("频率限制，每个用户每分钟100次");
+        }
+        return ResponseWrapper.markError("系统未知错误");
+    }
 }

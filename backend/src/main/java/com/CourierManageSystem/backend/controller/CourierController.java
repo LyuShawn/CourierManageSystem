@@ -3,8 +3,11 @@ package com.CourierManageSystem.backend.controller;
 import com.CourierManageSystem.backend.model.CourierModel.*;
 import com.CourierManageSystem.backend.service.CourierService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/courier")
@@ -113,5 +116,11 @@ public class CourierController {
         return courierService.courierApplyOutlets(courierApplyOutletsParam);
     }
 
+    @PostMapping("/login")
+    public ResponseWrapper login(@RequestBody JSONObject jsonObject) throws IOException {
+        //获得登录凭证code
+        String code=jsonObject.getString("code");
+        return courierService.userLogin(code);
+    }
 
 }

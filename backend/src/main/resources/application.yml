@@ -7,5 +7,15 @@ spring:
     url: jdbc:mysql://101.132.35.228:3306/courier_system?useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+mini-app-user:
+  appid: wx3fcad718a821d77d
+  secret: ba8459cc58de7acbcc67998c291a7d95
+mini-app-courier:
+  appid: wx0b1aa687cba0c146
+  secret: 8b52a729b94d62b8fb1488339606e447
+
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: false
 
 

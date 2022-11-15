@@ -7,7 +7,6 @@ import com.CourierManageSystem.backend.util.*;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.google.common.collect.ImmutableMap;
-import jdk.nashorn.internal.ir.annotations.Immutable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +30,7 @@ public class UserService {
     @Autowired
     UserExpressMapper userExpressMapper;
     @Autowired
-    WechatService wechatService;
+    UserWechatService userWechatService;
 
     private static final int INVALID = 40029;
     private static final int OFTEN = 45011;
@@ -280,7 +279,7 @@ public class UserService {
     // 用户登录
     public ResponseWrapper userLogin(String code) throws IOException {
         //登录凭证校验。通过 wx.login 接口获得临时登录凭证 code 后传到开发者服务器调用此接口完成登录流程
-        JSONObject code2Session = wechatService.getCode2Session(code);
+        JSONObject code2Session = userWechatService.getCode2Session(code);
         Integer errorCode =code2Session.getInteger("errcode");
 
         //errcode为0表示请求成功

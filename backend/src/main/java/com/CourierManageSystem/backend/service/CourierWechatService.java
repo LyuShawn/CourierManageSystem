@@ -2,20 +2,21 @@ package com.CourierManageSystem.backend.service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-
 import lombok.extern.log4j.Log4j2;
 import okhttp3.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.Objects;
 
 @Service
 @Log4j2
-public class WechatService {
+public class CourierWechatService {
 
-    private String APPID="wx3fcad718a821d77d"; 
-    private String SECRET="ba8459cc58de7acbcc67998c291a7d95";
+    @Value("${mini-app-courier.appid}")
+    private String APPID;
+    @Value("${mini-app-courier.secret}")
+    private String SECRET;
     private String messageUrl="https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=";
     private static final String AUTHORIZATION_CODE = "authorization_code";
     private static final String GRANT_TYPE="client_credential";
@@ -109,7 +110,7 @@ public class WechatService {
     }
 
     public JSONObject getUserPortrait(String begin_date,String end_date) throws IOException {
-        String accessToken =  new WechatService().getAccessToken().getString("access_token");
+        String accessToken =  new CourierWechatService().getAccessToken().getString("access_token");
         String requestUrl="https://api.weixin.qq.com/datacube/getweanalysisappiduserportrait";
         OkHttpClient okHttpClient=new OkHttpClient();
         HttpUrl.Builder httpBuilder=HttpUrl.parse(requestUrl).newBuilder();
@@ -131,7 +132,7 @@ public class WechatService {
     }
 
     public JSONObject getDailyVisitTrend(String begin_date,String end_date) throws IOException {
-        String accessToken = new WechatService().getAccessToken().getString("access_token");
+        String accessToken = new CourierWechatService().getAccessToken().getString("access_token");
         String requestUrl="https://api.weixin.qq.com/datacube/getweanalysisappiddailyvisittrend";
         OkHttpClient okHttpClient=new OkHttpClient();
         HttpUrl.Builder httpBuilder=HttpUrl.parse(requestUrl).newBuilder();
