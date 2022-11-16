@@ -16,15 +16,6 @@ public class CourierController {
     @Autowired
     CourierService courierService;
 
-    /**
-     * 快递员注册
-     * @param courierRegisterParam
-     * @return
-     */
-    @PostMapping("/register")
-    public ResponseWrapper register(@RequestBody CourierRegisterParam courierRegisterParam){
-        return courierService.courierRegister(courierRegisterParam);
-    }
 
     /**
      * 快递员信息获取

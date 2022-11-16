@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class CourierService {
@@ -39,11 +40,11 @@ public class CourierService {
      * @param courierRegisterParam
      * @return
      */
-    public ResponseWrapper courierRegister(CourierRegisterParam courierRegisterParam){
+    public Long courierRegister(CourierRegisterParam courierRegisterParam){
         LambdaQueryWrapper<Courier> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Courier::getOpen_id,courierRegisterParam.getOpen_id());
         if(courierMapper.selectCount(queryWrapper) > 0 ){
-            return ResponseWrapper.markError("该oepn_id对应快递员已存在");
+            return null;
         }
         Courier courier = new Courier();
         courier.setCountry(courierRegisterParam.getCountry());
@@ -59,7 +60,7 @@ public class CourierService {
         courier.setProvince(courierRegisterParam.getProvince());
         courier.setCity(courierRegisterParam.getCity());
         courierMapper.insert(courier);
-        return ResponseWrapper.markSuccess("注册成功");
+        return courier.getId();
     }
 
     /**
@@ -278,7 +279,10 @@ public class CourierService {
         //errcode为0表示请求成功
         if(errorCode==0){
             //将获得的openid 返回
-            return ResponseWrapper.markSuccess("用户登录成功", ImmutableMap.of("openId",code2Session.getString("openid")));
+            String openid=code2Session.getString("openid");
+            CourierRegisterParam courierRegisterParam=new CourierRegisterParam();
+            courierRegisterParam.setOpen_id(openid);
+            return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",courierRegister(courierRegisterParam)));
             //StpUtil.login(code2Session.getString("openid"));
             // 获取当前会话的token值,将该token值作为skey传给小程序端作为会话的维护
 
