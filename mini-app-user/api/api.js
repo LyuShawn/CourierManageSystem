@@ -11,9 +11,50 @@ export class User {
 			data: {
 				user_id:userId,
 			}
+		})	
+	}
+	static deleteaddress(address_id) {
+		return request({
+			url: '/user/change_address',
+			method: 'post',
+			data: {
+				address_id:address_id,
+			}
+		})	
+	}
+	static changeaddress(address_id,phone,addr) {
+		return request({
+			url: '/user/change_address',
+			method: 'post',
+			data: {
+				address_id:address_id,
+				phone:phone,
+				addr: addr,
+			}
+		})	
+	}
+	//static newaddress(user)
+	static login(code){
+		return request({
+			url:'/user/login',
+			method:'post',
+			data:{
+				code:code
+			}
 		})
 	}
 	
+	static userLogin(open_id,nickname,avatar_url){
+		return request({
+			url:'user/register',
+			method:'post',
+			data:{
+				open_id,
+				nickname,
+				avatar_url
+			}
+		})
+	}
 }
 
 export class Express{

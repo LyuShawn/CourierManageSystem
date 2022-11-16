@@ -18,10 +18,10 @@
 			<text>详细地址:</text>
 			<input type="text" v-model="userinfo.detail" placeholder="街道门牌,楼层房间号">
 		</view>
-		<view class="user">
+<!-- 		<view class="user">
 			<text>邮政编码:</text>
 			<input type="phone" v-model="userinfo.postCode" placeholder="邮政编码">
-		</view>
+		</view> -->
 		<view class="bottom">
 			<button @click="submit(userinfo)">保存</button>
 		</view>
@@ -48,24 +48,25 @@
 				userinfo: { location:''},
 				show: false,
 				alertshow: false,
-				message: ''
+				message: '',
+				gid:0
 			}
 		},
-		watch: {
-			async addressId(newVal, oldVal) {
-				this.addressId = newVal;
-				console.log(this.addressId)
-				// let res = await this.$request.post('/getAddressById', {
-				// 	addressId: this.addressId
-				// });
-				// this.userinfo = res.data.data
+		// watch: {
+		// 	async addressId(newVal, oldVal) {
+		// 		this.addressId = newVal;
+		// 		console.log(this.addressId)
+		// 		// let res = await this.$request.post('/getAddressById', {
+		// 		// 	addressId: this.addressId
+		// 		// });
+		// 		// this.userinfo = res.data.data
 
-			},
-		},
+		// 	},
+		// },
 		methods: {
-			async submit(userinfo) {
+			submit(userinfo) {
 				// console.log(Object.values(this.userinfo))
-				if (!userinfo.toName||!userinfo.location||!userinfo.phone||!userinfo.postCode||!userinfo.detail) {
+				if (!userinfo.toName||!userinfo.location||!userinfo.phone||!userinfo.detail) {
 					this.alertshow = true
 					this.message = "信息不能为空"
 					return
@@ -81,20 +82,16 @@
 
 				//将存下的数据发给父组件
 				let info = {
-					addressId: this.addressId,
-					toName: userinfo.toName,
+					//addressId: this.addressId,
+					name: userinfo.toName,
 					phone: userinfo.phone,
 					location: userinfo.location,
 					detail: userinfo.detail,
-					postCode: userinfo.postCode
-				}
-				// console.log(info)
-				// if ((this.userinfo.phone.length) != 11) {
-				// 	this.alertshow = true
-				// 	this.message = "11位手机号"
-				// 	return
-				// }
-				this.$emit("submit", info)
+					}
+				uni.$emit('submit',{
+					msg:this.info,
+					idf:this.flag
+				})
 
 			},
 			showPicker() {

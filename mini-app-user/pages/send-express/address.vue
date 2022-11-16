@@ -10,11 +10,6 @@
 				<view class="show-item-message" @click="sendaddr(index, flag)">
 					<!-- 圆点 -->
 					<view class="firstn">{{ item.name[0] }}</view>
-<!-- 		name: '张三',
-		number: '13145678912',
-		area: '四川省成都市双流区',
-		address: 'xxxxxxx',
-		code: '123' -->
 					<text>
 						{{ item.name }}&nbsp;&nbsp;{{ item.number.substr(0, 3) }}&nbsp;{{ item.number.substr(3, 4) }}&nbsp;{{ item.number.substr(-4) }}
 
@@ -30,7 +25,7 @@
 				<button size="mini" @click="showmodal(index)">删除</button>
 
 				<!-- 删除确认弹窗 -->
-				<u-modal content="是否删除此地址" :show="show" showCancelButton closeOnClickOverlay @confirm="confirm" @cancel="cancel" @close="close"></u-modal>
+				<u-modal content="是否删除此地址" :show="show" showCancelButton closeOnClickOverlay @confirm="confirm(index)" @cancel="cancel" @close="close"></u-modal>
 			</view>
 		</view>
 		<!-- 没有数据 显示空 -->
@@ -46,6 +41,15 @@
 export default {
 	onLoad: function(option) {
 		this.flag = option.id;
+		console.log(option.id);
+	 //    const eventChannel = this.getOpenerEventChannel();
+		// eventChannel.emit('acceptDataFromOpenedPage', {data: 'data from test page'});
+		// eventChannel.emit('someEvent', {data: this.data});
+		// // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
+		// eventChannel.on('acceptDataFromOpenerPage', function(data) {
+		//     console.log(data)
+		//   })
+		
 	},
 	data() {
 		return {
@@ -54,29 +58,43 @@ export default {
 		number: '13145678912',
 		area: '福建省福州市',
 		address: '福州大学旗山校区',
-		code: '123'
+		code: '123',
+		address_id: 1
 	},
 	{
 		name: '李四',
 		number: '15812312331',
 		area: '福建省福州市',
 		address: '福州大学旗山校区',
-		code: '123'
+		code: '123',
+		address_id:2
 	},
 	{
 		name: '王五',
 		number: '18145645611',
 		area: '福建省福州市',
 		address: '福州大学旗山校区',
-		code: '123'
+		code: '123',
+		address_id:3
 	}],
+	        // data:[],
 			keyword: '',
 			show: false, //判断弹窗是否要出现
 			id: '',
 			list: [],
-			flag: 0
+			flag: 0,
 		};
 	},
+	onShow() {
+		//加载
+		//this.init();
+		let _this = this
+		console.log(111);
+		this.$api.User.getAddress(1).then((res) => {
+			console.log('res:',res.data.data);
+			//_this.data = res;
+		})
+		},
 	// async onShow() {
 	// 	this.fetchData();
 	// },
@@ -93,15 +111,15 @@ export default {
 			this.id = this.data[index].addressId;
 			this.show = true;
 		},
-		// async confirm() {
-		// 	let res = await this.$request.post('/deleteAddress', {
-		// 		addressId: this.id
-		// 	});
-		// 	this.fetchData();
-		// 	// this.data.splice(this.id, 1); //确认删除
-		// 	this.show = false;
-		// 	console.log('confirm');
-		// },
+		confirm(index) {
+			// let res = await this.$request.post('/deleteAddress', {
+			// 	addressId: this.id
+			// });
+			//this.fetchData();
+			this.data.splice(index, 1); //确认删除
+			this.show = false;
+			console.log('confirm');
+		},
 		cancel() {
 			this.show = false;
 			console.log('cancel');
@@ -113,28 +131,69 @@ export default {
 
 		gonew() {
 			//切换至 新建信息 页面
+			let _this = this
+			let length = _this.data.length
 			uni.navigateTo({
-				url: '/pages/send-express/newaddr'
+				url: '/pages/send-express/newaddr?gid=' + 1
 			});
+			uni.$on('submitnew',function(datas){
+				console.log('数据',datas.msg)
+				console.log('flag',datas.idf)
+				if(datas.idf == 1)
+				{
+				    let newdata = {
+						name:datas.msg.name,
+						number:datas.msg.phone
+					}
+					_this.data.push(newdata);
+					console.log('数据全',_this.data)
+					console.log(_this.data[0].phone)
+					// _this.s_username = data.msg.name;
+					// _this.user_1.phone = data.msg.number
+					// _this.user_1.location = data.msg.area +data.msg.address
+				}
+				// _this.s_username = data.msg.name;
+				// _this.user_1.phone = data.msg.number
+				// _this.user_1.location = data.msg.area +data.msg.address
+				
+			})
 		},
-		sendinfo() {
+		sendinfo(index) {
 			// console.log(this.data[index].addressId);
+			let _this = this
 			uni.navigateTo({
-				url: '/pages/send-express/editaddr'  //跳转并传参
+				url: '/pages/send-express/editaddr?eid=' + index               //跳转并传参
 			});
+			uni.$on('submitedit',function(datas){
+				console.log('数据',datas.msg)
+				console.log('flag',datas.eid)
+				_this.data[index].name = datas.msg.name
+				console.log('数据2',_this.data[index])
+				console.log('数据3',_this.data)
+					
+					// _this.s_username = data.msg.name;
+					// _this.user_1.phone = data.msg.number
+					// _this.user_1.location = data.msg.area +data.msg.address
+			})
 		},
+		
 		sendaddr(index, flag) {
 			var pages = getCurrentPages();
 			var prevPage = pages[pages.length - 2];
 			var object = {
 				i: flag,
-				id: this.data[index].addressId
+				id: this.data[index]
 			};
 			//prevPage.onShow(object);
 			uni.navigateBack();
-			/* uni.navigateTo({
-					url: '/pages/send/index?i='+flag+'&id=' + index //跳转并传参给寄快递页面
-				}) */
+			uni.$emit('info',{
+				msg:this.data[index],
+				idf:flag
+			})
+			console.log('flag',this.flag)
+			// uni.navigateTo({
+			// 		url: '/pages/send-express/index?i='+flag+'&id=' + index //跳转并传参给寄快递页面
+			// 	})
 		},
 
 		match() {
@@ -211,7 +270,7 @@ export default {
 }
 
 .show-item button {
-	margin-right: 0;
+	margin-right: 5px;
 	background-color: #c85d53;
 	color: white;
 }

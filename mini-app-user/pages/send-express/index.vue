@@ -1,7 +1,7 @@
 <template>
 	<view class ="marginA">
 		<h2 class = "cell-background"style = "text-align: center;" >寄件</h2>
-		<view class="margin1">
+<!-- 		<view class="margin1">
 			<u-cell-group>
 				<u-cell 
 				title="从哪里寄出"
@@ -23,6 +23,28 @@
 				>
 				</u-cell>
 			</u-cell-group>
+		</view> -->
+		<!-- 寄/收信息 -->
+		<view class="address">
+			<!-- 寄件人 -->
+			<view class="send" @click="addr_s()">
+				<view class="s">寄</view>
+				<view class="_name">{{ s_username }}</view>
+				<view class="_phone">{{ user_1.phone }}</view>
+				<!-- <text>新建寄件人{{user.name}}</text> -->
+				<!-- <view class="iconfont icon-he_48wodedizhibu"></view> -->
+		
+				<view class="_addr">{{ user_1.location }} {{ user_1.detail }}</view>
+			</view>
+			<!-- 收件人 -->
+			<view class="receive" @click="addr_r()">
+				<view class="r">收</view>
+				<view class="_name">{{ r_username }}</view>
+				<view class="_phone">{{ user_2.phone }}</view>
+				<view class="iconfont icon-he_48wodedizhibu"></view>
+		
+				<view class="_addr">{{ user_2.location }} {{ user_2.detail }}</view>
+			</view>
 		</view>
 		<u-gap height="10px" ></u-gap>
 		<view class="flexcontent">
@@ -144,13 +166,14 @@
 		</view>
 		<view class="bottom">
 			<view class="title">预估总价:</view>
-			<view class="price"></view>
-			<view class="b"><button class="btn" size="large" @click="">下单</button></view>
+			<view class="price">¥</view>
+			<view><button class="btn" size="large" @click="">下单</button></view>
 		</view>
 	</view>
 </template>
 
 <script>
+// import { ReactiveFlags } from "vue";
 	export default {
 		data() {
 			return {
@@ -158,10 +181,30 @@
 				index1:0,
 				index2:0,
 				index3:0,
+				userdata:[],
 				show0:false,
 				showpicker1:false,
 				showpicker2:false,
 				showpicker3:false,
+				s_username: '新建寄件人',
+				r_username: '新建收件人',
+				num: '',
+				quota: '',
+				amount: 0,
+				mode: '微信支付',
+				value: '',
+				flag: 1,
+				couponid: 0,
+				user_1: {
+					phone: '',
+					location: '',
+					detail: ''
+				},
+				user_2: {
+					phone: '',
+					location: '',
+					detail: ''
+				},
 				columns:[
 					['今天','明天','后天'],
 					['9:00-11:00','11:00-12:00','14:00-16:00','16:00-18:00']
@@ -190,16 +233,23 @@
 				address:"请选择寄件服务点",
 				thing:"请选择物品类型",
 				actions0:[{name:'无',
-				subname:'不选择保价最高可获得运费7倍的赔付'},
+				subname:'不选择保价最高可获得运费7倍的赔付',value:0},
 				{name:'10元保价',
-				subname:'最高可以获得物品价值2倍的赔付'},
+				subname:'最高可以获得物品价值2倍的赔付',
+				value:10},
 				{name:'20元保价',
-				subname:'贵重物品如文件等，视情况进行赔付'}],
+				subname:'贵重物品如文件等，视情况进行赔付',
+				value:20}],
 				list:[{title:'保价服务'}]
 			}
 		},
 		onLoad(){
-			
+			// uni.$on('info',function(data){
+			// 	console.log('监听',data.msg);
+			// })
+		},
+		onUnload() {
+			uni.$off('info');
 		},
 		methods:{
 			change1(index){
@@ -291,17 +341,42 @@
 			},
 			addr_s() {
 				//切换至 地址薄 页面
+				let _this = this
 				uni.navigateTo({
-					url: '/pages/send-express/address?id=' + 1
+					url: '/pages/send-express/address?id=' + 1			
 				});
+				uni.$on('info',function(data){
+					if(data.idf == 1)
+					{
+						_this.s_username = data.msg.name;
+						_this.user_1.phone = data.msg.number
+						_this.user_1.location = data.msg.area +data.msg.address
+					}
+					// _this.s_username = data.msg.name;
+					// _this.user_1.phone = data.msg.number
+					// _this.user_1.location = data.msg.area +data.msg.address
+					
+				})
 			},
 			
 			addr_r() {
 				//切换至 地址薄 页面
 				// uni.$emit('recv',{number:2})
+				let _this = this
 				uni.navigateTo({
 					url: '/pages/send-express/address?id=' + 2
 				});
+				uni.$on('info',function(data){
+					if(data.idf == 2)
+					{
+						_this.r_username = data.msg.name;
+						_this.user_2.phone = data.msg.number
+						_this.user_2.location = data.msg.area +data.msg.address
+					}
+						// _this.r_username = data.msg.name;
+						// _this.user_2.phone = data.msg.number
+						// _this.user_2.location = data.msg.area +data.msg.address
+					})
 			},
 		}
 	}
@@ -355,19 +430,26 @@
 		background-color: white;
 		position: fixed;
 		display: flex;
+		justify-content: flex-end;
 		bottom: 0;
 		text {
-			font-size: 20rpx;
+			font-size: 30rpx;
 			font-weight: bold;
-			margin-left: 5px;
+			margin-left: 10px;
 		}
 	}
 	.bottom .btn {
 		background-color: #3c9cff;
 		color: white;
 		margin-top: 15px;
-		margin-left: 230px;
+		margin-left: 200px;
 		border-radius: 15px;
+	}
+	.bottom .price {
+		margin-top: 12px;
+		font-size: 25px;
+		font-weight: bold;
+		color: #ff3e3e;
 	}
 	.title {
 		hite-space: nowrap;
@@ -375,6 +457,93 @@
 		margin-top: 15px;
 		font-weight: bold;
 		//padding: 0 30rpx;
+	}
+	.address {
+		//width: 100%;
+		background-color: white;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #b4b4b4;
+		//margin: 0 auto;
+		margin:10px 10px;
+		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+	}
+	.address .send {
+		position: relative;
+		height: 50px;
+		border-bottom: 1px solid #c9c5c5;
+	}
+	.address .send .s {
+		position: absolute;
+		border-radius: 50%;
+		background-color: white;
+		color: #3c9cff;
+		width: 30px;
+		height: 30px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: black;
+		text-align: center;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-left: 20px;
+		margin-bottom: 15px;
+	}
+	
+	._name {
+		position: absolute;
+		font-size: 13px;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-left: 56px;
+	}
+	
+	._phone {
+		position: absolute;
+		font-size: 10px;
+		color: gray;
+		margin-top: 12px;
+		margin-left: 120px;
+		width: 100px;
+		height: 10px;
+	}
+	
+	.iconfont {
+		position: absolute;
+		margin-left: 240px;
+		margin-top: 10px;
+	}
+	
+	._addr {
+		position: absolute;
+		margin-left: 56px;
+		font-size: 10px;
+		margin-top: 30px;
+		color: gray;
+	}
+	
+	.address .receive {
+		position: relative;
+		height: 50px;
+	}
+	.address .receive .r {
+		position: absolute;
+		border-radius: 50%;
+		background-color: #3c9cff;
+		color: white;
+		width: 30px;
+		height: 30px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: white;
+		justify-content: center;
+		text-align: center;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-left: 20px;
+		margin-bottom: 15px;
 	}
 
 </style>

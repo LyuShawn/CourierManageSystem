@@ -1,3 +1,7 @@
 uni_modules/
 
 .DS_Store
+
+unpackage/
+unpackage/dist/
+.hbuilderx/
