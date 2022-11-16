@@ -1464,7 +1464,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8556,7 +8556,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8577,14 +8577,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8670,7 +8670,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"mini-app-user","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9084,9 +9084,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 5 */
-/*!***********************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/pages.json ***!
-  \***********************************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/pages.json ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9227,9 +9227,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 12 */
-/*!******************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/index.js ***!
-  \******************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/index.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9316,9 +9316,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 13 */
-/*!*****************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mixin.js ***!
-  \*****************************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mixin.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9485,9 +9485,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 14 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mpMixin.js ***!
-  \*******************************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/mpMixin.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9500,9 +9500,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 15 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/index.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/index.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9513,9 +9513,9 @@ _Request.default;exports.default = _default;
 
 /***/ }),
 /* 16 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/Request.js ***!
-  \*******************************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/Request.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9721,9 +9721,9 @@ Request = /*#__PURE__*/function () {
 
 /***/ }),
 /* 17 */
-/*!***************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
-  \***************************************************************************************************************************************/
+/*!********************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
+  \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9734,9 +9734,9 @@ function _default(config) {return (0, _index.default)(config);};exports.default 
 
 /***/ }),
 /* 18 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/adapters/index.js ***!
-  \*********************************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/adapters/index.js ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9842,9 +9842,9 @@ function _default(config) {return new Promise(function (resolve, reject) {
 
 /***/ }),
 /* 19 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
-  \***********************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9921,9 +9921,9 @@ function buildURL(url, params) {
 
 /***/ }),
 /* 20 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10062,9 +10062,9 @@ function isUndefined(val) {
 
 /***/ }),
 /* 21 */
-/*!*************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
-  \*************************************************************************************************************************************/
+/*!******************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
+  \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10092,9 +10092,9 @@ function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 22 */
-/*!****************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
-  \****************************************************************************************************************************************/
+/*!*********************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10116,9 +10116,9 @@ function isAbsoluteURL(url) {
 
 /***/ }),
 /* 23 */
-/*!**************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
-  \**************************************************************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10140,9 +10140,9 @@ function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 24 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/settle.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/settle.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10166,9 +10166,9 @@ function settle(resolve, reject, response) {var
 
 /***/ }),
 /* 25 */
-/*!******************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
-  \******************************************************************************************************************************************/
+/*!***********************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10226,9 +10226,9 @@ InterceptorManager;exports.default = _default;
 
 /***/ }),
 /* 26 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
-  \***********************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10339,9 +10339,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 
 /***/ }),
 /* 27 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/defaults.js ***!
-  \********************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/core/defaults.js ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10377,9 +10377,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 28 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils/clone.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/luch-request/utils/clone.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10648,7 +10648,7 @@ var clone = function () {
 }();var _default =
 
 clone;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 29).Buffer))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 29).Buffer))
 
 /***/ }),
 /* 29 */
@@ -12725,17 +12725,17 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 /* 33 */
-/*!****************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/util/route.js ***!
-  \****************************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/util/route.js ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 34));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * 并且带有路由拦截功能
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  */var
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 并且带有路由拦截功能
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */var
 
 Router = /*#__PURE__*/function () {
   function Router() {_classCallCheck(this, Router);
@@ -13648,9 +13648,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 37 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/colorGradient.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/colorGradient.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13791,9 +13791,9 @@ function colorToRgba(color, alpha) {
 
 /***/ }),
 /* 38 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/test.js ***!
-  \*******************************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/test.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14088,9 +14088,9 @@ function regExp(o) {
 
 /***/ }),
 /* 39 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/debounce.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/debounce.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14127,9 +14127,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 40 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/throttle.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/throttle.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14167,9 +14167,9 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 41 */
-/*!********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/index.js ***!
-  \********************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/index.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14882,9 +14882,9 @@ function setConfig(_ref3)
 
 /***/ }),
 /* 42 */
-/*!********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/digit.js ***!
-  \********************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/digit.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15057,9 +15057,9 @@ function enableBoundaryChecking() {var flag = arguments.length > 0 && arguments[
 
 /***/ }),
 /* 43 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/config.js ***!
-  \*******************************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/config.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15100,9 +15100,9 @@ if (true) {
 
 /***/ }),
 /* 44 */
-/*!******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props.js ***!
-  \******************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15299,9 +15299,9 @@ _upload.default);exports.default = _default;
 
 /***/ }),
 /* 45 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/actionSheet.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/actionSheet.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15332,9 +15332,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 46 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/album.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/album.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15365,9 +15365,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 47 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/alert.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/alert.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15395,9 +15395,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 48 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatar.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatar.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15431,9 +15431,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 49 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatarGroup.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/avatarGroup.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15462,9 +15462,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 50 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/backtop.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/backtop.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15496,9 +15496,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 51 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/badge.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/badge.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15531,9 +15531,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 52 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/button.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/button.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15581,9 +15581,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 53 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/calendar.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/calendar.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15631,9 +15631,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 54 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/carKeyboard.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/carKeyboard.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15654,9 +15654,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 55 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cell.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cell.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15697,9 +15697,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 56 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cellGroup.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/cellGroup.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15722,9 +15722,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 57 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkbox.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkbox.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15757,9 +15757,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 58 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
-  \********************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15794,9 +15794,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 59 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/circleProgress.js ***!
-  \*********************************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/circleProgress.js ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15817,9 +15817,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 60 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/code.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/code.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15846,9 +15846,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 61 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/codeInput.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/codeInput.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15883,9 +15883,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 62 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/col.js ***!
-  \**********************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/col.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15910,9 +15910,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 63 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapse.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapse.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15935,9 +15935,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 64 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapseItem.js ***!
-  \*******************************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/collapseItem.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15968,9 +15968,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 65 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/columnNotice.js ***!
-  \*******************************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/columnNotice.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16000,9 +16000,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 66 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countDown.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countDown.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16026,9 +16026,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 67 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countTo.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/countTo.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16059,9 +16059,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 68 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/datetimePicker.js ***!
-  \*********************************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/datetimePicker.js ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16103,9 +16103,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 69 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/divider.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/divider.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16133,9 +16133,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 70 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/empty.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/empty.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16166,9 +16166,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 71 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/form.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/form.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16196,9 +16196,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 72 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/formItem.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/formItem.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16227,9 +16227,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 73 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gap.js ***!
-  \**********************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gap.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16254,9 +16254,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 74 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/grid.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/grid.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16279,9 +16279,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 75 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gridItem.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/gridItem.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16303,9 +16303,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 76 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/icon.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/icon.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16347,9 +16347,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 43));f
 
 /***/ }),
 /* 77 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/image.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/image.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16385,9 +16385,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 78 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexAnchor.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexAnchor.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16412,9 +16412,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 79 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexList.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/indexList.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16439,9 +16439,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 80 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/input.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/input.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16495,9 +16495,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 81 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/keyboard.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/keyboard.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16533,9 +16533,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 82 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/line.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/line.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16561,9 +16561,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 83 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/lineProgress.js ***!
-  \*******************************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/lineProgress.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16588,9 +16588,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 84 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/link.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/link.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16622,9 +16622,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 43));f
 
 /***/ }),
 /* 85 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/list.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/list.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16658,9 +16658,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 86 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/listItem.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/listItem.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16681,9 +16681,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 87 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingIcon.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingIcon.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16719,9 +16719,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 43));f
 
 /***/ }),
 /* 88 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingPage.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadingPage.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16750,9 +16750,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 89 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadmore.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/loadmore.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16790,9 +16790,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 90 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/modal.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/modal.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16828,9 +16828,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 91 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/navbar.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/navbar.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16867,9 +16867,9 @@ var _color = _interopRequireDefault(__webpack_require__(/*! ../color */ 92));fun
 
 /***/ }),
 /* 92 */
-/*!******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/color.js ***!
-  \******************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/color.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16894,9 +16894,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 93 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noNetwork.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noNetwork.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16919,9 +16919,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 94 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noticeBar.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/noticeBar.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16954,9 +16954,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 95 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/notify.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/notify.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16984,9 +16984,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 96 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberBox.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberBox.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17027,9 +17027,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 97 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
-  \*********************************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17052,9 +17052,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 98 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/overlay.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/overlay.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17078,9 +17078,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 99 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/parse.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/parse.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17108,9 +17108,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 100 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/picker.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/picker.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17145,9 +17145,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 101 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/popup.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/popup.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17182,9 +17182,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 102 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radio.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radio.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17217,9 +17217,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 103 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radioGroup.js ***!
-  \*****************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/radioGroup.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17255,9 +17255,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 104 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rate.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rate.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17289,9 +17289,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 105 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/readMore.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/readMore.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17319,9 +17319,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 106 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/row.js ***!
-  \**********************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/row.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17344,9 +17344,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 107 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rowNotice.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/rowNotice.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17373,9 +17373,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 108 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/scrollList.js ***!
-  \*****************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/scrollList.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17401,9 +17401,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 109 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/search.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/search.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17446,9 +17446,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 110 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/section.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/section.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17478,9 +17478,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 111 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/skeleton.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/skeleton.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17511,9 +17511,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 112 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/slider.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/slider.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17544,9 +17544,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 113 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/statusBar.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/statusBar.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17567,9 +17567,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 114 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/steps.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/steps.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17596,9 +17596,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 115 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/stepsItem.js ***!
-  \****************************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/stepsItem.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17622,9 +17622,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 116 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/sticky.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/sticky.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17650,9 +17650,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 117 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/subsection.js ***!
-  \*****************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/subsection.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17681,9 +17681,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 118 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeAction.js ***!
-  \******************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeAction.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17704,9 +17704,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 119 */
-/*!**********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
-  \**********************************************************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17733,9 +17733,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 120 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swiper.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swiper.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17779,9 +17779,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 121 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
-  \***********************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17806,9 +17806,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 122 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/switch.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/switch.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17838,9 +17838,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 123 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbar.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbar.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17868,9 +17868,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 124 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbarItem.js ***!
-  \*****************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabbarItem.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17896,9 +17896,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 125 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabs.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tabs.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17936,9 +17936,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 126 */
-/*!**********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tag.js ***!
-  \**********************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tag.js ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17973,9 +17973,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 127 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/text.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/text.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18018,9 +18018,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 128 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/textarea.js ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/textarea.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18062,9 +18062,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 129 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toast.js ***!
-  \************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toast.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18099,9 +18099,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 130 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toolbar.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/toolbar.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18127,9 +18127,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 131 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tooltip.js ***!
-  \**************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/tooltip.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18160,9 +18160,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 132 */
-/*!*****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/transition.js ***!
-  \*****************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/transition.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18186,9 +18186,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 133 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/upload.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/props/upload.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18230,9 +18230,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 134 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/zIndex.js ***!
-  \*******************************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/config/zIndex.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18259,9 +18259,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 135 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/platform.js ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/function/platform.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18344,14 +18344,14 @@ platform;exports.default = _default;
 
 /***/ }),
 /* 136 */
-/*!***********************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/api/api.js ***!
-  \***********************************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/api/api.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 137);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Object.defineProperty(exports, "__esModule", { value: true });exports.Express = exports.User = void 0;var _request = __webpack_require__(/*! ./request.js */ 137);function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
 
 
 
@@ -18365,13 +18365,63 @@ User = /*#__PURE__*/function () {function User() {_classCallCheck(this, User);}_
           user_id: userId } });
 
 
-    } }]);return User;}();exports.User = User;
+    } }]);return User;}();exports.User = User;var
+
+
+
+Express = /*#__PURE__*/function () {function Express() {_classCallCheck(this, Express);}_createClass(Express, null, [{ key: "getAllExpress", value: function getAllExpress(
+    phone) {
+      return (0, _request.request)({
+        url: '/user/get_all_express',
+        method: 'get',
+        data: {
+          phone: phone } });
+
+
+    } }, { key: "getExpressPassOutlets", value: function getExpressPassOutlets(
+    number) {
+      return (0, _request.request)({
+        url: '/user/get_express_pass_outlets',
+        method: 'get',
+        data: {
+          tracking_number: number } });
+
+
+    } }, { key: "getExpressNowOutlets", value: function getExpressNowOutlets(
+    number) {
+      return (0, _request.request)({
+        url: '/user/get_express_nowoutlets',
+        method: 'get',
+        data: {
+          tracking_number: number } });
+
+
+    } }, { key: "postLogisticsInformation", value: function postLogisticsInformation(
+    number) {
+      return (0, _request.request)({
+        url: '/user/logistics_information',
+        method: 'post',
+        data: {
+          tracking_number: number } });
+
+
+    } }, { key: "postExpressState", value: function postExpressState(
+    number, phone) {
+      return (0, _request.request)({
+        url: '/user/get_express_state',
+        method: 'post',
+        data: {
+          tracking_number: number,
+          phone: phone } });
+
+
+    } }]);return Express;}();exports.Express = Express;
 
 /***/ }),
 /* 137 */
-/*!***************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/api/request.js ***!
-  \***************************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/api/request.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18488,15 +18538,10 @@ var request = function request(options) {
 /* 206 */,
 /* 207 */,
 /* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/value.js ***!
-  \************************************************************************************************************************/
+/* 209 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/value.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18587,10 +18632,10 @@ var request = function request(options) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 215 */
-/*!******************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/button.js ***!
-  \******************************************************************************************************************/
+/* 210 */
+/*!***********************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/button.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18608,10 +18653,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     openType: String } };exports.default = _default;
 
 /***/ }),
-/* 216 */
-/*!********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/openType.js ***!
-  \********************************************************************************************************************/
+/* 211 */
+/*!*************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/libs/mixin/openType.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18641,10 +18686,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 217 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/props.js ***!
-  \************************************************************************************************************************/
+/* 212 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-text/props.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18759,17 +18804,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
 /* 218 */,
 /* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/icons.js ***!
-  \************************************************************************************************************************/
+/* 220 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/icons.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18989,10 +19034,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 226 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/props.js ***!
-  \************************************************************************************************************************/
+/* 221 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-icon/props.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19086,17 +19131,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
 /* 227 */,
 /* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-gap/props.js ***!
-  \***********************************************************************************************************************/
+/* 229 */
+/*!****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-gap/props.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19125,17 +19170,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
 /* 235 */,
 /* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-search/props.js ***!
-  \**************************************************************************************************************************/
+/* 237 */
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-search/props.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19258,6 +19303,11 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
 /* 243 */,
 /* 244 */,
 /* 245 */,
@@ -19266,154 +19316,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 248 */,
 /* 249 */,
 /* 250 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper/props.js ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 列表数组，元素可为字符串，如为对象可通过keyName指定目标属性名
-    list: {
-      type: Array,
-      default: uni.$u.props.swiper.list },
-
-    // 是否显示面板指示器
-    indicator: {
-      type: Boolean,
-      default: uni.$u.props.swiper.indicator },
-
-    // 指示器非激活颜色
-    indicatorActiveColor: {
-      type: String,
-      default: uni.$u.props.swiper.indicatorActiveColor },
-
-    // 指示器的激活颜色
-    indicatorInactiveColor: {
-      type: String,
-      default: uni.$u.props.swiper.indicatorInactiveColor },
-
-    // 指示器样式，可通过bottom，left，right进行定位
-    indicatorStyle: {
-      type: [String, Object],
-      default: uni.$u.props.swiper.indicatorStyle },
-
-    // 指示器模式，line-线型，dot-点型
-    indicatorMode: {
-      type: String,
-      default: uni.$u.props.swiper.indicatorMode },
-
-    // 是否自动切换
-    autoplay: {
-      type: Boolean,
-      default: uni.$u.props.swiper.autoplay },
-
-    // 当前所在滑块的 index
-    current: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.current },
-
-    // 当前所在滑块的 item-id ，不能与 current 被同时指定
-    currentItemId: {
-      type: String,
-      default: uni.$u.props.swiper.currentItemId },
-
-    // 滑块自动切换时间间隔
-    interval: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.interval },
-
-    // 滑块切换过程所需时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.duration },
-
-    // 播放到末尾后是否重新回到开头
-    circular: {
-      type: Boolean,
-      default: uni.$u.props.swiper.circular },
-
-    // 前边距，可用于露出前一项的一小部分，nvue和支付宝不支持
-    previousMargin: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.previousMargin },
-
-    // 后边距，可用于露出后一项的一小部分，nvue和支付宝不支持
-    nextMargin: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.nextMargin },
-
-    // 当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持
-    acceleration: {
-      type: Boolean,
-      default: uni.$u.props.swiper.acceleration },
-
-    // 同时显示的滑块数量，nvue、支付宝小程序不支持
-    displayMultipleItems: {
-      type: Number,
-      default: uni.$u.props.swiper.displayMultipleItems },
-
-    // 指定swiper切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic
-    // 只对微信小程序有效
-    easingFunction: {
-      type: String,
-      default: uni.$u.props.swiper.easingFunction },
-
-    // list数组中指定对象的目标属性名
-    keyName: {
-      type: String,
-      default: uni.$u.props.swiper.keyName },
-
-    // 图片的裁剪模式
-    imgMode: {
-      type: String,
-      default: uni.$u.props.swiper.imgMode },
-
-    // 组件高度
-    height: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.height },
-
-    // 背景颜色
-    bgColor: {
-      type: String,
-      default: uni.$u.props.swiper.bgColor },
-
-    // 组件圆角，数值或带单位的字符串
-    radius: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.radius },
-
-    // 是否加载中
-    loading: {
-      type: Boolean,
-      default: uni.$u.props.swiper.loading },
-
-    // 是否显示标题，要求数组对象中有title属性
-    showTitle: {
-      type: Boolean,
-      default: uni.$u.props.swiper.showTitle } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-image/props.js ***!
-  \*************************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-image/props.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19502,15 +19407,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps/props.js ***!
-  \*************************************************************************************************************************/
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps/props.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19554,17 +19459,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps-item/props.js ***!
-  \******************************************************************************************************************************/
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-steps-item/props.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19593,17 +19498,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell-group/props.js ***!
-  \******************************************************************************************************************************/
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell-group/props.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19622,17 +19527,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell/props.js ***!
-  \************************************************************************************************************************/
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-cell/props.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19747,17 +19652,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-line/props.js ***!
-  \************************************************************************************************************************/
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-line/props.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19795,17 +19700,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-picker/props.js ***!
-  \**************************************************************************************************************************/
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-picker/props.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19889,17 +19794,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-input/props.js ***!
-  \*************************************************************************************************************************/
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-input/props.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20091,15 +19996,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */
-/*!****************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse/props.js ***!
-  \****************************************************************************************************************************/
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */
+/*!*********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse/props.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20123,17 +20028,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse-item/props.js ***!
-  \*********************************************************************************************************************************/
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */
+/*!**************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-collapse-item/props.js ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20197,17 +20102,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
-  \********************************************************************************************************************************/
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */
+/*!*************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20266,17 +20171,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */
-/*!**************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-button/props.js ***!
-  \**************************************************************************************************************************/
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */
+/*!*******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-button/props.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20442,17 +20347,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-modal/props.js ***!
-  \*************************************************************************************************************************/
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-modal/props.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20541,17 +20446,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-empty/props.js ***!
-  \*************************************************************************************************************************/
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-empty/props.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20615,6 +20520,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
 /* 364 */,
 /* 365 */,
 /* 366 */,
@@ -20623,23 +20541,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 369 */,
 /* 370 */,
 /* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-link/props.js ***!
-  \************************************************************************************************************************/
+/* 372 */
+/*!*****************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-link/props.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20683,142 +20588,24 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
 /* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */
-/*!********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
-  \********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.show },
-
-    // 颜色
-    color: {
-      type: String,
-      default: uni.$u.props.loadingIcon.color },
-
-    // 提示文字颜色
-    textColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.textColor },
-
-    // 文字和图标是否垂直排列
-    vertical: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.vertical },
-
-    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
-    mode: {
-      type: String,
-      default: uni.$u.props.loadingIcon.mode },
-
-    // 图标大小，单位默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.size },
-
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.textSize },
-
-    // 文字内容
-    text: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.text },
-
-    // 动画模式
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.loadingIcon.timingFunction },
-
-    // 动画执行周期时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.duration },
-
-    // mode=circle时的暗边颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */
-/*!************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
-  \************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 轮播的长度
-    length: {
-      type: [String, Number],
-      default: uni.$u.props.swiperIndicator.length },
-
-    // 当前处于活动状态的轮播的索引
-    current: {
-      type: [String, Number],
-      default: uni.$u.props.swiperIndicator.current },
-
-    // 指示器非激活颜色
-    indicatorActiveColor: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
-
-    // 指示器的激活颜色
-    indicatorInactiveColor: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
-
-    // 指示器模式，line-线型，dot-点型
-    indicatorMode: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */
-/*!*************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-popup/props.js ***!
-  \*************************************************************************************************************************/
+/* 387 */
+/*!******************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-popup/props.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20902,17 +20689,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-toolbar/props.js ***!
-  \***************************************************************************************************************************/
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-toolbar/props.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20951,29 +20738,103 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-overlay/props.js ***!
-  \***************************************************************************************************************************/
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */
+/*!*************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */
+/*!********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-overlay/props.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21002,17 +20863,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */,
-/* 452 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/props.js ***!
-  \******************************************************************************************************************************/
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/props.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21041,10 +20902,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 453 */
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/transition.js ***!
-  \***********************************************************************************************************************************/
+/* 432 */
+/*!****************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/transition.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21052,7 +20913,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 34));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 454));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 433));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -21206,10 +21067,10 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 454 */
-/*!*************************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
-  \*************************************************************************************************************************************/
+/* 433 */
+/*!******************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
+  \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21282,17 +21143,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 455 */,
-/* 456 */,
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */,
-/* 462 */
-/*!******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-status-bar/props.js ***!
-  \******************************************************************************************************************************/
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */
+/*!***********************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-status-bar/props.js ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21305,17 +21166,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */,
-/* 470 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/lyu/Project/github_repo/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
-  \*******************************************************************************************************************************/
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */
+/*!************************************************************************************************************************!*\
+  !*** E:/project_vue/vue_test/CourierManageSystem/mini-app-user/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

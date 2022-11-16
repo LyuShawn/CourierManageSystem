@@ -31,13 +31,53 @@
   display: flex;
   margin: 10px 10px;
   align-items: center;
-  justify-content: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+.exp-info {
+  display: flex;
+  margin: 10px 20px;
+  flex-wrap: nowrap;
+}
+.exp-info .item {
+  flex: 1;
+  margin: 10px 20px;
+}
+.exp-info .item.item-60 {
+  flex: 20% 0 0;
+}
+.exp-info-title {
+  display: flex;
+  margin: 15px 20px;
+}
+.exp-info-company {
+  display: flex;
+  margin: 15px 20px;
+  color: #97694F;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.item-status {
+  font-weight: bold;
+}
+.item-number {
+  margin: 10px 0px;
+}
+.item-outlet {
+  display: flex;
+  margin: 10px 0px;
 }
 .view1 {
   width: 100px;
   height: 100px;
   background-color: #B7B2B7;
+}
+.view3 {
+  display: flex;
+  align: center;
+}
+.view2-3 {
+  display: flex;
+  width: 100px;
 }
 .share {
   align: center;
@@ -56,14 +96,20 @@
   background-color: white;
 }
 .block1 {
-  margin: 10px 10px;
-  display: flex;
-  background-color: white;
-  align-items: center;
+  margin: 15px 20px;
 }
 .block2 {
   height: 20px;
   width: 100px;
   display: flex;
+}
+.slot-icon {
+  width: 21px;
+  height: 21px;
+  border-radius: 100px;
+  font-size: 12px;
+  color: #fff;
+  line-height: 21px;
+  text-align: center;
 }
 

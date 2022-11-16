@@ -55,6 +55,7 @@
 }
 .block3 {
   margin: 10px 10px;
+  display: flex;
   align-items: center;
 }
 .black4 {
@@ -76,23 +77,30 @@
   margin: 10px;
 }
 .btn {
-  width: 15%;
+  width: 40px;
   height: 40px;
-  border: 0;
+  box-shadow: none;
+  border: none;
   border-radius: 5px;
   color: black;
-  margin: 5px 3px;
+  margin: 3px 3px;
   background-color: white;
+}
+.btn::after {
+  border: none;
 }
 /*选中时*/
 .btn1 {
-  width: 15%;
+  width: 40px;
   height: 40px;
   border: 0;
   border-radius: 5px;
   color: #2979ff;
-  margin: 5px 3px;
+  margin: 3px 3px;
   background-color: white;
+}
+.btn1::after {
+  border: none;
 }
 .statebtn {
   width: 150px;
@@ -102,6 +110,9 @@
   margin: 5px 3px;
   background-color: white;
   text-align: center;
+}
+.statebtn::after {
+  border: none;
 }
 /*选中时*/
 .statebtn1 {
@@ -113,6 +124,9 @@
   margin: 5px 3px;
   background-color: #E0E0E0;
   text-align: center;
+}
+.statebtn1::after {
+  border: none;
 }
 #content1, #content2 {
   background-color: #white;

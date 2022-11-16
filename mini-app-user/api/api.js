@@ -14,18 +14,54 @@ export class User {
 		})
 	}
 	
-	
-	
 }
 
-export class Myexpress{
-	static getAllExpress(code) {
+export class Express{
+	static getAllExpress(phone) {
 		return request({
 			url: '/user/get_all_express',
 			method: 'get',
 			data: {
-				code
+				phone:phone,
 			}
 		})
 	}
+	static getExpressPassOutlets(number) {
+		return request({
+			url: '/user/get_express_pass_outlets',
+			method: 'get',
+			data: {
+				tracking_number:number,
+			}
+		})
+	}
+	static getExpressNowOutlets(number) {
+		return request({
+			url: '/user/get_express_nowoutlets',
+			method: 'get',
+			data: {
+				tracking_number:number,
+			}
+		})
+	}
+	static postLogisticsInformation(number) {
+		return request({
+			url: '/user/logistics_information',
+			method: 'post',
+			data: {
+				tracking_number:number,
+			}
+		})
+	}
+	static postExpressState(number,phone) {
+		return request({
+			url: '/user/get_express_state',
+			method: 'post',
+			data: {
+				tracking_number:number,
+				phone:phone,
+			}
+		})
+	}
+	
 }
