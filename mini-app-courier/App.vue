@@ -9,10 +9,12 @@
 				success: function(res) {
 					//console.log(res.code);
 					_this.$api.Courier.login(res.code).then((res) => {
-						let openid = res.data.data.openId;
+						let openid = res.data.data.openId
+						let id=res.data.data.id
 						try {
 							//open_id存入缓存
 							uni.setStorageSync('open_id', openid);
+							uni.setStorageSync('id', id);
 						} catch (e) {
 							// error
 						}
