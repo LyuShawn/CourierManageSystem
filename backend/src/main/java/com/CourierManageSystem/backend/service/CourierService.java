@@ -280,9 +280,17 @@ public class CourierService {
         if(errorCode==0){
             //将获得的openid 返回
             String openid=code2Session.getString("openid");
-            CourierRegisterParam courierRegisterParam=new CourierRegisterParam();
-            courierRegisterParam.setOpen_id(openid);
-            return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",courierRegister(courierRegisterParam)));
+
+            LambdaQueryWrapper<Courier> queryWrapper = new LambdaQueryWrapper<>();
+            queryWrapper.eq(Courier::getOpen_id,openid);
+            Courier courier=courierMapper.selectOne(queryWrapper);
+            if(courier!=null){
+                return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",courier.getId()));
+            }
+            Courier newCourier=new Courier();
+            newCourier.setOpen_id(openid);
+            courierMapper.insert(newCourier);
+            return ResponseWrapper.markSuccess("新用户注册成功",ImmutableMap.of("openId",openid,"id",newCourier.getId()));
             //StpUtil.login(code2Session.getString("openid"));
             // 获取当前会话的token值,将该token值作为skey传给小程序端作为会话的维护
 
