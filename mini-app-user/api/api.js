@@ -33,7 +33,6 @@ export class User {
 			}
 		})	
 	}
-	//static newaddress(user)
 	static login(code){
 		return request({
 			url:'/user/login',
@@ -44,11 +43,12 @@ export class User {
 		})
 	}
 	
-	static userLogin(open_id,nickname,avatar_url){
+	static updateInfo(id,open_id,nickname,avatar_url){
 		return request({
-			url:'user/register',
+			url:'/user/update',
 			method:'post',
 			data:{
+				id,
 				open_id,
 				nickname,
 				avatar_url
