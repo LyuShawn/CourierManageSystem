@@ -80,7 +80,11 @@
 				userinfo: {
 					avatarUrl: uni.getStorageSync('userinfo').avatarUrl ||
 						'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
-					nickName: uni.getStorageSync('userinfo').nickName || null
+					nickName: uni.getStorageSync('userinfo').nickName || '你好，请登录'
+				},
+				userId:{
+					openId:uni.getStorageSync('open_id'),
+					id:uni.getStorageSync('id')
 				},
 				showEditor: false,
 				
@@ -243,6 +247,7 @@
 				console.log(this.userinfo);
 				this.showInfoPopup = false;
 
+
 				try {
 					//open_id存入缓存
 					uni.setStorageSync('userinfo', _this.userinfo);
@@ -262,6 +267,12 @@
 							})
 					}
 				})
+				
+				this.$api.User.updateInfo(this.userId.id,this.userId.openId, this.userinfo.nickName, this.userinfo.avatarUrl)
+					.then((res) => {
+						uni.setStorageSync('userinfo', _this.userinfo);
+						uni.setStorageSync('login', true);
+					})
 
 			},
 		},
