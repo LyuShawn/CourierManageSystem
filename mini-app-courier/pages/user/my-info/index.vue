@@ -52,6 +52,10 @@
 					outlets: null,
 
 				},
+				userId:{
+					openId:uni.getStorageSync('open_id')||'',
+					id:uni.getStorageSync('id')||''
+				},
 				showOutlet: false,
 				outletList: [],
 
