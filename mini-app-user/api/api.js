@@ -15,7 +15,7 @@ export class User {
 	}
 	static deleteaddress(address_id) {
 		return request({
-			url: '/user/change_address',
+			url: '/user/delete_address',
 			method: 'post',
 			data: {
 				address_id:address_id,
@@ -29,11 +29,46 @@ export class User {
 			data: {
 				address_id:address_id,
 				phone:phone,
-				addr: addr,
+				addr: addr
 			}
 		})	
 	}
-	//static newaddress(user)
+	static newaddress(user_id ,phone ,addr){
+		return request({
+			url:'/user/add_address',
+			method:'post',
+			data:{
+				user:user_id,
+				phone:phone,
+				addr:addr
+			}
+		})
+	}
+	static computeprice(d_addr,r_addr)
+	{
+		return request({
+			url:'/user/express_money',
+			method:'post',
+			data:{
+				delivery_address:d_addr,
+				recipient_address:r_addr,
+			}
+		})
+	}
+	static expressinfo(phone,d_addr,r_addr,price)
+	{
+		return request({
+			url:'/user/delivery_express',
+			method:'post',
+			data:{
+				phone:phone,
+				delivery_address:d_addr,
+				recipient_address:r_addr,
+				price:price,
+			}
+		})
+	}
+		
 	static login(code){
 		return request({
 			url:'/user/login',

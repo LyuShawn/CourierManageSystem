@@ -9,11 +9,11 @@
 			<view class="show-item" v-for="(item, index) in data" :key="index">
 				<view class="show-item-message" @click="sendaddr(index, flag)">
 					<!-- 圆点 -->
-					<view class="firstn">{{ item.name[0] }}</view>
+					<view class="firstn">{{ item.id[0] }}</view>
 					<text>
-						{{ item.name }}&nbsp;&nbsp;{{ item.number.substr(0, 3) }}&nbsp;{{ item.number.substr(3, 4) }}&nbsp;{{ item.number.substr(-4) }}
+						{{ item.id }}&nbsp;&nbsp;{{ item.phone.substr(0, 3) }}&nbsp;{{ item.phone.substr(3, 4) }}&nbsp;{{ item.phone.substr(-4) }}
 
-						{{ item.area }}{{ item.address }}
+						{{ item.addr }}
 					</text>
 					<!-- 数据显示 -->
 						<!-- u-button icon = "edit-pen" text="编辑" @click.stop="sendinfo(index)"></u-button> -->
@@ -25,7 +25,7 @@
 				<button size="mini" @click="showmodal(index)">删除</button>
 
 				<!-- 删除确认弹窗 -->
-				<u-modal content="是否删除此地址" :show="show" showCancelButton closeOnClickOverlay @confirm="confirm(index)" @cancel="cancel" @close="close"></u-modal>
+				<u-modal content="是否删除此地址" :show="show" showCancelButton closeOnClickOverlay @confirm="confirm()" @cancel="cancel" @close="close"></u-modal>
 			</view>
 		</view>
 		<!-- 没有数据 显示空 -->
@@ -53,45 +53,51 @@ export default {
 	},
 	data() {
 		return {
-			data:[{
-		name: '张三',
-		number: '13145678912',
-		area: '福建省福州市',
-		address: '福州大学旗山校区',
-		code: '123',
-		address_id: 1
-	},
-	{
-		name: '李四',
-		number: '15812312331',
-		area: '福建省福州市',
-		address: '福州大学旗山校区',
-		code: '123',
-		address_id:2
-	},
-	{
-		name: '王五',
-		number: '18145645611',
-		area: '福建省福州市',
-		address: '福州大学旗山校区',
-		code: '123',
-		address_id:3
-	}],
-	        // data:[],
+	// 		data:[{
+	// 	name: '张三',
+	// 	number: '13145678912',
+	// 	area: '福建省福州市',
+	// 	address: '福州大学旗山校区',
+	// 	code: '123',
+	// 	address_id: 1
+	// },
+	// {
+	// 	name: '李四',
+	// 	number: '15812312331',
+	// 	area: '福建省福州市',
+	// 	address: '福州大学旗山校区',
+	// 	code: '123',
+	// 	address_id:2
+	// },
+	// {
+	// 	name: '王五',
+	// 	number: '18145645611',
+	// 	area: '福建省福州市',
+	// 	address: '福州大学旗山校区',
+	// 	code: '123',
+	// 	address_id:3
+	// }],
+	        data:[],
+			database:[],
 			keyword: '',
 			show: false, //判断弹窗是否要出现
 			id: '',
 			list: [],
 			flag: 0,
+			Addressid: 0,
+			label:0
 		};
 	},
 	onShow() {
 		//加载
 		//this.init();
 		let _this = this
-		console.log(111);
-		this.$api.User.getAddress(1).then((res) => {
+		console.log('更新');
+		this.$api.User.getAddress(0).then((res) => {
 			console.log('res:',res.data.data);
+			let ress = res.data.data
+			_this.data = res.data.data
+			console.log('数据',_this.data)
 			//_this.data = res;
 		})
 		},
@@ -108,16 +114,20 @@ export default {
 		// 	this.list = this.data;
 		// },
 		showmodal(index) {
-			this.id = this.data[index].addressId;
+			this.Addressid = this.data[index].id;
+			this.label = index;
 			this.show = true;
 		},
 		confirm(index) {
-			// let res = await this.$request.post('/deleteAddress', {
-			// 	addressId: this.id
-			// });
+			console.log('删除编号',this.Addressid)
+			this.$api.User.deleteaddress(this.Addressid).then(() => {
+				console.log('数据已删除')
+				//_this.data = res;
+			})
 			//this.fetchData();
-			this.data.splice(index, 1); //确认删除
+			this.data.splice(this.label, 1); //确认删除
 			this.show = false;
+			console.log('现存数据',this.data)
 			console.log('confirm');
 		},
 		cancel() {
@@ -136,45 +146,47 @@ export default {
 			uni.navigateTo({
 				url: '/pages/send-express/newaddr?gid=' + 1
 			});
-			uni.$on('submitnew',function(datas){
-				console.log('数据',datas.msg)
-				console.log('flag',datas.idf)
-				if(datas.idf == 1)
-				{
-				    let newdata = {
-						name:datas.msg.name,
-						number:datas.msg.phone
-					}
-					_this.data.push(newdata);
-					console.log('数据全',_this.data)
-					console.log(_this.data[0].phone)
+			// uni.$on('submitnew',function(datas){
+			// 	console.log('数据',datas.msg)
+			// 	console.log('flag',datas.idf)
+			// 	if(datas.idf == 1)
+			// 	{
+			// 	    let newdata = {
+			// 			name:datas.msg.name,
+			// 			number:datas.msg.phone
+			// 		}
+			// 		_this.data.push(newdata);
+			// 		console.log('数据全',_this.data)
+			// 		console.log(_this.data[0].phone)
 					// _this.s_username = data.msg.name;
 					// _this.user_1.phone = data.msg.number
 					// _this.user_1.location = data.msg.area +data.msg.address
-				}
+				//}
 				// _this.s_username = data.msg.name;
 				// _this.user_1.phone = data.msg.number
 				// _this.user_1.location = data.msg.area +data.msg.address
 				
-			})
+			//})
 		},
 		sendinfo(index) {
 			// console.log(this.data[index].addressId);
+			console.log('addressId',this.data[index].id)
+			let addressid = this.data[index].id
 			let _this = this
 			uni.navigateTo({
-				url: '/pages/send-express/editaddr?eid=' + index               //跳转并传参
+				url: '/pages/send-express/editaddr?eid=' +  addressid             //跳转并传参
 			});
-			uni.$on('submitedit',function(datas){
-				console.log('数据',datas.msg)
-				console.log('flag',datas.eid)
-				_this.data[index].name = datas.msg.name
-				console.log('数据2',_this.data[index])
-				console.log('数据3',_this.data)
+			// uni.$on('submitedit',function(datas){
+			// 	console.log('数据',datas.msg)
+			// 	console.log('flag',datas.eid)
+			// 	_this.data[index].name = datas.msg.name
+			// 	console.log('数据2',_this.data[index])
+			// 	console.log('数据3',_this.data)
 					
-					// _this.s_username = data.msg.name;
-					// _this.user_1.phone = data.msg.number
-					// _this.user_1.location = data.msg.area +data.msg.address
-			})
+			// 		_this.s_username = data.msg.name;
+			// 		_this.user_1.phone = data.msg.number
+			// 		_this.user_1.location = data.msg.area +data.msg.address
+			// })
 		},
 		
 		sendaddr(index, flag) {
@@ -191,6 +203,7 @@ export default {
 				idf:flag
 			})
 			console.log('flag',this.flag)
+			console.log('info',this.data[index])
 			// uni.navigateTo({
 			// 		url: '/pages/send-express/index?i='+flag+'&id=' + index //跳转并传参给寄快递页面
 			// 	})

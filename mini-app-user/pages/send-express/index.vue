@@ -136,9 +136,9 @@
 			    <u-collapse-item title="平台权益">
 					<view class='flexcontent'>
 <!-- 						<u--image class='iconP' src="../../static/send-express/p1.png"></u--image> -->
-                        <u--text prefixIcon="../../static/send-express/p2.png" iconStyle="font-size: 19px" text="丢失必赔"></u--text>
-						<u--text prefixIcon="../../static/send-express/p1.png" iconStyle="font-size: 19px" text="守时守约"></u--text>
-                        <u--text prefixIcon="../../static/send-express/p3.png" iconStyle="font-size: 19px" text="急速官方保障"></u--text>
+                        <u--text prefixIcon="/static/send-express/p2.png" iconStyle="font-size: 19px" text="丢失必赔"></u--text>
+						<u--text prefixIcon="/static/send-express/p1.png" iconStyle="font-size: 19px" text="守时守约"></u--text>
+                        <u--text prefixIcon="/static/send-express/p3.png" iconStyle="font-size: 19px" text="急速官方保障"></u--text>
 				
 					</view>
 				</u-collapse-item>
@@ -166,8 +166,8 @@
 		</view>
 		<view class="bottom">
 			<view class="title">预估总价:</view>
-			<view class="price">¥</view>
-			<view><button class="btn" size="large" @click="">下单</button></view>
+			<view class="price">¥{{sum}}</view>
+			<view><button class="btn" size="large" @click="submitexpress()">下单</button></view>
 		</view>
 	</view>
 </template>
@@ -177,6 +177,8 @@
 	export default {
 		data() {
 			return {
+				temp:0,
+				temp1:0,
 				index:0,
 				index1:0,
 				index2:0,
@@ -191,9 +193,14 @@
 				num: '',
 				quota: '',
 				amount: 0,
+				valuebj:0,
+				x:0,
 				mode: '微信支付',
 				value: '',
 				flag: 1,
+				sum:0,
+				valueid:0,
+				price:0,
 				couponid: 0,
 				user_1: {
 					phone: '',
@@ -251,14 +258,63 @@
 		onUnload() {
 			uni.$off('info');
 		},
+		onShow() {
+			this.$api.User.computeprice(this.user_1.location,this.user_2.location).then((exp_price) => {
+				console.log('钱:',exp_price.data.data.money);
+				this.sum = exp_price.data.data.money;
+				console.log('地点',this.user_1.location,this.user_2.location)
+			})
+		},
+		// computed:{
+		//     sum(){
+		// 		this.$api.User.computeprice(this.user_1.location,this.user_2.location).then((exp_price) => {
+		// 			this.price = exp_price.data.data.money;
+		// 		})
+		// 	}
+		// },
 		methods:{
 			change1(index){
 				this.number = index;
 			},
 			test(e){
-				console.log('test', e);
+				console.log('输入值', e);
+				this.weight = e;
+				if(this.thing ==="食品"){
+					this.x = 1.5;
+					this.sum =this.sum + this.weight*0.9
+				}
+				if(this.thing === "数码产品"){
+					this.x = 2;
+					this.sum = this.sum + this.weight*this.x
+				}
+				if(this.thing ==="文件"){
+					this.x = 3;
+					this.sum = this.sum + this.weight*this.x
+				}
+				if(this.thing === "衣物"){
+					this.x = 1;
+					this.sum = this.sum + this.weight*0.9
+				}
+				if(this.thing ==="其他"){
+					this.x = 1;
+					this.sum = this.sum + this.weight*0.9
+				}
 				
 			},
+			submitexpress()
+			{
+				this.$api.User.expressinfo(this.user_2.phone,this.user_1.location,this.user_2.location,this.sum).then((number) => {
+					console.log('数据单号',number)
+					console.log('上传成功');
+					//_this.data = res;
+				})
+			},
+			// computersum(){
+			// 	this.$api.User.computeprice(this.user_1.location,this.user_2.location).then((exp_price) => {
+			// 		console.log('价格',exp_price);
+			// 		//_this.data = res;
+			// 	})
+			// },
 			change(index) {
 				// #ifndef MP
 				if (index === 5) return uni.$u.toast('请在微信内预览')
@@ -315,6 +371,30 @@
 				console.log('confirm', e)
                 this.showpicker3 = false
 				this.thing = e.value[0]
+				if(this.thing === "日用品"){
+					this.x = 1;
+					this.sum = this.sum*1
+				}
+				if(this.thing ==="食品"){
+					this.x = 1.5;
+					this.sum =this.sum*1.5
+				}
+				if(this.thing === "数码产品"){
+					this.x = 2;
+					this.sum = this.sum*2
+				}
+				if(this.thing ==="文件"){
+					this.x = 3;
+					this.sum = this.sum*3
+				}
+				if(this.thing === "衣物"){
+					this.x = 1;
+					this.sum = this.sum*1
+				}
+				if(this.thing ==="其他"){
+					this.x = 1;
+					this.sum = this.sum*1
+				}
 			},
 			getuserinfo(res) {
 				uni.$u.toast(`用户名：${res.userInfo.nickName}`)
@@ -337,7 +417,10 @@
 			},
 			select(e) {
 				console.log('select', e);
-				this.user = e.name;
+				this.user = e.name
+				this.values = e.value
+				console.log('钱',this.values)
+				this.sum = this.sum + this.values
 			},
 			addr_s() {
 				//切换至 地址薄 页面
@@ -349,8 +432,8 @@
 					if(data.idf == 1)
 					{
 						_this.s_username = data.msg.name;
-						_this.user_1.phone = data.msg.number
-						_this.user_1.location = data.msg.area +data.msg.address
+						_this.user_1.phone = data.msg.phone
+						_this.user_1.location = data.msg.addr
 					}
 					// _this.s_username = data.msg.name;
 					// _this.user_1.phone = data.msg.number
@@ -370,8 +453,8 @@
 					if(data.idf == 2)
 					{
 						_this.r_username = data.msg.name;
-						_this.user_2.phone = data.msg.number
-						_this.user_2.location = data.msg.area +data.msg.address
+						_this.user_2.phone = data.msg.phone
+						_this.user_2.location = data.msg.addr
 					}
 						// _this.r_username = data.msg.name;
 						// _this.user_2.phone = data.msg.number
@@ -424,30 +507,32 @@
 	    margin-left:5px;
 	}
 	.bottom {
-		width: 100%;
-		height: 120px;
+		//width: 100%;
+		height: 70px;
 		border-top: 1px solid #3c9cff;
 		background-color: white;
 		position: fixed;
 		display: flex;
-		justify-content: flex-end;
+		margin-left: 20px;
+		//justify-content: flex-end;
 		bottom: 0;
 		text {
-			font-size: 30rpx;
+			font-size: 35rpx;
 			font-weight: bold;
-			margin-left: 10px;
+			margin-left: 150px;
 		}
 	}
 	.bottom .btn {
 		background-color: #3c9cff;
 		color: white;
 		margin-top: 15px;
-		margin-left: 200px;
+		margin-left: 150px;
 		border-radius: 15px;
 	}
 	.bottom .price {
-		margin-top: 12px;
-		font-size: 25px;
+		margin-top: 10px;
+		margin-left: 20px;
+		font-size: 30px;
 		font-weight: bold;
 		color: #ff3e3e;
 	}

@@ -46,8 +46,8 @@
 		// 	// console.log(this.addressId)
 		// },
 		onLoad(option) {
-			this.eid = option.eid
-			console.log(this.eid)
+			this.addressId = option.eid
+			console.log('edi',this.addressId)
 		
 		},
 		
@@ -94,11 +94,16 @@
 						location: userinfo.location,
 						detail: userinfo.detail,
 						}
-					console.log('info',info)
-					uni.$emit('submitedit',{
-						msg:info,
-						eid:this.eid
+					let address = info.location + info.detail
+					console.log('修改数据',info)
+					let addressid = this.addressId
+					this.$api.User.changeaddress(addressid,info.phone,address).then(() => {
+						console.log('修改成功');
 					})
+					// uni.$emit('submitedit',{
+					// 	msg:info,
+					// 	eid:this.eid
+					// })
 					uni.navigateBack()
 				
 				},

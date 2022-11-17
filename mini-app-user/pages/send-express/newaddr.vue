@@ -58,9 +58,6 @@
 		},
 		onshow()
 		{
-			this.$api.User.getAddress(1).then((res) => {
-				console.log(res.data.data);
-			})
 		},
 		methods: {
 			// submit() {
@@ -91,11 +88,15 @@
 					location: userinfo.location,
 					detail: userinfo.detail,
 					}
+				let address = info.location + info.detail
 				console.log('info',info)
-				uni.$emit('submitnew',{
-					msg:info,
-					idf:this.flag
+				this.$api.User.newaddress(0,info.phone,address).then(() => {
+					console.log('上传成功');
 				})
+				// uni.$emit('submitnew',{
+				// 	msg:info,
+				// 	idf:this.flag
+				// })
 				uni.navigateBack()
 			
 			},
