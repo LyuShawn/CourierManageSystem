@@ -7,11 +7,13 @@
 		<view class="express-view" v-if="(isLogin && isComfirm)">
 			<u-subsection @change="changeMenu" fontSize=16 :list="expressMenu.list" :current="expressMenu.current"
 				mode="button"></u-subsection>
+			<expressItem></expressItem>
 		</view>
 	</view>
 </template>
 
 <script>
+	import expressItem from '@/pages/express/express-item.vue'
 	export default {
 		data() {
 			return {
@@ -47,15 +49,18 @@
 
 			init() {
 				let _this = this
-				this.$api.Outlet.getExpressList(this.userId.id).then((res) => {
-					console.log(res);
-				})
+				// this.$api.Outlet.getExpressList(this.userId.id).then((res) => {
+				// 	console.log(res);
+				// })
 			},
 
 			changeMenu(index) {
 				console.log(index);
 				this.expressMenu.current = index
 			}
+		},
+		components:{
+			expressItem,
 		}
 	}
 </script>
