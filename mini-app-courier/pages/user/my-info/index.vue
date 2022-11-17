@@ -134,15 +134,13 @@
 						_this.$refs.uToast.show({
 							message: '信息修改成功',
 							complete() {
-								uni.navigateBack()
 							}
 						})
 					} else {
 						_this.$refs.uToast.show({
-							message: '信息修改成功',
+							message: '信息修改失败',
 							type:'error',
 							complete() {
-								uni.navigateBack()
 							}
 						})
 					}

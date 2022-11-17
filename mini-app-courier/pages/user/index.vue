@@ -149,13 +149,13 @@
 		},
 		methods: {
 			init() {
-				let _this=this
-				this.courierInfo=uni.getStorageSync('courierInfo')
+				let _this = this
+				this.courierInfo = uni.getStorageSync('courierInfo')
 			},
 
 			toServer1(i) {
 				if (this.severList[0][i].name == 'info') {
-					uni.navigateTo({
+					uni.switchTab({
 						url: '/pages/user/my-info/index'
 					});
 				} else if (this.severList[0][i].name == 'backups') {
@@ -185,8 +185,8 @@
 					url: '/pages/web-view/webView?url=' + encodeURIComponent(url) + '&title=仓库地址'
 				});
 			},
-			
-			toUserInfo(){
+
+			toUserInfo() {
 				uni.navigateTo({
 					url: '/pages/user/my-info/index'
 				});

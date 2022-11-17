@@ -1,6 +1,5 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
 		{
 			"path": "pages/user/index",
 			"style": {
@@ -8,13 +7,7 @@
 				"enablePullDownRefresh": false
 			}
 		},
-		{
-			"path": "pages/my-outlets/index",
-			"style": {
-				"navigationBarTitleText": "我的网点",
-				"enablePullDownRefresh": false
-			}
-		},
+
 		{
 			"path": "pages/express/index",
 			"style": {
@@ -61,7 +54,7 @@
 			"selectedIconPath": "static/tab-bar/express-select.jpg",
 			"text": "我的快递"
 		}, { // 最少2个、最多5个 tab
-			"pagePath": "pages/my-outlets/index", // 页面路径，必须在 pages 中先定义
+			"pagePath": "pages/user/my-info/index", // 页面路径，必须在 pages 中先定义
 			"iconPath": "static/tab-bar/outlets.jpg", // 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px
 			"selectedIconPath": "static/tab-bar/outlets-select.jpg", // 选中时的图片路径
 			"text": "我的网点" // tab 上按钮文字
