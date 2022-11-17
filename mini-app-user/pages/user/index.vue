@@ -175,6 +175,9 @@
 			toServer1(i) {
 				if (this.severList[0][i].name == 'classes') {
 					console.log('进入我的地址簿');
+					uni.navigateTo({
+						url:'/pages/send-express/address'
+					})
 				} else if (this.severList[0][i].name == 'backups') {
 					this.$refs.uToast.show({
 						message: '已自动进行数据备份',
@@ -188,11 +191,13 @@
 
 			toServer2(i){
 				if (this.severList[1][i].name == 'help') {
-					console.log('进入帮助页面');
+					//console.log('进入帮助页面');
+					this.goGithub()
 				} else if (this.severList[1][i].name == 'feedback') {
 					//console.log('进入反馈页面');
 				} else if (this.severList[1][i].name == 'about') {
-					console.log('进入关于我们页面');
+					//console.log('进入关于我们页面');
+					this.goGithub()
 				}else if(this.severList[1][i].name == 'share'){
 					//console.log('进入分享页面');
 				}
