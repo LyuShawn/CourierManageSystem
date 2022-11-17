@@ -17,10 +17,10 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/register")
-    public ResponseWrapper register(@RequestBody UserRegisterParam userRegisterParam){
-        return userService.register(userRegisterParam);
-    }
+//    @PostMapping("/register")
+//    public ResponseWrapper register(@RequestBody UserRegisterParam userRegisterParam){
+//        return userService.register(userRegisterParam);
+//    }
 
     @PostMapping("/update")
     public ResponseWrapper update(@RequestBody User user)

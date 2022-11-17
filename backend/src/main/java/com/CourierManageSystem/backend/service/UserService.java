@@ -5,6 +5,7 @@ import com.CourierManageSystem.backend.mapper.*;
 import com.CourierManageSystem.backend.model.UserModel.*;
 import com.CourierManageSystem.backend.util.*;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.google.common.collect.ImmutableMap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -316,10 +317,19 @@ public class UserService {
         //errcode为0表示请求成功
         if(errorCode==0){
             //将获得的openid 返回
-            return ResponseWrapper.markSuccess("用户登录成功",ImmutableMap.of("openId",code2Session.getString("openid")));
-            //StpUtil.login(code2Session.getString("openid"));
-            // 获取当前会话的token值,将该token值作为skey传给小程序端作为会话的维护
+            String openid=code2Session.getString("openid");
 
+            LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+            queryWrapper.eq(User::getOpen_id,openid);
+            User user=userMapper.selectOne(queryWrapper);
+
+            if(user!=null){
+                return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",user.getId()));
+            }
+            User newUser=new User();
+            newUser.setOpen_id(openid);
+            userMapper.insert(newUser);
+            return ResponseWrapper.markSuccess("新用户注册成功",ImmutableMap.of("openId",openid,"id",newUser.getId()));
         }
         else if(errorCode==-1){
             return ResponseWrapper.markError("系统繁忙，此时请开发者稍候再试");
