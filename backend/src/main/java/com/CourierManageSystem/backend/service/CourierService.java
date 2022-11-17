@@ -1,26 +1,33 @@
 package com.CourierManageSystem.backend.service;
 
 
+import com.CourierManageSystem.backend.entity.Address;
 import com.CourierManageSystem.backend.entity.Courier;
 import com.CourierManageSystem.backend.entity.Express;
 import com.CourierManageSystem.backend.entity.OutletsCourier;
+import com.CourierManageSystem.backend.mapper.AddressMapper;
 import com.CourierManageSystem.backend.mapper.CourierMapper;
 import com.CourierManageSystem.backend.mapper.ExpressMapper;
 import com.CourierManageSystem.backend.mapper.OutletsCourierMapper;
 import com.CourierManageSystem.backend.model.CourierModel.*;
+import com.CourierManageSystem.backend.model.ExpressModel.ExpressResult;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class CourierService {
@@ -28,6 +35,8 @@ public class CourierService {
     CourierMapper courierMapper;
     @Autowired
     ExpressMapper expressMapper;
+    @Autowired
+    AddressMapper addressMapper;
     @Autowired
     OutletsCourierMapper outletsCourierMapper;
 
@@ -321,12 +330,46 @@ public class CourierService {
     }
 
     public ResponseWrapper getOutletsTask(Long courierId,Long outletsId){
+        LambdaQueryWrapper<Express> expressQuery = new LambdaQueryWrapper<>();
         //先判断快递员和网点id是否匹配
-        List<OutletsCourier> outletsCourierList=outletsCourierMapper.selectByMap(ImmutableMap.of("outlets",courierId,"outlets",outletsId,"comfirmed",1));
+        List<OutletsCourier> outletsCourierList=outletsCourierMapper.selectByMap(ImmutableMap.of("courier",courierId,"outlets",outletsId,"confirmed",1));
         if(outletsCourierList.isEmpty()){
             return ResponseWrapper.markError("快递员和网点信息不匹配");
         }
-        List<Express> expressList= expressMapper.selectByMap(ImmutableMap.of("now_outlets",outletsId));
-        return null;
+
+        Set<Express> expressSet = expressMapper
+                .selectList(expressQuery.eq(Express::getNow_outlets, outletsId))
+                .stream()
+                .filter(Objects::nonNull)
+                .collect(ImmutableSet.toImmutableSet());
+        Set<Long> deliveryAddressSet = expressSet.stream()
+                .map(Express::getDelivery_address)
+                .filter(Objects::nonNull)
+                .collect(ImmutableSet.toImmutableSet());
+        Set<Long> recipientAddressSet = expressSet.stream()
+                .map(Express::getRecipient_address)
+                .filter(Objects::nonNull)
+                .collect(ImmutableSet.toImmutableSet());
+        HashSet<Long> selectSet = new HashSet<>(deliveryAddressSet);
+        selectSet.addAll(recipientAddressSet);
+        if (selectSet.isEmpty()) {
+            return ResponseWrapper.markSuccess("查询成功",
+                    ImmutableMap.of("list", ImmutableList.of()));
+        }
+
+        LambdaQueryWrapper<Address> addressQuery = new LambdaQueryWrapper<>();
+        Map<Long, Address> addressMap = addressMapper
+                .selectList(addressQuery.in(Address::getId, selectSet))
+                .stream()
+                .distinct()
+                .collect(ImmutableMap.toImmutableMap(Address::getId, Function.identity()));
+
+        List<ExpressResult> resultList = expressSet.stream()
+                .map(it -> new ExpressResult(it,
+                        addressMap.get(it.getDelivery_address()),
+                        addressMap.get(it.getRecipient_address())))
+                .collect(ImmutableList.toImmutableList());
+
+        return ResponseWrapper.markSuccess("查询成功",ImmutableMap.of("list",resultList));
     }
 }
