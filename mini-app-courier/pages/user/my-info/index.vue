@@ -133,15 +133,11 @@
 						_this.updateInfoStorage()
 						_this.$refs.uToast.show({
 							message: '信息修改成功',
-							complete() {
-							}
 						})
 					} else {
 						_this.$refs.uToast.show({
 							message: '信息修改失败',
 							type:'error',
-							complete() {
-							}
 						})
 					}
 					

@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="width: 100vw;">
 		<view class="header" v-bind:class="{'status':isH5Plus}">
 			<view class="userinfo" @click="toUserInfo">
 				<view class="avatar">
@@ -213,7 +213,6 @@
 		background-color:#7faacc;
 		width:100vw;
 		height:30vw;
-		padding:0 4%;
 		display:flex;
 		align-items:center;
 
@@ -257,18 +256,18 @@
 	.classes {
 		background-color: #7faacc;
 		width: 100%;
-		height: 11vw;
-		padding: 0 4%;
-		margin-bottom: calc(11vw + 40upx);
+		height: 6vh;
+		margin-bottom: calc(10vw + 40upx);
 		display: flex;
+		justify-content: center;
 		align-items: flex-start;
 		border-radius: 0 0 100% 100%;
 		margin-top: -1upx;
 
 		.box {
 			width: 90vw;
-			padding: 0 1%;
-			height: 22vw;
+			
+			height: 12vh;
 			background-color: #fefefe;
 			border-radius: 24upx;
 			box-shadow: 0 0 20upx rgba(0, 0, 0, 0.15);

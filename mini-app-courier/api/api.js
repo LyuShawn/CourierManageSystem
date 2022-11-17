@@ -66,4 +66,14 @@ export class Outlet {
 			data: {}
 		})
 	}
+	
+	static getExpressList(courierId){
+		return request({
+			url:'/courier/check_outlets_task',
+			method:'get',
+			data:{
+				id:courierId,
+			}
+		})
+	}
 }
