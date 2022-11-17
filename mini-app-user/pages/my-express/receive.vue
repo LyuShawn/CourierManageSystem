@@ -113,6 +113,7 @@
 				courierImg:'/static/my-express/courier.svg',
 				companyImg:'/static/my-express/company.svg',
 				current:'',
+				phone:'',
 				expressList:{},
 				expressNowStatus:[ ],
 				expressStatusList:[ ],
@@ -120,7 +121,13 @@
 				
 			};
 		},
-		onLoad(number){
+		async onLoad(number){
+			
+			await this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+				.then((res) => {
+					this.phone = res.data.data.phone;
+					console.log('1',this.phone);
+				})
 			
 			this.traNum = number.traNum
 			uni.showLoading({
@@ -139,7 +146,7 @@
 				this.expressList = res.data.data.tracking_number;
 				// console.log(this.expressList);
 			});
-			this.$api.Express.postExpressState(this.traNum,17759996037).then((res) => {
+			this.$api.Express.postExpressState(this.traNum,this.phone).then((res) => {
 				this.expressState = res.data.data.state;
 				console.log(this.traNum,this.expressState);
 			});

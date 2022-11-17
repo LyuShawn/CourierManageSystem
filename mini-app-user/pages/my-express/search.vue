@@ -28,8 +28,8 @@
 		
 		
 		<view class="block">
-			<view class="view">
-				<view class="view2" @click="chooseImage">
+			<view class="view" @click="chooseImage">
+				<view class="view2" >
 					<u--image :showLoading="true" :src="imgsrc" width="30px" height="30px" radius="10px"></u--image>
 				</view>
 				
@@ -42,7 +42,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="view">
+			<view class="view" @click="chooseImage">
 				<view class="view2">
 					<u--image :showLoading="true" :src="scansrc" width="30px" height="30px" radius="10px"></u--image>
 				</view>
@@ -74,14 +74,22 @@
 				imgsrc:'/static/my-express/imgDete.svg',
 				scansrc:'/static/my-express/scan.svg',
 				imgPath:'/static/my-express/express.svg',
+				phone:'',
 				expressList:[],
 				expressListRst:[],
 				
 			};
 		},
-		onLoad(){
+		async onLoad(){
 			let _this = this;
-			this.$api.Express.getAllExpress(17759996037).then((res) => {
+			
+			await _this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+				.then((res) => {
+					_this.phone = res.data.data.phone;
+					console.log('1',_this.phone);
+				})
+			
+			this.$api.Express.getAllExpress(_this.phone).then((res) => {
 				
 				_this.expressList = res.data.data;
 				// console.log(_this.expressList[0].express.tracking_number);

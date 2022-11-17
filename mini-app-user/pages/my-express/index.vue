@@ -68,8 +68,9 @@
 						</view>
 					</view>
 					<view v-else-if="getWaitList.length" class="express" @click="express_information(item.tracking_number)"  v-for="(item,index) in getWaitList" :key="index">
-						
-						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						<view class="view1">
+							<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						</view>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" text="待揽件"></u--text>
@@ -94,7 +95,9 @@
 						</view>
 					</view>
 					<view v-else-if="getTranList.length" class="express" @click="express_information(item.tracking_number)" v-for="(item,index) in getTranList" :key="index">
-						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						<view class="view1">
+							<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						</view>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" text="运输中"></u--text>
@@ -119,7 +122,9 @@
 						</view>
 					</view>
 					<view v-else-if="getSignList.length" class="express" @click="express_information(item.tracking_number)" v-for="(item,index) in getSignList" :key="index">
-						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						<view class="view1">
+							<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						</view>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" text="已签收"></u--text>
@@ -152,7 +157,9 @@
 						</view>
 					</view>
 					<view v-else-if="postWaitList.length" class="express" @click="express_information(item.tracking_number)" v-for="(item,index) in postWaitList" :key="index">
-						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						<view class="view1">
+							<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						</view>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" text="待揽件"></u--text>
@@ -177,7 +184,9 @@
 						</view>
 					</view>
 					<view v-else-if="postTranList.length" class="express" @click="express_information(item.tracking_number)" v-for="(item,index) in postTranList" :key="index">
-						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						<view class="view1">
+							<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						</view>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" text="运输中"></u--text>
@@ -203,7 +212,9 @@
 						</view>
 					</view>
 					<view v-else-if="postSignList.length" class="express" @click="express_information(item.tracking_number)" v-for="(item,index) in postSignList" :key="index">
-						<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						<view class="view1">
+							<u--image :showLoading="true" :src="imgPath" width="100px" height="100px" radius="10px"></u--image>
+						</view>
 						<view class="view2">
 							<view class="view2-1">
 								<u--text :lines="1" :bold="true" size="18" text="已签收"></u--text>
@@ -237,6 +248,7 @@
 				state: 0,
 				keyword: '',
 				isShow: false,
+				phone:'',
 				noRecord:'/static/my-express/noRecord.svg',
 				imgPath:'/static/my-express/express.svg',
 				list1: [
@@ -244,6 +256,11 @@
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
 				],
+				userinfo: {
+					avatarUrl: uni.getStorageSync('userinfo').avatarUrl ||
+						'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
+					nickName: uni.getStorageSync('userinfo').nickName || null
+				},
 				dataList: [
 				  {option: '收'},
 				  {option: '寄'},
@@ -268,11 +285,19 @@
 				postSignList:[],
 			};
 		},
-		onLoad(){
+		async onLoad(){
 			let _this = this;
-			this.$api.Express.getAllExpress(17759996037).then((res) => {//17758928672
+			
+			await _this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+				.then((res) => {
+					_this.phone = res.data.data.phone;
+					console.log('1',_this.phone);
+				})
+			
+			console.log(_this.phone);
+			this.$api.Express.getAllExpress(_this.phone).then((res) => {//17758928672
 				_this.expressList = res.data.data;
-				console.log(_this.expressList);
+				// console.log(_this.expressList);
 				// console.log(_this.expressList[0].receive_send);
 				for(let i = 0;i < _this.expressList.length;i++){
 					if(_this.expressList[i].receive_send == 0){
@@ -297,7 +322,7 @@
 							_this.postSignList.push(_this.expressList[i].express);
 						}
 					}
-					
+			
 				}
 				// console.log(_this.postWaitList)
 			});
@@ -315,7 +340,7 @@
 			// 					});
 			// 				}
 			// 			});
-			
+			// console.log('url',this.userinfo.avatarUrl)
 		},
 		methods:{
 			tab(index){
@@ -336,19 +361,7 @@
 					url: '/pages/my-express/search'
 				})
 			},
-			//手机真机操作测试才能调用摄像头，相册图片，网页上只能选择图片
-			chooseImage() {
-				var _this = this
-				uni.chooseImage({
-					count: 1, //默认9
-					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album', 'camera'], //从相册选择、摄像头
-					success: function(res) {
-						_this.imgShow = res.tempFilePaths[0]
-					}
-				});
-				// ass()
-			},
+			
 
 		},
 		// Vue.filter('format', function(date) {
@@ -412,20 +425,18 @@
 .express{
 	// height: 100px;
 	display: flex;
-	// border: 1px solid #b7b2b7;
-	margin: 10px 10px;
-	align-items: center;
-	justify-content: center;
-	justify-content: space-around;
-}
-    .view1 {
-		width: 50px;
-		height: 50px;
-		background-color: #B7B2B7;		
+	
+	margin: 0px 10px;
+	justify-content: flex-start;
+	.view1 {
+		// flex:20% 0 0;
+		margin: 20px;
 	}
 	.view2 {
-		margin: 10px;
+		margin: 10px 20px;
 	}
+}
+    
 	
 	.view3 {	
 		

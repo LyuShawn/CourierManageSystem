@@ -254,11 +254,11 @@
 					key: 'open_id',
 					success: function(res) {
 						let open_id = res.data
-						console.log(open_id);
+						console.log('openid',open_id);
 						_this.$api.User.userLogin(open_id, _this.userinfo.nickName, _this.userinfo.avatarUrl)
 							.then((res) => {
 								uni.setStorageSync('login', true);
-								console.log(res);
+								console.log('fail',res);
 							})
 					}
 				})

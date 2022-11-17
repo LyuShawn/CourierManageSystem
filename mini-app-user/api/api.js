@@ -55,6 +55,15 @@ export class User {
 			}
 		})
 	}
+	static postUserInfo(open_id){
+		return request({
+			url:'/user/user_information',
+			method:'post',
+			data:{
+				open_id:open_id,
+			}
+		})
+	}
 }
 
 export class Express{
