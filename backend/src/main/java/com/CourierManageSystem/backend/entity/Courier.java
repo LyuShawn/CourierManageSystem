@@ -87,6 +87,7 @@ public class Courier  implements Serializable {
 	/**
 	 * 逻辑删除
 	 */
+	@TableLogic
 	private Integer is_delete;
 
 }

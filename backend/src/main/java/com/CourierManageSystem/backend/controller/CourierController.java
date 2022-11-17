@@ -114,4 +114,10 @@ public class CourierController {
         return courierService.userLogin(code);
     }
 
+    @PostMapping("/apply_info")
+    public ResponseWrapper applyInfo(@RequestBody JSONObject jsonObject){
+        Long courierId=jsonObject.getLong("courier_id");
+        return courierService.applyInfo(courierId);
+    }
+
 }

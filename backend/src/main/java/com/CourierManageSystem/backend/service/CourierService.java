@@ -12,6 +12,7 @@ import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.google.common.collect.ImmutableMap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -262,6 +263,9 @@ public class CourierService {
      * @return
      */
     public ResponseWrapper courierApplyOutlets(CourierApplyOutletsParam courierApplyOutletsParam){
+        Long courierId=courierApplyOutletsParam.getCourier_id();
+        //多个申请只保留最新的
+        outletsCourierMapper.deleteByMap(ImmutableMap.of("courier",courierId));
         OutletsCourier outletsCourier = new OutletsCourier();
         outletsCourier.setCourier(courierApplyOutletsParam.getCourier_id());
         outletsCourier.setOutlets(courierApplyOutletsParam.getOutlets_id());
@@ -305,5 +309,15 @@ public class CourierService {
             return ResponseWrapper.markError("频率限制，每个用户每分钟100次");
         }
         return ResponseWrapper.markError("系统未知错误");
+    }
+
+    public ResponseWrapper applyInfo(Long id){
+        LambdaQueryWrapper<OutletsCourier> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(OutletsCourier::getCourier,id);
+        OutletsCourier outletsCourier=outletsCourierMapper.selectOne(queryWrapper);
+        if (outletsCourier==null){
+            return ResponseWrapper.markError("未查询到该快递员的申请");
+        }
+        return ResponseWrapper.markSuccess("查询成功",ImmutableMap.of("comfirmd",outletsCourier.getConfirmed()));
     }
 }
