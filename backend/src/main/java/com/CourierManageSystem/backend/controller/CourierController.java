@@ -120,4 +120,10 @@ public class CourierController {
         return courierService.applyInfo(courierId);
     }
 
+    @PostMapping("/get_outlets_task")
+    public ResponseWrapper getOutletsTask(@RequestBody JSONObject jsonObject){
+        Long courierId=jsonObject.getLong("courier_id");
+        Long outletsId=jsonObject.getLong("outlets_id");
+        return courierService.getOutletsTask(courierId,outletsId);
+    }
 }

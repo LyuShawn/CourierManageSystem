@@ -197,8 +197,7 @@ public class CourierService {
         List<CourierCheckOutletsTaskResult> deliverResults = JSON.parseArray(JSON.toJSONString(deliverExpresses)).toJavaList(CourierCheckOutletsTaskResult.class);
 
         expressQueryWrapper.clear();
-        expressQueryWrapper.eq(Express::getPick_up,0);
-        expressQueryWrapper.eq(Express::getBegin_outlets,outlets);
+        expressQueryWrapper.eq(Express::getPick_up,0).eq(Express::getBegin_outlets,outlets);
         List<Express> pickUpExpresses = expressMapper.selectList(expressQueryWrapper);
         List<CourierCheckOutletsTaskResult> pickUpResults = JSON.parseArray(JSON.toJSONString(pickUpExpresses)).toJavaList(CourierCheckOutletsTaskResult.class);
 
@@ -319,5 +318,15 @@ public class CourierService {
             return ResponseWrapper.markError("未查询到该快递员的申请");
         }
         return ResponseWrapper.markSuccess("查询成功",ImmutableMap.of("comfirmd",outletsCourier.getConfirmed()));
+    }
+
+    public ResponseWrapper getOutletsTask(Long courierId,Long outletsId){
+        //先判断快递员和网点id是否匹配
+        List<OutletsCourier> outletsCourierList=outletsCourierMapper.selectByMap(ImmutableMap.of("outlets",courierId,"outlets",outletsId,"comfirmed",1));
+        if(outletsCourierList.isEmpty()){
+            return ResponseWrapper.markError("快递员和网点信息不匹配");
+        }
+        List<Express> expressList= expressMapper.selectByMap(ImmutableMap.of("now_outlets",outletsId));
+        return null;
     }
 }
