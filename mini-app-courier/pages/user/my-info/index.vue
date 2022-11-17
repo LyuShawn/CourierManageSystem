@@ -25,8 +25,9 @@
 			<view class="form-item outlet-view">
 				<view class="form-item-title">所属网点</view>
 				<view class="form-item-content" @click="showOutlet=true">
-					<view class="outlet-select">{{courierInfo.outlets?courierInfo.outlets.nickname:'请选择网点'}}</view>
+					<view class="outlet-select">{{courierOutlets?courierOutlets.nickname:'请选择网点'}}</view>
 				</view>
+				<view class="outlet-apply-title" :style="{color:outletsApplyInfo.color}">{{outletsApplyInfo.title}}</view>
 			</view>
 
 			<view class="form-item confirm-btn">
@@ -45,16 +46,19 @@
 	export default {
 		data() {
 			return {
-				courierInfo: {
+				courierInfo: uni.getStorageSync('courierInfo') || {
 					avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
 					fullName: '',
 					phoneNumber: '',
-					outlets: null,
-
 				},
-				userId:{
-					openId:uni.getStorageSync('open_id')||'',
-					id:uni.getStorageSync('id')||''
+				courierOutlets: uni.getStorageSync('courierOutlets') || null,
+				outletsApplyInfo:{
+					title:'',
+					color:'indianred'
+				},
+				userId: {
+					openId: uni.getStorageSync('open_id') || '',
+					id: uni.getStorageSync('id') || ''
 				},
 				showOutlet: false,
 				outletList: [],
@@ -74,11 +78,31 @@
 				})
 			},
 
+			updateInfoStorage(){
+				let _this=this
+				this.$api.Courier.getCourierInfo(this.userId.openId).then((res) => {
+					if (res.data.code == 200) {
+						let info = res.data.data
+						_this.courierInfo.avatarUrl = info.avatarUrl
+						_this.courierInfo.fullName = info.fullName
+						_this.courierInfo.phoneNumber = info.phone
+						uni.setStorageSync("courierInfo", _this.courierInfo)
+				
+						console.log(res.data.data);
+					} else {
+						_this.showToast({
+							message: res.data.message,
+							type: 'error'
+						})
+					}
+				})
+			},
+			
 			onChooseAvatar(e) {
 				this.courierInfo.avatarUrl = e.detail.avatarUrl;
 			},
 			confirmOutlet(e) {
-				this.courierInfo.outlets = e.value[0]
+				this.courierOutlets = e.value[0]
 				this.showOutlet = false
 			},
 			submitInfo() {
@@ -96,18 +120,50 @@
 						type: 'error'
 					})
 				}
-				if (uni.$u.test.isEmpty(this.courierInfo.outlets)) {
+				if (uni.$u.test.isEmpty(this.courierOutlets)) {
 					return this.showToast({
 						message: '请选择网点',
 						type: 'error'
 					})
 				}
-				//手机号校验未开启
-				this.showToast({
-					message:'信息完善成功',
-					type:'success'
+
+				//修改信息
+				this.$api.Courier.changeInfo(_this.userId.openId, _this.courierInfo).then((res) => {
+					if (res.data.code == 200) {
+						_this.updateInfoStorage()
+						_this.$refs.uToast.show({
+							message: '信息修改成功',
+							complete() {
+								uni.navigateBack()
+							}
+						})
+					} else {
+						_this.$refs.uToast.show({
+							message: '信息修改成功',
+							type:'error',
+							complete() {
+								uni.navigateBack()
+							}
+						})
+					}
+					
 				})
-				
+
+				let courierOutletsStorage = uni.getStorageSync('courierOutlets')
+				//当找不到缓存或是缓存的和当前的不一样时需要发送网点申请
+				if (uni.$u.test.isEmpty(courierOutletsStorage) || courierOutletsStorage.id != this.courierOutlets.id){
+					//申请网点
+					this.$api.Courier.applyOutlet(this.userId.id, this.courierOutlets.id).then((res)=>{
+						uni.setStorageSync('courierOutlets',this.courierOutlets)
+					})
+				}
+
+				//手机号校验未开启
+				// this.showToast({
+				// 	message: '信息完善成功',
+				// 	type: 'success'
+				// })
+
 
 			}
 		},
@@ -116,6 +172,27 @@
 			let _this = this
 			this.$api.Outlet.getList().then((res) => {
 				_this.outletList.push(res.data.data)
+			})
+			
+			this.updateInfoStorage()
+
+			this.$api.Courier.applyInfo(this.userId.id).then((res) => {
+				if (res.data.code == 200) {
+					let status=res.data.data.comfirmd
+					uni.setStorageSync('outletsComfirm',status)
+					if(status==0){
+						_this.outletsApplyInfo.title='网点申请待审核'
+					}
+					else if(status==1){
+						_this.outletsApplyInfo.title='网点申请已通过'
+						_this.outletsApplyInfo.color='cadetblue'
+					}
+				} else {
+					_this.showToast({
+						message: res.data.message,
+						type: 'error'
+					})
+				}
 			})
 		}
 	}
@@ -162,6 +239,11 @@
 			.outlet-select {
 				font-size: 40rpx;
 				color: #777;
+			}
+			
+			.outlet-apply-title{
+				margin-left: 10rpx;
+				font-size:32rpx;
 			}
 		}
 

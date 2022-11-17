@@ -3,10 +3,10 @@
 		<view class="header" v-bind:class="{'status':isH5Plus}">
 			<view class="userinfo" @click="toUserInfo">
 				<view class="avatar">
-					<image :src="userinfo.avatarUrl"></image>
+					<image :src="courierInfo.avatarUrl"></image>
 				</view>
 				<view class="info">
-					<view class="username">{{userinfo.nickName}}</view>
+					<view class="username">{{courierInfo.fullName}}</view>
 				</view>
 			</view>
 		</view>
@@ -64,10 +64,10 @@
 				//#ifndef APP-PLUS
 				isH5Plus: false,
 				//#endif
-				userinfo: {
-					avatarUrl: uni.getStorageSync('userinfo').avatarUrl ||
+				courierInfo: {
+					avatarUrl: uni.getStorageSync('courierInfo').avatarUrl ||
 						'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
-					nickName: uni.getStorageSync('userinfo').nickName || '你好，请登录'
+					fullName: uni.getStorageSync('courierInfo').fullName || '你好，请登录'
 				},
 				showEditor: false,
 
@@ -149,7 +149,8 @@
 		},
 		methods: {
 			init() {
-
+				let _this=this
+				this.courierInfo=uni.getStorageSync('courierInfo')
 			},
 
 			toServer1(i) {
@@ -191,32 +192,6 @@
 				});
 			},
 
-			confirmUserInfo() {
-				var _this = this
-				console.log(this.userinfo);
-				this.showInfoPopup = false;
-
-				try {
-					//open_id存入缓存
-					uni.setStorageSync('userinfo', _this.userinfo);
-				} catch (e) {
-					// error
-				}
-
-				uni.getStorage({
-					key: 'open_id',
-					success: function(res) {
-						let open_id = res.data
-						console.log(open_id);
-						_this.$api.User.userLogin(open_id, _this.userinfo.nickName, _this.userinfo.avatarUrl)
-							.then((res) => {
-								uni.setStorageSync('login', true);
-								console.log(res);
-							})
-					}
-				})
-
-			},
 		},
 		components: {
 
