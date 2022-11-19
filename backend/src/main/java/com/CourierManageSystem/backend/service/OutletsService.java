@@ -12,6 +12,7 @@ import com.CourierManageSystem.backend.model.OutletsParamAndResult.*;
 import com.CourierManageSystem.backend.util.GetGeocoding;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.google.common.collect.ImmutableMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -223,17 +224,19 @@ public class OutletsService {
      * @return
      */
     public ResponseWrapper delCourier(OutletsCourierIsJoinParam outletsCourierIsJoinParam) {
-        Map<String, Object> map=new HashMap<>();
-        map.put("outlets",outletsCourierIsJoinParam.getOutlets_id());
-        map.put("courier",outletsCourierIsJoinParam.getCourier());
-        map.put("is_delete",0);
-        map.put("confirmed",1);
-        List<OutletsCourier> outletsCouriers = outletsCourierMapper.selectByMap(map);
-        if(outletsCouriers.size()==0)
-            return ResponseWrapper.markError("快递员或网点不存在");
-        OutletsCourier outletsCourier = outletsCouriers.get(0);
-        outletsCourier.setIs_delete(1);
-        outletsCourierMapper.updateById(outletsCourier);
-        return ResponseWrapper.markSuccess("删除成功");
+
+//        Map<String, Object> map=new HashMap<>();
+//        map.put("outlets",outletsCourierIsJoinParam.getOutlets_id());
+//        map.put("courier",outletsCourierIsJoinParam.getCourier());
+//        map.put("is_delete",0);
+//        map.put("confirmed",1);
+//        List<OutletsCourier> outletsCouriers = outletsCourierMapper.selectByMap(map);
+//        if(outletsCouriers.size()==0)
+//            return ResponseWrapper.markError("快递员或网点不存在");
+//        OutletsCourier outletsCourier = outletsCouriers.get(0);
+//        outletsCourier.setIs_delete(1);
+
+        int r=outletsCourierMapper.deleteByMap(ImmutableMap.of("outlets",outletsCourierIsJoinParam.getOutlets_id(),"courier",outletsCourierIsJoinParam.getCourier()));
+        return r>0?ResponseWrapper.markSuccess("删除成功"):ResponseWrapper.markError("删除失败");
     }
 }
