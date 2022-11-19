@@ -36,13 +36,21 @@
 
 		.info {
 			
+			padding: 0 40rpx;
 			height: 10vh;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
 			
 			.info-item {
 				display: flex;
+				
 
 				.title {
 					color: #444;
+				}
+				.content{
+					font-size: 36rpx;
 				}
 			}
 		}

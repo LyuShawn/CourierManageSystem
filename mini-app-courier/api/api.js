@@ -67,12 +67,13 @@ export class Outlet {
 		})
 	}
 	
-	static getExpressList(courierId){
+	static getExpressList(courierId,outletsId){
 		return request({
-			url:'/courier/check_outlets_task',
+			url:'/courier/get_outlets_task',
 			method:'get',
 			data:{
-				id:courierId,
+				courier_id:courierId,
+				outlets_id:outletsId
 			}
 		})
 	}
