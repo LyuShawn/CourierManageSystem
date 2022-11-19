@@ -52,7 +52,7 @@
 </template>
 
 <script>
-	//找到接口
+	import Cookie from "js-cookie"
 	import {
 		Couriersq,
 		courierAgree,
