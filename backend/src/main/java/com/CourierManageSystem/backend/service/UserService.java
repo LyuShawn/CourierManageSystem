@@ -203,12 +203,10 @@ public class UserService {
      * @return
      */
     public ResponseWrapper delete_address(UserDeleteAddressParam userDeleteAddressParam) {
-        System.out.println("用户地址删除参数为\n" + userDeleteAddressParam.getAddress_id().toString());
-        Address address = addressMapper.selectById(userDeleteAddressParam.getAddress_id());
-        if (address == null)
-            return ResponseWrapper.markError("删除失败，id异常！");
-        address.setIs_delete(1);
-        addressMapper.updateById(address);
+        int r=addressMapper.deleteByMap(ImmutableMap.of("id",userDeleteAddressParam.getAddress_id()));
+        if(r==0){
+            return ResponseWrapper.markError("删除失败");
+        }
         return ResponseWrapper.markSuccess("删除成功");
     }
     /**
