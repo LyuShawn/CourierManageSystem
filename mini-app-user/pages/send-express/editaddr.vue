@@ -35,7 +35,6 @@
 </template>
 
 <script>
-	// import data from "@/src/data.js"
 	import chooser from "../send-express/components/choosearea.vue"
 	export default {
 		components: {
@@ -104,7 +103,9 @@
 					// 	msg:info,
 					// 	eid:this.eid
 					// })
-					uni.navigateBack()
+					uni.redirectTo({
+						 url: './pages/send-express/address'
+					});
 				
 				},
 				showPicker() {

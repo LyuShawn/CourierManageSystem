@@ -18,7 +18,7 @@ export class User {
 			url: '/user/delete_address',
 			method: 'post',
 			data: {
-				address_id:address_id,
+				address_id:address_id
 			}
 		})	
 	}

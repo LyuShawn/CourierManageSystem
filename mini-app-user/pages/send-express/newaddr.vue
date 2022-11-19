@@ -98,7 +98,9 @@
 				// 	msg:info,
 				// 	idf:this.flag
 				// })
-				uni.navigateBack()
+				uni.redirectTo({
+					 url: './pages/send-express/address'
+				});
 			
 			},
 			showPicker() {

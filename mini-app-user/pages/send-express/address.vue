@@ -92,10 +92,10 @@ export default {
 			userid:0
 		};
 	},
-	onShow() {
+    onShow() {
 		//加载
 		//this.init();
-		// let _this = this
+		let _this = this
 		// console.log('更新');	
 		// // this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
 		// // 	.then((res) => {
@@ -104,15 +104,14 @@ export default {
 		// // 		console.log('userid',this.userid)
 		// // 	})
 		// console.log('userid2:::',_this.userid)
-		// this.$api.User.getAddress(_this.userid).then((res) => {
-		// 	console.log('res:',res.data.data);
-		// 	let ress = res.data.data
-		// 	_this.data = res.data.data
-		// 	_this.list = res.data.data
-		// 	console.log('数据2',_this.data)
-		// 	//_this.data = res;
-		// })
-		this.fetchData()
+		this.$api.User.getAddress(_this.userid).then((res) => {
+			console.log('res:',res.data.data);
+			let ress = res.data.data
+			_this.data = res.data.data
+			_this.list = res.data.data
+			console.log('数据2',_this.data)
+			//_this.data = res;
+		})
 		},
 	methods: {
 		// async fetchData() {
@@ -127,27 +126,27 @@ export default {
 		// 	this.id = this.data[index].addressId;
 		// 	this.show = true;
 		// },
-		async confirm() {
-			console.log(this.Addressid)
-			await this.$api.User.deleteaddress(this.Addressid).then(() => {
-				console.log('数据已删除')
-				//_this.data = res;
-			})
-			this.fetchData();
-			// this.data.splice(this.id, 1); //确认删除
-			this.show = false;
-			console.log('confirm');
-		},
-		async fetchData() {
-			let _this = this
-			await this.$api.User.getAddress(_this.userid).then((res) => {
-				console.log('res:',res.data.data);
-				let ress = res.data.data
-				_this.data = res.data.data
-				_this.list = res.data.data
-				console.log('数据2',_this.data)
-				//_this.data = res;
-			})
+		// confirm() {
+		// 	console.log(this.Addressid)
+		// 	let id = this.Addressid
+		// 	this.$api.User.deleteaddress(id).then(() => {
+		// 		console.log('数据已删除',id)
+		// 	})
+		// 	this.fetchData();
+		// 	this.data.splice(this.label, 1); //确认删除
+		// 	this.show = false;
+		// 	console.log('confirm');
+		// },
+		// fetchData() {
+		// 	let _this = this
+		// 	this.$api.User.getAddress(_this.userid).then((res) => {
+		// 		console.log('res:',res.data.data);
+		// 		let ress = res.data.data
+		// 		_this.data = res.data.data
+		// 		_this.list = res.data.data
+		// 		console.log('数据2',_this.data)
+		// 		//_this.data = res;
+		// 	})
 			// this.data = res.data.data;
 			// console.log(this.data);
 			// this.list = this.data;
@@ -165,29 +164,27 @@ export default {
 			// 	let ress = res.data.data
 			// 	_this.data = res.data.data
 			// 	_this.list = res.data.data
-			// 	console.log('数据2',_this.data)
-		},
 		showmodal(index) {
 			this.Addressid = this.data[index].id;
 			this.label = index;
 			this.show = true;
 				//_this.data = res;
 		},
-		// confirm(index) {
-		// 	console.log('删除编号',this.Addressid)
-		// 	// this.$api.User.deleteaddress(this.Addressid).then(() => {
-		// 	// 	console.log('数据已删除')
-		// 	// 	//_this.data = res;
-		// 	// })
-		// 	//this.fetchData();
-		// 	this.$api.User.deleteaddress(this.Addressid).then(() => {
-		// 		console.log('数据已删除')
-		// 		})
-		// 	this.data.splice(this.label, 1); //确认删除
-		// 	this.show = false;
-		// 	console.log('现存数据',this.data)
-		// 	console.log('confirm');
-		// },
+		confirm(index) {
+			console.log('删除编号',this.Addressid)
+			// this.$api.User.deleteaddress(this.Addressid).then(() => {
+			// 	console.log('数据已删除')
+			// 	//_this.data = res;
+			// })
+			//this.fetchData();
+			this.$api.User.deleteaddress(this.Addressid).then(() => {
+				console.log('数据已删除')
+				})
+			this.data.splice(this.label, 1); //确认删除
+			this.show = false;
+			console.log('现存数据',this.data)
+			console.log('confirm');
+		},
 		cancel() {
 			this.show = false;
 			console.log('cancel');

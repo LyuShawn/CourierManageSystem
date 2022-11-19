@@ -394,10 +394,6 @@
 				this.time = e.value[0]+e.value[1]
 				this.address = e.value[1]
 			},
-			dialogOptions: {
-				visible: false,
-				content: '下单成功'
-			},
 			handleDialogBack() {
 				this.dialogOptions.visible = false;
 			},
