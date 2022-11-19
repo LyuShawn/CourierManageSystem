@@ -46,7 +46,7 @@
 </template>
 
 <script>
-	//找到接口
+	import Cookie from "js-cookie"
 	import qs from 'qs'
 	import {
 		delCourier,
