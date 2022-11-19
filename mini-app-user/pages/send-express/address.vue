@@ -9,9 +9,9 @@
 			<view class="show-item" v-for="(item, index) in data" :key="index">
 				<view class="show-item-message" @click="sendaddr(index, flag)">
 					<!-- 圆点 -->
-					<view class="firstn">{{ item.id[0] }}</view>
+					<view class="firstn">{{ item.name[0] }}</view>
 					<text>
-						{{ item.id }}&nbsp;&nbsp;{{ item.phone.substr(0, 3) }}&nbsp;{{ item.phone.substr(3, 4) }}&nbsp;{{ item.phone.substr(-4) }}
+						{{ item.name }}&nbsp;&nbsp;{{ item.phone.substr(0, 3) }}&nbsp;{{ item.phone.substr(3, 4) }}&nbsp;{{ item.phone.substr(-4) }}
 
 						{{ item.addr }}
 					</text>
@@ -41,7 +41,9 @@
 export default {
 	onLoad: function(option) {
 		this.flag = option.id;
-		console.log(option.id);
+		this.userid = option.userid;
+		console.log('flag',option.id);
+		console.log('id',option.userid)
 	 //    const eventChannel = this.getOpenerEventChannel();
 		// eventChannel.emit('acceptDataFromOpenedPage', {data: 'data from test page'});
 		// eventChannel.emit('someEvent', {data: this.data});
@@ -85,25 +87,33 @@ export default {
 			list: [],
 			flag: 0,
 			Addressid: 0,
-			label:0
+			label:0,
+			keyword: '',
+			userid:0
 		};
 	},
 	onShow() {
 		//加载
 		//this.init();
-		let _this = this
-		console.log('更新');
-		this.$api.User.getAddress(0).then((res) => {
-			console.log('res:',res.data.data);
-			let ress = res.data.data
-			_this.data = res.data.data
-			console.log('数据',_this.data)
-			//_this.data = res;
-		})
+		// let _this = this
+		// console.log('更新');	
+		// // this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+		// // 	.then((res) => {
+		// // 		console.log('资源2',res.data.data.id)
+		// // 		this.userid = res.data.data.id;
+		// // 		console.log('userid',this.userid)
+		// // 	})
+		// console.log('userid2:::',_this.userid)
+		// this.$api.User.getAddress(_this.userid).then((res) => {
+		// 	console.log('res:',res.data.data);
+		// 	let ress = res.data.data
+		// 	_this.data = res.data.data
+		// 	_this.list = res.data.data
+		// 	console.log('数据2',_this.data)
+		// 	//_this.data = res;
+		// })
+		this.fetchData()
 		},
-	// async onShow() {
-	// 	this.fetchData();
-	// },
 	methods: {
 		// async fetchData() {
 		// 	let res = await this.$request.post('/getAddress', {
@@ -113,23 +123,71 @@ export default {
 		// 	console.log(this.data);
 		// 	this.list = this.data;
 		// },
+		// showmodal(index) {
+		// 	this.id = this.data[index].addressId;
+		// 	this.show = true;
+		// },
+		async confirm() {
+			console.log(this.Addressid)
+			await this.$api.User.deleteaddress(this.Addressid).then(() => {
+				console.log('数据已删除')
+				//_this.data = res;
+			})
+			this.fetchData();
+			// this.data.splice(this.id, 1); //确认删除
+			this.show = false;
+			console.log('confirm');
+		},
+		async fetchData() {
+			let _this = this
+			await this.$api.User.getAddress(_this.userid).then((res) => {
+				console.log('res:',res.data.data);
+				let ress = res.data.data
+				_this.data = res.data.data
+				_this.list = res.data.data
+				console.log('数据2',_this.data)
+				//_this.data = res;
+			})
+			// this.data = res.data.data;
+			// console.log(this.data);
+			// this.list = this.data;
+			// let _this = this
+			// console.log('更新');	
+			// // this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+			// // 	.then((res) => {
+			// // 		console.log('资源2',res.data.data.id)
+			// // 		this.userid = res.data.data.id;
+			// // 		console.log('userid',this.userid)
+			// // 	})
+			// console.log('userid2:::',_this.userid)
+			// this.$api.User.getAddress(_this.userid).then((res) => {
+			// 	console.log('res:',res.data.data);
+			// 	let ress = res.data.data
+			// 	_this.data = res.data.data
+			// 	_this.list = res.data.data
+			// 	console.log('数据2',_this.data)
+		},
 		showmodal(index) {
 			this.Addressid = this.data[index].id;
 			this.label = index;
 			this.show = true;
-		},
-		confirm(index) {
-			console.log('删除编号',this.Addressid)
-			this.$api.User.deleteaddress(this.Addressid).then(() => {
-				console.log('数据已删除')
 				//_this.data = res;
-			})
-			//this.fetchData();
-			this.data.splice(this.label, 1); //确认删除
-			this.show = false;
-			console.log('现存数据',this.data)
-			console.log('confirm');
 		},
+		// confirm(index) {
+		// 	console.log('删除编号',this.Addressid)
+		// 	// this.$api.User.deleteaddress(this.Addressid).then(() => {
+		// 	// 	console.log('数据已删除')
+		// 	// 	//_this.data = res;
+		// 	// })
+		// 	//this.fetchData();
+		// 	this.$api.User.deleteaddress(this.Addressid).then(() => {
+		// 		console.log('数据已删除')
+		// 		})
+		// 	this.data.splice(this.label, 1); //确认删除
+		// 	this.show = false;
+		// 	console.log('现存数据',this.data)
+		// 	console.log('confirm');
+		// },
 		cancel() {
 			this.show = false;
 			console.log('cancel');
@@ -144,7 +202,7 @@ export default {
 			let _this = this
 			let length = _this.data.length
 			uni.navigateTo({
-				url: '/pages/send-express/newaddr?gid=' + 1
+				url: '/pages/send-express/newaddr?gid=' + _this.userid
 			});
 			// uni.$on('submitnew',function(datas){
 			// 	console.log('数据',datas.msg)
@@ -212,7 +270,7 @@ export default {
 		match() {
 			// console.log(this.keyword)
 			this.data = this.list.filter(item => {
-				return item.toName.includes(this.keyword) || item.phone.includes(this.keyword) || item.location.includes(this.keyword) || item.detail.includes(this.keyword);
+				return item.name.includes(this.keyword) || item.phone.includes(this.keyword) || item.addr.includes(this.keyword);
 			});
 		}
 	}

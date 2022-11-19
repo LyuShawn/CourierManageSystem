@@ -169,6 +169,11 @@
 			<view class="price">¥{{sum}}</view>
 			<view><button class="btn" size="large" @click="submitexpress()">下单</button></view>
 		</view>
+		
+		<div class="dialog" v-if="dialogOptions.visible">
+			<p>{{ dialogOptions.content }}</p>
+			<button @click="handleDialogBack()">返回</button>
+		</div>
 	</view>
 </template>
 
@@ -201,6 +206,7 @@
 				sum:0,
 				valueid:0,
 				price:0,
+				userid:0,
 				couponid: 0,
 				user_1: {
 					phone: '',
@@ -211,6 +217,10 @@
 					phone: '',
 					location: '',
 					detail: ''
+				},
+				dialogOptions: {
+					visible: false,
+					content: '下单成功'
 				},
 				columns:[
 					['今天','明天','后天'],
@@ -250,10 +260,15 @@
 				list:[{title:'保价服务'}]
 			}
 		},
-		onLoad(){
-			// uni.$on('info',function(data){
-			// 	console.log('监听',data.msg);
-			// })
+		async onLoad(){
+			let _this = this;
+			
+			await _this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+				.then((res) => {
+					console.log('资源',res.data.data.id)
+					_this.userid = res.data.data.id
+					console.log('资源3',_this.userid)
+				})
 		},
 		onUnload() {
 			uni.$off('info');
@@ -303,11 +318,23 @@
 			},
 			submitexpress()
 			{
-				this.$api.User.expressinfo(this.user_2.phone,this.user_1.location,this.user_2.location,this.sum).then((number) => {
-					console.log('数据单号',number)
-					console.log('上传成功');
-					//_this.data = res;
-				})
+				if (this.s_username != '新建寄件人' && this.r_username != '新建收件人' ) {
+					// 弹窗
+					this.$api.User.expressinfo(this.user_2.phone,this.user_1.location,this.user_2.location,this.sum).then((number) => {
+						console.log('数据单号',number)
+						console.log('上传成功');
+						//_this.data = res;
+					})
+					this.dialogOptions = {
+						visible: true,
+						content: '下单成功'
+					};
+				} else {
+					this.dialogOptions = {
+						visible: true,
+						content: '请把信息填写完整'
+					};
+				}
 			},
 			// computersum(){
 			// 	this.$api.User.computeprice(this.user_1.location,this.user_2.location).then((exp_price) => {
@@ -366,6 +393,13 @@
 				this.showpicker2 = false
 				this.time = e.value[0]+e.value[1]
 				this.address = e.value[1]
+			},
+			dialogOptions: {
+				visible: false,
+				content: '下单成功'
+			},
+			handleDialogBack() {
+				this.dialogOptions.visible = false;
 			},
 			confirm1(e) {
 				console.log('confirm', e)
@@ -426,7 +460,7 @@
 				//切换至 地址薄 页面
 				let _this = this
 				uni.navigateTo({
-					url: '/pages/send-express/address?id=' + 1			
+					url: '/pages/send-express/address?id=1&userid='	+_this.userid		
 				});
 				uni.$on('info',function(data){
 					if(data.idf == 1)
@@ -447,7 +481,7 @@
 				// uni.$emit('recv',{number:2})
 				let _this = this
 				uni.navigateTo({
-					url: '/pages/send-express/address?id=' + 2
+					url: '/pages/send-express/address?id=2&userid='	+_this.userid
 				});
 				uni.$on('info',function(data){
 					if(data.idf == 2)
@@ -629,6 +663,35 @@
 		margin-top: 10px;
 		margin-left: 20px;
 		margin-bottom: 15px;
+	}
+	.dialog {
+		width: 80%;
+		height: 110px;
+		background: #3c9cff;
+		border-radius: 10px;
+		position: absolute;
+		bottom: 15%;
+		left: 50%;
+		transform: translateX(-50%);
+		p {
+			font-size: 24px;
+			color: #fff;
+			margin-bottom: 30px;
+			display: flex;
+			justify-content: center;
+			margin-top: 40px;
+		}
+		button {
+			background: red;
+			color: #ffffff;
+			outline: none;
+			border: none;
+			padding: 5px 10px;
+			display: flex;
+			justify-content: center;
+			margin: 0 auto;
+			border-radius: 2px;
+		}
 	}
 
 </style>

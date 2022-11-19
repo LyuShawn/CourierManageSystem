@@ -48,12 +48,12 @@
 				show: false,
 				alertshow: false,
 				message: '',
-				gid:0
+				//gid:0
 			}
 		},
 		onLoad(option) {
 			this.flag = option.gid,
-			console.log(option.gid)
+			console.log('userid newaddr',this.flag)
 			
 		},
 		onshow()
@@ -90,7 +90,8 @@
 					}
 				let address = info.location + info.detail
 				console.log('info',info)
-				this.$api.User.newaddress(0,info.phone,address).then(() => {
+			    console.log('usid',this.flag)
+				this.$api.User.newaddress(this.flag,info.phone,address,info.name).then(() => {
 					console.log('上传成功');
 				})
 				// uni.$emit('submitnew',{

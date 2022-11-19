@@ -33,14 +33,15 @@ export class User {
 			}
 		})	
 	}
-	static newaddress(user_id ,phone ,addr){
+	static newaddress(user_id ,phone ,addr,name){
 		return request({
 			url:'/user/add_address',
 			method:'post',
 			data:{
 				user:user_id,
 				phone:phone,
-				addr:addr
+				addr:addr,
+				name:name
 			}
 		})
 	}
@@ -79,28 +80,75 @@ export class User {
 		})
 	}
 	
-	static userLogin(open_id,nickname,avatar_url){
+	static updateInfo(id,open_id,nickname,avatar_url){
 		return request({
-			url:'user/register',
+			url:'/user/update',
 			method:'post',
 			data:{
+				id,
 				open_id,
 				nickname,
 				avatar_url
 			}
 		})
 	}
-
+	static postUserInfo(open_id){
+		return request({
+			url:'/user/user_information',
+			method:'post',
+			data:{
+				open_id:open_id,
+			}
+		})
+	}
 }
 
-export class Myexpress{
-	static getAllExpress(code) {
+export class Express{
+	static getAllExpress(phone) {
 		return request({
 			url: '/user/get_all_express',
 			method: 'get',
 			data: {
-				code
+				phone:phone,
 			}
 		})
 	}
+	static getExpressPassOutlets(number) {
+		return request({
+			url: '/user/get_express_pass_outlets',
+			method: 'get',
+			data: {
+				tracking_number:number,
+			}
+		})
+	}
+	static getExpressNowOutlets(number) {
+		return request({
+			url: '/user/get_express_nowoutlets',
+			method: 'get',
+			data: {
+				tracking_number:number,
+			}
+		})
+	}
+	static postLogisticsInformation(number) {
+		return request({
+			url: '/user/logistics_information',
+			method: 'post',
+			data: {
+				tracking_number:number,
+			}
+		})
+	}
+	static postExpressState(number,phone) {
+		return request({
+			url: '/user/get_express_state',
+			method: 'post',
+			data: {
+				tracking_number:number,
+				phone:phone,
+			}
+		})
+	}
+	
 }

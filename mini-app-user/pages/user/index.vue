@@ -80,7 +80,11 @@
 				userinfo: {
 					avatarUrl: uni.getStorageSync('userinfo').avatarUrl ||
 						'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
-					nickName: uni.getStorageSync('userinfo').nickName || null
+					nickName: uni.getStorageSync('userinfo').nickName || '你好，请登录'
+				},
+				userId:{
+					openId:uni.getStorageSync('open_id'),
+					id:uni.getStorageSync('id')
 				},
 				showEditor: false,
 				
@@ -175,6 +179,9 @@
 			toServer1(i) {
 				if (this.severList[0][i].name == 'classes') {
 					console.log('进入我的地址簿');
+					uni.navigateTo({
+						url:'/pages/send-express/address'
+					})
 				} else if (this.severList[0][i].name == 'backups') {
 					this.$refs.uToast.show({
 						message: '已自动进行数据备份',
@@ -188,11 +195,13 @@
 
 			toServer2(i){
 				if (this.severList[1][i].name == 'help') {
-					console.log('进入帮助页面');
+					//console.log('进入帮助页面');
+					this.goGithub()
 				} else if (this.severList[1][i].name == 'feedback') {
 					//console.log('进入反馈页面');
 				} else if (this.severList[1][i].name == 'about') {
-					console.log('进入关于我们页面');
+					//console.log('进入关于我们页面');
+					this.goGithub()
 				}else if(this.severList[1][i].name == 'share'){
 					//console.log('进入分享页面');
 				}
@@ -238,6 +247,7 @@
 				console.log(this.userinfo);
 				this.showInfoPopup = false;
 
+
 				try {
 					//open_id存入缓存
 					uni.setStorageSync('userinfo', _this.userinfo);
@@ -249,14 +259,20 @@
 					key: 'open_id',
 					success: function(res) {
 						let open_id = res.data
-						console.log(open_id);
+						console.log('openid',open_id);
 						_this.$api.User.userLogin(open_id, _this.userinfo.nickName, _this.userinfo.avatarUrl)
 							.then((res) => {
 								uni.setStorageSync('login', true);
-								console.log(res);
+								console.log('fail',res);
 							})
 					}
 				})
+				
+				this.$api.User.updateInfo(this.userId.id,this.userId.openId, this.userinfo.nickName, this.userinfo.avatarUrl)
+					.then((res) => {
+						uni.setStorageSync('userinfo', _this.userinfo);
+						uni.setStorageSync('login', true);
+					})
 
 			},
 		},

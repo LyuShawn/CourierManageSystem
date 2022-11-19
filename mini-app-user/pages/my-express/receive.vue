@@ -3,18 +3,25 @@
 		<u-gap height="10" ></u-gap>
 		<view class="block">
 			<u-gap height="5" ></u-gap>
-			<view class="express" v-for="(item,index) in expressList" :key="index">
+			<view class="exp-info" >
+				<view class="item item-60">
+					<u--image :showLoading="true" :src="src" width="80px" height="80px" radius="10px"></u--image>
+				</view>
 				
-				<u--image :showLoading="true" :src="item.src" width="80px" height="80px" radius="10px"></u--image>
-				<view class="view2">
-					<view class="view2-1">
-						<u--text :lines="1" :bold="true" size="18" :text="item.state"></u--text>
+				<view class="item">
+					<view class="">
+						<!-- <u--text  :bold="true" size="18" text="haha"></u--text> -->
+						<view v-if="expressState==1" class="item-status">待揽件</view>
+						<view v-else-if="expressState==2" class="item-status">运输中</view>
+						<view v-else-if="expressState==3" class="item-status">已签收</view>
 					</view>
-					<view class="view2-2">
-						<u--text :lines="1" :text="item.name"></u--text>
+					<view class="">
+						<!-- <u--text  :text="expressList"></u--text> -->
+						<view class="item-number" >{{ expressList }}</view>
 					</view>
-					<view class="view2-3">
-						<u--text :lines="1" :text="item.address"></u--text>
+					<view class="item-outlet">
+						<!-- <view>所在网点：</view> -->
+						<view>{{ expressNowStatus }}</view>
 					</view>
 				</view>
 			</view>
@@ -27,58 +34,68 @@
 		</view>
 		
 		
-		<u-gap height="10" ></u-gap>
+		<u-gap height="5" ></u-gap>
 		<view class="state">
 			<u-gap height="10" ></u-gap>
-			<view margin="10px" class="block1" v-for="(item,index) in expressInfoList" :key="index">
-				<u--image :showLoading="true" :src="item.img" width="30px" height="30px" radius="5px"></u--image>
-				<u--text align="center" :text="item.company" ></u--text>
-				<u--text :text="item.number" ></u--text>
-				<view class="block2">
-					<u--text color="gray" text="复制" ></u--text>
-					<u--text mode="phone" call="true" color="gray" text="打电话" ></u--text>
-				</view>
+			<view margin="10px" class="exp-info-title">
+				<u--image :showLoading="true" :src="companyImg" width="50px" height="50px" radius="5px"></u--image>
+				<!-- <u--text align="center" :text="expressInfo.company" ></u--text> -->
+				<view class="exp-info-company">哈哈快递</view>
 				
+				<!-- <view class="block2">
+					<u--text color="gray" text="复制" ></u--text>
+					<u--text mode="phone"  color="gray" text="打电话" ></u--text>
+				</view> -->
 			</view>
-			
+			<view margin="10px" class="block1">
+				<text>运输情况</text>
+			</view>
 			<view class="state1">
 				<view class="u-demo-block">
 					
-					<view class="u-demo-block__content" >
+					<view class="" >
 						<u-steps
-							:current="0"
+							:current="current"
 							direction="column"
-							dot="true"
-							
 							activeColor="#2979ff"
 							inactiveColor="gray"
 						>
-							<u-steps-item
-								:title="expressNewStatusList[0].title"
-								:desc="expressNewStatusList[0].desc"
+							<u-steps-item iconSize="17" v-for="(item,index) in expressStatusList" :key="index"
+								:title="item"
+								desc="  "
 							>
+							<!-- <text class="slot-icon" slot="icon"></text> -->
 							</u-steps-item>
-							
-							<u-steps-item v-for="(item,index) in expressStatusList" :key="index"
-								:title="item.title"
-								:desc="item.desc"
-							>
-							</u-steps-item>
-							<!-- <u-steps-item
-								title="昨天 14:33"
-								
-								desc="江苏省南通市通州区三余公司已揽收"
-							>
-							</u-steps-item> -->
 						</u-steps>
+						
 						
 					</view>
 					<u-gap height="10" ></u-gap>
 				</view>
-
+                
 			</view>
+			
+			
 		</view>
 		
+		<!-- <view class="state">
+			<u-gap height="10" ></u-gap>
+			<u--image :showLoading="true" :src="courierImg" width="30px" height="30px" radius="5px"></u--image>
+			<view margin="10px" class="block1">
+				<text>快递员信息</text>
+			</view>
+			
+			<view class="state1">
+				<view class="u-demo-block">
+					<view class="" >
+					</view>
+					<u-gap height="10" ></u-gap>
+				</view>
+		        
+			</view>
+			<u-gap height="10" ></u-gap>
+			
+		</view> -->
 		
 		
 	</view>
@@ -90,28 +107,55 @@
 	export default {
 		data() {
 			return {
-				src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',
+				traNum:1,
+				src: '/static/my-express/express.svg',
 			    checkmark:'/static/my-express/share.svg',
-				expressList:[
-					{state:'待收件',name:'天猫 | 狂欢价 秋季男士衣服',address:'圆通速递：南通转运公司 已发出，下一站：福',src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.fr-trading.com%2F1%2F5_494_2078984_800_800.jpg.webp&refer=http%3A%2F%2Fimg2.fr-trading.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669969176&t=2d50ba68ce4ef56508b1914240e7d257',},
-				],
-				expressNewStatusList:[
-					{title:'待收件 14:33',desc:'福州大学快递中心'},
-				],
-				expressStatusList:[
-					{title:'今天 11:40',desc:'福州转运中心'},
-					{title:'昨天 22:35',desc:'南通转运公司'},
-					{title:'昨天 14:33',desc:'江苏省南通市通州区三余公司已揽收'},
-				],
-				expressInfoList:[
-					{company:'中通速递',number:'ZT123456789',img:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.cnmo.com%2F1823_600x1000%2F1822451.jpg&refer=http%3A%2F%2Fimg.cnmo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669980420&t=4a6e442ee44332a52d78d26cce368d33',},
-				],
+				courierImg:'/static/my-express/courier.svg',
+				companyImg:'/static/my-express/company.svg',
+				current:'',
+				phone:'',
+				expressList:{},
+				expressNowStatus:[ ],
+				expressStatusList:[ ],
+				expressState:'',
+				
 			};
 		},
-		onLoad(){
-			// uni.$on('info',function(data) {
-			// 	message:data.id;
-			// })
+		async onLoad(number){
+			
+			await this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+				.then((res) => {
+					this.phone = res.data.data.phone;
+					console.log('1',this.phone);
+				})
+			
+			this.traNum = number.traNum
+			uni.showLoading({
+				title:"数据加载中...",
+				mask:true
+			})
+			this.$api.Express.getExpressNowOutlets(this.traNum).then((res) => {
+				this.expressNowStatus = res.data.data.now_outlet;
+			});
+			this.$api.Express.getExpressPassOutlets(this.traNum).then((res) => {
+				this.expressStatusList = res.data.data.pass_outlets_list
+			    this.current = this.expressStatusList.indexOf(this.expressNowStatus);  
+			});
+			this.$api.Express.postLogisticsInformation(this.traNum).then((res) => {
+				
+				this.expressList = res.data.data.tracking_number;
+				// console.log(this.expressList);
+			});
+			this.$api.Express.postExpressState(this.traNum,this.phone).then((res) => {
+				this.expressState = res.data.data.state;
+				console.log(this.traNum,this.expressState);
+			});
+			
+			uni.hideLoading()
+			
+		},
+		methods: {
+			
 		}
 	}
 </script>
@@ -127,9 +171,45 @@
 	// border: 1px solid #b7b2b7;
 	margin: 10px 10px;
 	align-items: center;
-	justify-content: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	// justify-content: space-around;
+	
 }
+.exp-info{
+	display:flex;
+	margin: 10px 20px;
+	flex-wrap: nowrap;
+	.item{
+		flex:1;
+		margin: 10px 20px;
+		
+		&.item-60{
+			flex:20% 0 0;
+		}
+	}
+}
+.exp-info-title{
+	display: flex;
+	margin: 15px 20px;
+}
+.exp-info-company{
+	display: flex;
+	margin: 15px 20px;
+	color: #97694F;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.item-status{
+	font-weight: bold;
+}
+.item-number{
+	margin: 10px 0px;
+}
+.item-outlet{
+	display: flex;
+	margin: 10px 0px;
+}
+
     .view1 {
 		width: 100px;
 		height: 100px;
@@ -137,11 +217,17 @@
 	}
 	.view2 {
 		// margin: 50px,50px;
+		// width: 100px;
 	}
 	
 	.view3 {	
-		
+		display: flex;
+		align: center;
 	}
+.view2-3{
+	display: flex;
+	width: 100px;
+}
 .share{
 	align: center;
     text-align: center;
@@ -161,10 +247,8 @@
 	background-color: white;
 }
 .block1{
-	margin: 10px 10px;
-	display: flex;
-	background-color: white;
-	align-items: center;
+	margin: 15px 20px;
+	
 	// justify-content: space-around;
 }
 .block2{
@@ -172,4 +256,14 @@
    width:  100px;
    display: flex;
 }
+.slot-icon {
+		width: 21px;
+		height: 21px;
+		
+		border-radius: 100px;
+		font-size: 12px;
+		color: #fff;
+		line-height: 21px;
+		text-align: center;
+	}
 </style>
