@@ -56,6 +56,29 @@ export class Courier {
 			}
 		})
 	}
+	
+	//快递员确认派送
+	static expressReach(trackingNumber){
+		return request({
+			url:'/courier/express_reach_confirm',
+			method:'post',
+			data:{
+				tracking_number:trackingNumber
+			}
+		})
+	}
+	
+	//快递员取件
+	static expressGet(id,trackingNumber){
+		return request({
+			url:'/courier/express_get_confirm',
+			method:'post',
+			data:{
+				id:id,
+				tracking_number:trackingNumber
+			}
+		})
+	}
 }
 
 export class Outlet {
@@ -70,7 +93,7 @@ export class Outlet {
 	static getExpressList(courierId,outletsId){
 		return request({
 			url:'/courier/get_outlets_task',
-			method:'get',
+			method:'post',
 			data:{
 				courier_id:courierId,
 				outlets_id:outletsId
