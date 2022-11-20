@@ -2,7 +2,7 @@ backend/.idea/
 backend/target/
 backend/backend.iml
 backend/HELP.md
-
+backend/
 web/node_modules/
 
 # Logs
@@ -39,4 +39,3 @@ outlets/
 courier/
 backend/
 mini-app-courier/
-
