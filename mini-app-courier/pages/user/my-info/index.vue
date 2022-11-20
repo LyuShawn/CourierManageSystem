@@ -177,6 +177,7 @@
 		},
 		onShow() {
 			let _this = this
+			this.courierOutlets=uni.getStorageSync('courierOutlets')
 			this.$api.Outlet.getList().then((res) => {
 				_this.outletList = []
 				if (res.data.code == 200) {
