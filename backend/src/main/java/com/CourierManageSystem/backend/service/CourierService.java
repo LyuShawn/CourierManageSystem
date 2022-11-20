@@ -271,7 +271,13 @@ public class CourierService {
      * @return
      */
     public ResponseWrapper courierApplyOutlets(CourierApplyOutletsParam courierApplyOutletsParam){
+        Long outletsId=courierApplyOutletsParam.getOutlets_id();
         Long courierId=courierApplyOutletsParam.getCourier_id();
+
+        List<OutletsCourier> outletsCourierList= outletsCourierMapper.selectByMap(ImmutableMap.of("outlets",outletsId,"courier",courierId,"confirmed",1));
+        if(!outletsCourierList.isEmpty()){
+            return ResponseWrapper.markSuccess("该快递员的申请已经通过");
+        }
         //多个申请只保留最新的
         outletsCourierMapper.deleteByMap(ImmutableMap.of("courier",courierId));
         OutletsCourier outletsCourier = new OutletsCourier();
