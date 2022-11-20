@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="not-login" v-if="!(isLogin && isComfirm) &&false">
+		<view class="not-login" v-if="!(isLogin && isComfirm)">
 			<view>请先完善个人信息</view>
 			<view>并等待网点审核通过</view>
 		</view>
@@ -22,8 +22,8 @@
 	export default {
 		data() {
 			return {
-				isLogin: uni.getStorageInfoSync('courierInfo') == null ? false : true,
-				isComfirm: uni.getStorageSync('outletsComfirm') == 1 ? true : false,
+				isLogin: uni.getStorageSync('courierInfo') == null ? false : true,
+				isComfirm: false,
 				courierOutlets: uni.getStorageSync('courierOutlets') || null,
 				userId: {
 					id: uni.getStorageSync('id') || '',
@@ -36,6 +36,13 @@
 				}
 
 			};
+		},
+		onShow(){
+			this.isComfirm=uni.getStorageSync('outletsComfirm') == 1 ? true : false
+			
+			if (this.isLogin && this.isComfirm) {
+				this.init()
+			}
 		},
 		onReady() {
 			let _this = this
@@ -69,6 +76,7 @@
 			expressFormat(l) {
 				let list = l
 				let _this = this
+				_this.expressList=[]
 				//0待派送；1已派送；2待上门；3已揽件
 				for (let item of list) {
 					let express = {

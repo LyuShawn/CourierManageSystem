@@ -160,7 +160,7 @@
 			}
 		},
 		mounted() {
-			console.log(this.itemInfo);
+			console.log(this.express);
 		}
 	}
 </script>

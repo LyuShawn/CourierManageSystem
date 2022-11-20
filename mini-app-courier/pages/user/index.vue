@@ -64,10 +64,17 @@
 				//#ifndef APP-PLUS
 				isH5Plus: false,
 				//#endif
+
+				// courierInfo: { 
+				// 	avatarUrl: uni.getStorageSync('courierInfo').avatarUrl ||
+				// 		'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
+				// 	fullName: '你好，请登录'
+				// 	//fullName: uni.$u.test.isEmpty(uni.getStorageSync('courierInfo').fullName) ? '你好，请登录' : uni
+				// 	//	.getStorageSync('courierInfo').fullName
+				// },
 				courierInfo: {
-					avatarUrl: uni.getStorageSync('courierInfo').avatarUrl ||
-						'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
-					fullName: uni.getStorageSync('courierInfo').fullName || '你好，请登录'
+					avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
+					fullName: '你好，请登录'
 				},
 				showEditor: false,
 
@@ -150,7 +157,10 @@
 		methods: {
 			init() {
 				let _this = this
-				this.courierInfo = uni.getStorageSync('courierInfo')
+				if (!uni.$u.test.isEmpty(uni.getStorageSync('courierInfo'))) {
+					this.courierInfo = uni.getStorageSync('courierInfo')
+				}
+
 			},
 
 			toServer1(i) {
@@ -168,9 +178,9 @@
 					})
 				}
 			},
-			
-			toServer2(index){
-				if(index==1){
+
+			toServer2(index) {
+				if (index == 1) {
 					this.goGithub()
 				}
 			},
@@ -180,11 +190,10 @@
 					uni.switchTab({
 						url: '/pages/user/my-info/index'
 					});
-				}
-				else{
+				} else {
 					uni.redirectTo({
-					      url: '/pages/express/index?status='+(index-1)
-					  });
+						url: '/pages/express/index?status=' + (index - 1)
+					});
 				}
 			},
 
@@ -198,7 +207,7 @@
 			},
 
 			toUserInfo() {
-				uni.navigateTo({
+				uni.switchTab({
 					url: '/pages/user/my-info/index'
 				});
 			},
@@ -277,7 +286,7 @@
 
 		.box {
 			width: 90vw;
-			
+
 			height: 12vh;
 			background-color: #fefefe;
 			border-radius: 24upx;

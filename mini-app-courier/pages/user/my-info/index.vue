@@ -27,7 +27,8 @@
 				<view class="form-item-content" @click="showOutlet=true">
 					<view class="outlet-select">{{courierOutlets?courierOutlets.nickname:'请选择网点'}}</view>
 				</view>
-				<view class="outlet-apply-title" :style="{color:outletsApplyInfo.color}">{{outletsApplyInfo.title}}</view>
+				<view class="outlet-apply-title" :style="{color:outletsApplyInfo.color}">{{outletsApplyInfo.title}}
+				</view>
 			</view>
 
 			<view class="form-item confirm-btn">
@@ -46,15 +47,15 @@
 	export default {
 		data() {
 			return {
-				courierInfo: uni.getStorageSync('courierInfo') || {
+				courierInfo: {
 					avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
 					fullName: '',
 					phoneNumber: '',
 				},
-				courierOutlets: uni.getStorageSync('courierOutlets') || null,
-				outletsApplyInfo:{
-					title:'',
-					color:'indianred'
+				courierOutlets: null,
+				outletsApplyInfo: {
+					title: '',
+					color: 'indianred'
 				},
 				userId: {
 					openId: uni.getStorageSync('open_id') || '',
@@ -78,17 +79,20 @@
 				})
 			},
 
-			updateInfoStorage(){
-				let _this=this
+			updateInfoStorage() {
+				let _this = this
 				this.$api.Courier.getCourierInfo(this.userId.openId).then((res) => {
 					if (res.data.code == 200) {
 						let info = res.data.data
-						_this.courierInfo.avatarUrl = info.avatarUrl
-						_this.courierInfo.fullName = info.fullName
-						_this.courierInfo.phoneNumber = info.phone
-						uni.setStorageSync("courierInfo", _this.courierInfo)
-				
-						console.log(res.data.data);
+
+						if (uni.$u.test.isEmpty(info.fullName)) {
+							uni.removeStorageSync("courierInfo")
+						} else {
+							_this.courierInfo.avatarUrl = info.avatarUrl
+							_this.courierInfo.fullName = info.fullName
+							_this.courierInfo.phoneNumber = info.phone
+							uni.setStorageSync("courierInfo", _this.courierInfo)
+						}
 					} else {
 						_this.showToast({
 							message: res.data.message,
@@ -97,7 +101,7 @@
 					}
 				})
 			},
-			
+
 			onChooseAvatar(e) {
 				this.courierInfo.avatarUrl = e.detail.avatarUrl;
 			},
@@ -114,7 +118,7 @@
 						type: 'error'
 					})
 				}
-				if (uni.$u.test.mobile(this.courierInfo.phoneNumber)) {
+				if (!uni.$u.test.mobile(this.courierInfo.phoneNumber)) {
 					return this.showToast({
 						message: '请正确输入手机号',
 						type: 'error'
@@ -137,57 +141,58 @@
 					} else {
 						_this.$refs.uToast.show({
 							message: '信息修改失败',
-							type:'error',
+							type: 'error',
 						})
 					}
-					
+
 				})
 
-				let courierOutletsStorage = uni.getStorageSync('courierOutlets')
-				//当找不到缓存或是缓存的和当前的不一样时需要发送网点申请
-				if (uni.$u.test.isEmpty(courierOutletsStorage) || courierOutletsStorage.id != this.courierOutlets.id){
-					//申请网点
-					this.$api.Courier.applyOutlet(this.userId.id, this.courierOutlets.id).then((res)=>{
-						uni.setStorageSync('courierOutlets',this.courierOutlets)
-					})
-				}
+				//申请网点
+				this.$api.Courier.applyOutlet(this.userId.id, this.courierOutlets.id).then((res) => {
+					uni.setStorageSync('courierOutlets', this.courierOutlets)
+					_this.outletsApplyInfo.title = '网点申请待审核'
+				})
 
-				//手机号校验未开启
-				// this.showToast({
-				// 	message: '信息完善成功',
-				// 	type: 'success'
-				// })
+			},
 
+			updateApplyInfo() {
+				let _this = this
+				this.$api.Courier.applyInfo(this.userId.id).then((res) => {
+					if (res.data.code == 200) {
+						let status = res.data.data.comfirmd
+						uni.setStorageSync('outletsComfirm', status)
+						if (status == 0) {
+							_this.outletsApplyInfo.title = '网点申请待审核'
+						} else if (status == 1) {
+							_this.outletsApplyInfo.title = '网点申请已通过'
+							_this.outletsApplyInfo.color = 'cadetblue'
+						}
+					} else {
+						uni.removeStorageSync('outletsComfirm')
+						uni.removeStorageSync('isLogin')
 
+					}
+				})
 			}
 		},
-		onLoad() {
-			console.log('完善个人信息页面onload函数调用');
+		onShow() {
 			let _this = this
 			this.$api.Outlet.getList().then((res) => {
-				_this.outletList.push(res.data.data)
-			})
-			
-			this.updateInfoStorage()
-
-			this.$api.Courier.applyInfo(this.userId.id).then((res) => {
+				_this.outletList = []
 				if (res.data.code == 200) {
-					let status=res.data.data.comfirmd
-					uni.setStorageSync('outletsComfirm',status)
-					if(status==0){
-						_this.outletsApplyInfo.title='网点申请待审核'
-					}
-					else if(status==1){
-						_this.outletsApplyInfo.title='网点申请已通过'
-						_this.outletsApplyInfo.color='cadetblue'
-					}
+					_this.outletList.push(res.data.data)
 				} else {
 					_this.showToast({
-						message: res.data.message,
-						type: 'error'
+						'message': '获取网点列表失败，请联系管理员',
+						'type': 'error'
 					})
 				}
+
 			})
+
+			this.updateInfoStorage()
+			this.updateApplyInfo()
+
 		}
 	}
 </script>
@@ -234,10 +239,10 @@
 				font-size: 40rpx;
 				color: #777;
 			}
-			
-			.outlet-apply-title{
+
+			.outlet-apply-title {
 				margin-left: 10rpx;
-				font-size:32rpx;
+				font-size: 32rpx;
 			}
 		}
 
