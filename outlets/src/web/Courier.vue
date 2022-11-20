@@ -140,11 +140,11 @@
 					cancelButtonText: '取消',
 					type: 'warning'
 				}).then(() => {
+					qs.stringify(this.form)
 					console.log(row)
-					delCourier({
-						courier: row.id,
-						outlets_id: this.pass.id
-					}).then(() => {
+					this.del.courier = row.id
+					this.del.outlets_id = this.pass.id
+					delCourier(this.del = qs.stringify(this.del)).then(() => {
 						this.$message({
 							type: 'success',
 							message: '删除成功!'
