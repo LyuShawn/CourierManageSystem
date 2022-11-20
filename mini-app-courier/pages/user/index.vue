@@ -1,6 +1,6 @@
 <template>
 	<view style="width: 100vw;">
-		<view class="header" v-bind:class="{'status':isH5Plus}">
+		<view class="header" stv-bind:class="{'status':isH5Plus}">
 			<view class="userinfo" @click="toUserInfo">
 				<view class="avatar">
 					<image :src="courierInfo.avatarUrl"></image>
@@ -168,12 +168,23 @@
 					})
 				}
 			},
+			
+			toServer2(index){
+				if(index==1){
+					this.goGithub()
+				}
+			},
 
 			toStatusType(index) {
 				if (index == 0) {
 					uni.switchTab({
-						url: '/pages/my-outlets/index'
+						url: '/pages/user/my-info/index'
 					});
+				}
+				else{
+					uni.redirectTo({
+					      url: '/pages/express/index?status='+(index-1)
+					  });
 				}
 			},
 
@@ -219,7 +230,7 @@
 		.userinfo {
 			width: 90%;
 			display: flex;
-
+			margin-left: 40rpx;
 
 			.avatar {
 				flex-shrink: 0;
