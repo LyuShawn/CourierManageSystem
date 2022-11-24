@@ -15,6 +15,8 @@
 							//open_id存入缓存
 							uni.setStorageSync('open_id', openid);
 							uni.setStorageSync('id', id);
+							uni.setStorageSync('tokenKey',res.data.data.tokenKey)
+							uni.setStorageSync('tokenValue', res.data.data.tokenValue)
 						} catch (e) {
 							// error
 						}

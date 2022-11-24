@@ -1,5 +1,5 @@
 // 基于Promise封装的请求
-const BASE_URL = 'https://api.shawnxixi.icu/'
+const BASE_URL = 'https://api.shawnxixi.icu'
 //const BASE_URL = 'https://localhost'
 
 export const request = (options) => {
