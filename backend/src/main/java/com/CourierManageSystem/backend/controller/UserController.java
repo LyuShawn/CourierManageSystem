@@ -84,8 +84,8 @@ public class UserController {
         return userService.set_default_address(userSetDefaultAddressParam);
     }
 
-    @PostMapping("/login")
     @SaIgnore
+    @PostMapping("/login")
     public ResponseWrapper login(@RequestBody JSONObject jsonObject) throws IOException {
         //获得登录凭证code
         String code=jsonObject.getString("code");

@@ -110,8 +110,8 @@ public class CourierController {
         return courierService.courierApplyOutlets(courierApplyOutletsParam);
     }
 
-    @PostMapping("/login")
     @SaIgnore
+    @PostMapping("/login")
     public ResponseWrapper login(@RequestBody JSONObject jsonObject) throws IOException {
         //获得登录凭证code
         String code=jsonObject.getString("code");
