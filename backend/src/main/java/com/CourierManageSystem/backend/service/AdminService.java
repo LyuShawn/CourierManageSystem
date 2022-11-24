@@ -71,8 +71,8 @@ public class AdminService {
         LambdaQueryWrapper<Outlets> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Outlets::getIs_delete,0);
         List<Outlets> outlets = outletsMapper.selectList(queryWrapper);
-        List<ShowOutletsResult> showOutletsResults = JSON.parseArray(JSON.toJSONString(outlets)).toJavaList(ShowOutletsResult.class);
-        return ResponseWrapper.markSuccess("获取成功",showOutletsResults);
+        //List<ShowOutletsResult> showOutletsResults = JSON.parseArray(JSON.toJSONString(outlets)).toJavaList(ShowOutletsResult.class);
+        return ResponseWrapper.markSuccess("获取成功",outlets);
     }
 
     /**
