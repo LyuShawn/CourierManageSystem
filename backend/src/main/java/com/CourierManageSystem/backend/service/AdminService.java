@@ -1,5 +1,6 @@
 package com.CourierManageSystem.backend.service;
 
+import cn.dev33.satoken.secure.SaSecureUtil;
 import com.CourierManageSystem.backend.entity.Admin;
 import com.CourierManageSystem.backend.entity.Outlets;
 import com.CourierManageSystem.backend.mapper.AdminMapper;
@@ -9,6 +10,7 @@ import com.CourierManageSystem.backend.util.ResponseWrapper;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.google.common.collect.ImmutableMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,12 +32,15 @@ public class AdminService {
 
         LambdaQueryWrapper<Admin> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Admin::getName,adminLoginParam.getName());
-        queryWrapper.eq(Admin::getPwd,adminLoginParam.getPwd());
         Admin admin = adminMapper.selectOne(queryWrapper);
-
         if (admin != null){
+            String salt=admin.getSalt();
             AdminLoginResult adminLoginResult = new AdminLoginResult();
             adminLoginResult.setId(admin.getId().intValue());
+            String pwd=(salt==null||salt.length()==0)?adminLoginParam.getPwd():SaSecureUtil.md5BySalt(adminLoginParam.getPwd(),admin.getSalt());
+            if(adminMapper.selectByMap(ImmutableMap.of("pwd",pwd)).isEmpty()){
+                    return ResponseWrapper.markError("用户名或密码不正确");
+            }
             return ResponseWrapper.markSuccess("登录成功",adminLoginResult);
         }
         else{
@@ -55,9 +60,7 @@ public class AdminService {
             return ResponseWrapper.markError("姓名已存在");
         }
 
-        Admin admin = new Admin();
-        admin.setName(adminAddParam.getName());
-        admin.setPwd(adminAddParam.getPwd());
+        Admin admin = new Admin(adminAddParam.getName(),adminAddParam.getPwd());
 
         adminMapper.insert(admin);
         return ResponseWrapper.markSuccess("新增成功");

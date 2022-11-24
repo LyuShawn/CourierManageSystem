@@ -1,5 +1,7 @@
 package com.CourierManageSystem.backend.entity;
 
+import cn.dev33.satoken.secure.SaSecureUtil;
+import cn.hutool.core.util.RandomUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.io.Serializable;
@@ -19,7 +21,13 @@ import lombok.NoArgsConstructor;
 @TableName ( "admin" )
 public class Admin  implements Serializable {
 
-	private static final long serialVersionUID =  904390091839455403L;
+	public Admin(String name,String originPwd){
+		this.name=name;
+		//随机8位盐
+		this.salt= RandomUtil.randomString (8);
+		this.pwd= SaSecureUtil.md5BySalt(originPwd,this.salt);
+	}
+
 
 	/**
 	 * 管理员表id
@@ -38,4 +46,5 @@ public class Admin  implements Serializable {
 	 */
 	private String pwd;
 
+	private String salt;
 }
