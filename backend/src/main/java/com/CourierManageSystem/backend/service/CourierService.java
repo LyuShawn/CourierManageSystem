@@ -1,6 +1,7 @@
 package com.CourierManageSystem.backend.service;
 
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.CourierManageSystem.backend.entity.Address;
 import com.CourierManageSystem.backend.entity.Courier;
 import com.CourierManageSystem.backend.entity.Express;
@@ -302,15 +303,16 @@ public class CourierService {
             LambdaQueryWrapper<Courier> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(Courier::getOpen_id,openid);
             Courier courier=courierMapper.selectOne(queryWrapper);
+            StpUtil.login(openid);
+            String satoken=StpUtil.getTokenValue();
+
             if(courier!=null){
-                return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",courier.getId()));
+                return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",courier.getId(),"tokenKey","satoken","tokenValue",satoken));
             }
             Courier newCourier=new Courier();
             newCourier.setOpen_id(openid);
             courierMapper.insert(newCourier);
-            return ResponseWrapper.markSuccess("新用户注册成功",ImmutableMap.of("openId",openid,"id",newCourier.getId()));
-            //StpUtil.login(code2Session.getString("openid"));
-            // 获取当前会话的token值,将该token值作为skey传给小程序端作为会话的维护
+            return ResponseWrapper.markSuccess("新用户注册成功",ImmutableMap.of("openId",openid,"id",newCourier.getId(),"tokenKey","satoken","tokenValue",satoken));
 
         }
         else if(errorCode==-1){

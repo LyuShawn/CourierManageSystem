@@ -1,5 +1,7 @@
 package com.CourierManageSystem.backend.controller;
 
+import cn.dev33.satoken.annotation.SaCheckLogin;
+import cn.dev33.satoken.annotation.SaIgnore;
 import com.CourierManageSystem.backend.model.CourierModel.*;
 import com.CourierManageSystem.backend.service.CourierService;
 import com.CourierManageSystem.backend.util.ResponseWrapper;
@@ -12,6 +14,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/courier")
 @CrossOrigin
+@SaCheckLogin
 public class CourierController {
     @Autowired
     CourierService courierService;
@@ -108,6 +111,7 @@ public class CourierController {
     }
 
     @PostMapping("/login")
+    @SaIgnore
     public ResponseWrapper login(@RequestBody JSONObject jsonObject) throws IOException {
         //获得登录凭证code
         String code=jsonObject.getString("code");

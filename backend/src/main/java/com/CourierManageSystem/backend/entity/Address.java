@@ -12,11 +12,11 @@ public class Address {
     /**
      * 地址表id
      */
-    private long id;
+    private Long id;
     /**
      * user_id
      */
-    private long user;
+    private Long user;
     /**
      * 手机号
      */

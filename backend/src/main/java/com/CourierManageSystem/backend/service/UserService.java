@@ -1,5 +1,6 @@
 package com.CourierManageSystem.backend.service;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.CourierManageSystem.backend.entity.*;
 import com.CourierManageSystem.backend.mapper.*;
 import com.CourierManageSystem.backend.model.UserModel.*;
@@ -320,14 +321,17 @@ public class UserService {
             LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(User::getOpen_id,openid);
             User user=userMapper.selectOne(queryWrapper);
+            StpUtil.login(openid);
+            String satoken=StpUtil.getTokenValue();
+
 
             if(user!=null){
-                return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",user.getId()));
+                return ResponseWrapper.markSuccess("登录成功",ImmutableMap.of("openId",openid,"id",user.getId(),"tokenKey","satoken","tokenValue",satoken));
             }
             User newUser=new User();
             newUser.setOpen_id(openid);
             userMapper.insert(newUser);
-            return ResponseWrapper.markSuccess("新用户注册成功",ImmutableMap.of("openId",openid,"id",newUser.getId()));
+            return ResponseWrapper.markSuccess("新用户注册成功",ImmutableMap.of("openId",openid,"id",newUser.getId(),"tokenKey","satoken","tokenValue",satoken));
         }
         else if(errorCode==-1){
             return ResponseWrapper.markError("系统繁忙，此时请开发者稍候再试");

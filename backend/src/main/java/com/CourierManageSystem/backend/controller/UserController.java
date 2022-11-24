@@ -1,5 +1,7 @@
 package com.CourierManageSystem.backend.controller;
 
+import cn.dev33.satoken.annotation.SaCheckLogin;
+import cn.dev33.satoken.annotation.SaIgnore;
 import com.CourierManageSystem.backend.entity.User;
 import com.CourierManageSystem.backend.model.UserModel.*;
 import com.CourierManageSystem.backend.service.UserService;
@@ -13,6 +15,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/user")
 @CrossOrigin
+@SaCheckLogin
 public class UserController {
     @Autowired
     UserService userService;
@@ -82,6 +85,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    @SaIgnore
     public ResponseWrapper login(@RequestBody JSONObject jsonObject) throws IOException {
         //获得登录凭证code
         String code=jsonObject.getString("code");
