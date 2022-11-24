@@ -76,6 +76,16 @@ const routes: Array<RouteRecordRaw> = [
 				title:"添加管理员"
 			}
 		},
+		{
+			path:"/outletsmap",
+			name:"outletsmap",
+			component:()=>import("../views/home/childrens/OutletsMap.vue"),
+			meta:{
+				classifyTitle:"网点地图",
+				icon:TrendCharts,
+				title:"网点地图"
+			}
+		},
 		// {
 		// 	path:"/echarts",
 		// 	name:"echarts",
@@ -138,4 +148,9 @@ const router = createRouter({
   routes
 })
 
+router.afterEach((to, from, next) => {
+  if (typeof (to.meta?.title) === 'string') {
+    document.title = to.meta?.title;
+  }
+})
 export default router
