@@ -34,10 +34,9 @@ public class AdminService {
         queryWrapper.eq(Admin::getName,adminLoginParam.getName());
         Admin admin = adminMapper.selectOne(queryWrapper);
         if (admin != null){
-            String salt=admin.getSalt();
             AdminLoginResult adminLoginResult = new AdminLoginResult();
             adminLoginResult.setId(admin.getId().intValue());
-            String pwd=(salt==null||salt.length()==0)?adminLoginParam.getPwd():SaSecureUtil.md5BySalt(adminLoginParam.getPwd(),admin.getSalt());
+            String pwd=SaSecureUtil.md5BySalt(adminLoginParam.getPwd(),admin.getSalt());
             if(adminMapper.selectByMap(ImmutableMap.of("pwd",pwd)).isEmpty()){
                     return ResponseWrapper.markError("用户名或密码不正确");
             }
