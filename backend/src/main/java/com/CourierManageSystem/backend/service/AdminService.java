@@ -135,14 +135,15 @@ public class AdminService {
     public ResponseWrapper adminUpdatePwd(AdminUpdatePwdParam adminUpdatePwdParam){
         LambdaQueryWrapper<Admin> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Admin::getName,adminUpdatePwdParam.getName());
-        queryWrapper.eq(Admin::getPwd,adminUpdatePwdParam.getOldPwd());
+
+        Admin admin=adminMapper.selectOne(queryWrapper);
+        queryWrapper.eq(Admin::getPwd,SaSecureUtil.md5BySalt(adminUpdatePwdParam.getOldPwd(),admin.getSalt()));
         if(adminMapper.selectOne(queryWrapper) == null){
             return ResponseWrapper.markError("旧密码不匹配");
         }
         LambdaUpdateWrapper<Admin> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.eq(Admin::getName,adminUpdatePwdParam.getName());
-        updateWrapper.eq(Admin::getPwd,adminUpdatePwdParam.getOldPwd());
-        updateWrapper.set(Admin::getPwd,adminUpdatePwdParam.getNewPwd());
+        updateWrapper.set(Admin::getPwd,SaSecureUtil.md5BySalt(adminUpdatePwdParam.getNewPwd(),admin.getSalt()));
         adminMapper.update(null,updateWrapper);
         return ResponseWrapper.markSuccess("修改成功");
     }
