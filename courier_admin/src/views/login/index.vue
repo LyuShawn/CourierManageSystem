@@ -217,7 +217,7 @@
 					console.log(ok);
 					if(ok.code == 200){
 						ElMessage("登录成功!");
-						router.push("/home")
+						router.push("/outletsmap")
 					}else{
 						ElMessage.error("账号或密码有误，请重试！")
 					}
