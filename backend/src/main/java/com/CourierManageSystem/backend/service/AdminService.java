@@ -123,10 +123,7 @@ public class AdminService {
         if (outletsMapper.selectOne(queryWrapper) == null) {
             return ResponseWrapper.markError("该id对应的网点不存在");
         }
-        Outlets outlets = new Outlets();
-        outlets.setId(deleteOutletsParam.getId());
-        outlets.setIs_delete(1);
-        outletsMapper.updateById(outlets);
+        outletsMapper.delete(queryWrapper);
         return ResponseWrapper.markSuccess("删除成功");
     }
 
