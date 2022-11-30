@@ -1,14 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/express/index",
-			"style": {
-				"navigationBarTitleText": "我的快递",
-				"enablePullDownRefresh": false
-			}
-		
-		},
-		{
 			"path": "pages/user/index",
 			"style": {
 				"navigationBarTitleText": "个人中心",
@@ -16,6 +8,14 @@
 				"disableScroll":true
 			}
 			
+		},
+		{
+			"path": "pages/express/index",
+			"style": {
+				"navigationBarTitleText": "我的快递",
+				"enablePullDownRefresh": false
+			}
+		
 		},
 
 
