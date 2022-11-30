@@ -16,7 +16,7 @@
 							uni.setStorageSync('open_id', openid);
 							uni.setStorageSync('id', id);
 						} catch (e) {
-							// error
+							console.log(e);
 						}
 					})
 				},

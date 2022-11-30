@@ -88,9 +88,9 @@
 					</u-cell-group>
 					 <u-picker 
 					 :show="showpicker2" 
-					 ref="uPicker" 
+					 ref="uPicker2" 
 					 :columns="columns1"
-					  @confirm="confirm" 
+					  @confirm="confirm3" 
 					  @close="close2"
 					  @change="changeHandler2"
 					  ></u-picker>
@@ -111,7 +111,7 @@
 				</u-cell>
 				<u-picker
 				:show="showpicker3" 
-				ref="uPicker" 
+				ref="uPicker3" 
 				:columns="columns2"
 				 @confirm="confirm1" 
 				 @close="close3"
@@ -260,10 +260,10 @@
 				list:[{title:'保价服务'}]
 			}
 		},
-		async onLoad(){
+		onLoad(){
 			let _this = this;
-			
-			await _this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
+			console.log('获取用户id')
+			_this.$api.User.postUserInfo(uni.getStorageSync("open_id"))
 				.then((res) => {
 					console.log('资源',res.data.data.id)
 					_this.userid = res.data.data.id
@@ -379,7 +379,7 @@
 					values, // values为当前变化列的数组内容
 					index,
 					// 微信小程序无法将picker实例传出来，只能通过ref操作
-					picker = this.$refs.uPicker
+					picker = this.$refs.uPicker2
 				} = e
 				// 当第一列值发生变化时，变化第二列(后一列)对应的选项
 				if (columnIndex === 0) {
@@ -390,15 +390,18 @@
 			confirm(e) {
 				console.log('confirm', e)
 				this.showpicker1 = false
-				this.showpicker2 = false
 				this.time = e.value[0]+e.value[1]
+			},
+			confirm3(e) {
+				console.log('confirm3', e)
+				this.showpicker2 = false
 				this.address = e.value[1]
 			},
 			handleDialogBack() {
 				this.dialogOptions.visible = false;
 			},
 			confirm1(e) {
-				console.log('confirm', e)
+				console.log('confirm1', e)
                 this.showpicker3 = false
 				this.thing = e.value[0]
 				if(this.thing === "日用品"){

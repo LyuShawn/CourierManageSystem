@@ -197,7 +197,10 @@ export default {
 		gonew() {
 			//切换至 新建信息 页面
 			let _this = this
-			let length = _this.data.length
+			// if(_this.data.length != null)
+			// {
+			// 	let length = _this.data.length
+			// }
 			uni.navigateTo({
 				url: '/pages/send-express/newaddr?gid=' + _this.userid
 			});
@@ -245,12 +248,12 @@ export default {
 		},
 		
 		sendaddr(index, flag) {
-			var pages = getCurrentPages();
-			var prevPage = pages[pages.length - 2];
-			var object = {
-				i: flag,
-				id: this.data[index]
-			};
+			// var pages = getCurrentPages();
+			// var prevPage = pages[pages.length - 2];
+			// var object = {
+			// 	i: flag,
+			// 	id: this.data[index]
+			// };
 			//prevPage.onShow(object);
 			uni.navigateBack();
 			uni.$emit('info',{
