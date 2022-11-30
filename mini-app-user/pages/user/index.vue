@@ -275,6 +275,11 @@
 					})
 
 			},
+			toStatusType(index){
+				uni.switchTab({
+					url:'/pages/my-express/index'
+				})
+			},
 		},
 		components: {
 
