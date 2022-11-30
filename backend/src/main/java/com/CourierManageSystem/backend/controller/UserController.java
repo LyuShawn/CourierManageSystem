@@ -15,6 +15,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/user")
 @SaCheckLogin
+@CrossOrigin
 public class UserController {
     @Autowired
     UserService userService;
