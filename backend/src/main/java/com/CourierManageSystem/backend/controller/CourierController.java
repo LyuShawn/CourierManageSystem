@@ -13,7 +13,6 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/courier")
-@CrossOrigin
 @SaCheckLogin
 public class CourierController {
     @Autowired
