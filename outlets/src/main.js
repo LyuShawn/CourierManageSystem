@@ -31,7 +31,7 @@ router.beforeEach((to, from, next) => {
   if(!token && to.name !== 'login'){
 	  next({ name: 'login'})
   }else if(token && to.name === 'login') { //token存在，登录成功跳转页面
-	  next({name: 'home'})
+	  //next({name: 'home'})
   }else{
 	  next()
   }

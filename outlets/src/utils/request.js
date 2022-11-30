@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-	baseURL: 'https://api.shawnxixi.icu/', //通用请求接口前缀，后端，后面修改
+	baseURL: 'https://api.shawn1111xixi.icu', //通用请求接口前缀，后端，后面修改
 	timeout: 10000,
 	//超时时间
 })
